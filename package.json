@@ -1,0 +1,41 @@
+{
+	"author": {
+		"email": "giovanni.calo@live.it",
+		"name": "Giovanni Calò",
+		"url": "https://github.com/giovannicalo"
+	},
+	"bugs": {
+		"url": "https://github.com/giovannicalo/eslint-config/issues"
+	},
+	"dependencies": {
+		"babel": "^6.1.18",
+		"babel-core": "^6.1.21",
+		"babel-eslint": "^4.1.5",
+		"eslint": "^1.9.0"
+	},
+	"description": "",
+	"devDependencies": {
+		"babel-cli": "^6.1.18",
+		"chai": "^3.4.1",
+		"coveralls": "^2.11.4",
+		"isparta": "^4.0.0",
+		"mocha": "^2.3.3",
+		"posix-cat": "^1.1.1",
+		"rimraf": "^2.4.3"
+	},
+	"homepage": "https://github.com/giovannicalo/eslint-config",
+	"keywords": [],
+	"license": "MIT",
+	"main": "source/index.js",
+	"name": "eslint-config-giovanni",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/giovannicalo/eslint-config.git"
+	},
+	"scripts": {
+		"coverage": "babel-node node_modules/isparta/bin/isparta cover node_modules/mocha/bin/_mocha --report lcovonly -- --compilers js:babel/register --recursive && cat coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js && rimraf coverage",
+		"lint": "eslint .",
+		"test": "mocha --compilers js:babel/register --recursive"
+	},
+	"version": "0.0.0"
+}
