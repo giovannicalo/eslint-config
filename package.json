@@ -8,21 +8,12 @@
 		"url": "https://github.com/giovannicalo/eslint-config/issues"
 	},
 	"dependencies": {
-		"babel": "^6.5.2",
-		"babel-core": "^6.7.4",
 		"babel-eslint": "^6.0.0-beta.6",
-		"eslint": "^2.4.0"
+		"eslint": "^2.4.0",
+		"eslint-plugin-react": "^4.2.3"
 	},
 	"description": "",
-	"devDependencies": {
-		"babel-cli": "^6.6.5",
-		"chai": "^3.5.0",
-		"coveralls": "^2.11.8",
-		"isparta": "^4.0.0",
-		"mocha": "^2.4.5",
-		"posix-cat": "^1.1.1",
-		"rimraf": "^2.5.2"
-	},
+	"devDependencies": {},
 	"homepage": "https://github.com/giovannicalo/eslint-config",
 	"keywords": [],
 	"license": "MIT",
@@ -33,9 +24,7 @@
 		"url": "https://github.com/giovannicalo/eslint-config.git"
 	},
 	"scripts": {
-		"coverage": "babel-node node_modules/isparta/bin/isparta cover node_modules/mocha/bin/_mocha --report lcovonly -- --compilers js:babel/register --recursive && cat coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js && rimraf coverage",
-		"lint": "eslint .",
-		"test": "mocha --compilers js:babel/register --recursive"
+		"lint": "eslint ."
 	},
 	"version": "0.0.0"
 }
