@@ -12,12 +12,12 @@
 		"eslint": "^2.4.0",
 		"eslint-plugin-react": "^4.2.3"
 	},
-	"description": "",
+	"description": "ESLint Config",
 	"devDependencies": {},
 	"homepage": "https://github.com/giovannicalo/eslint-config",
-	"keywords": [],
+	"keywords": ["config", "eslint"],
 	"license": "MIT",
-	"main": "source/index.js",
+	"main": "index.js",
 	"name": "eslint-config-giovanni",
 	"repository": {
 		"type": "git",
