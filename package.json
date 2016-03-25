@@ -9,7 +9,7 @@
 	},
 	"dependencies": {
 		"babel-eslint": "^6.0.0-beta.6",
-		"eslint": "^2.4.0",
+		"eslint": "^2.5.0",
 		"eslint-plugin-react": "^4.2.3"
 	},
 	"description": "ESLint Config",
