@@ -1,0 +1,9 @@
+{
+	"dependencies": {
+		"unused-ignores": [
+			"babel-eslint",
+			"eslint",
+			"eslint-plugin-react"
+		]
+	}
+}
