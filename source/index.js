@@ -11,7 +11,7 @@ module.exports = {
 		ecmaVersion: 7,
 		sourceType: "module"
 	},
-	plugins: [],
+	plugins: ["babel"],
 	rules: {
 		"accessor-pairs": [2, {
 			getWithoutSet: false,
@@ -24,11 +24,21 @@ module.exports = {
 		}],
 		"array-callback-return": 2,
 		"arrow-body-style": [2, "always"],
-		"arrow-parens": [2, "always"],
+		"arrow-parens": 0,
 		"arrow-spacing": [2, {
 			after: true,
 			before: true
 		}],
+		"babel/array-bracket-spacing": 0,
+		"babel/arrow-parens": [2, "always"],
+		"babel/generator-star-spacing": [2, {
+			after: true,
+			before: true
+		}],
+		"babel/new-cap": 0,
+		"babel/no-await-in-loop": 0,
+		"babel/object-curly-spacing": 0,
+		"babel/object-shorthand": 0,
 		"block-scoped-var": 2,
 		"block-spacing": [2, "always"],
 		"brace-style": [2, "1tbs", { allowSingleLine: false }],
@@ -59,10 +69,7 @@ module.exports = {
 		eqeqeq: 2,
 		"func-names": 0,
 		"func-style": [1, "expression"],
-		"generator-star-spacing": [2, {
-			after: true,
-			before: true
-		}],
+		"generator-star-spacing": 0,
 		"global-require": 0,
 		"guard-for-in": 1,
 		"handle-callback-err": 0,
