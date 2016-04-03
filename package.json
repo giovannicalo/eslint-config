@@ -8,8 +8,8 @@
 		"url": "https://github.com/giovannicalo/eslint-config/issues"
 	},
 	"dependencies": {
-		"babel-eslint": "^6.0.0-beta.6",
-		"eslint": "^2.5.1",
+		"babel-eslint": "^6.0.2",
+		"eslint": "^2.6.0",
 		"eslint-plugin-react": "^4.2.3"
 	},
 	"description": "ESLint Config",
