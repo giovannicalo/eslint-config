@@ -273,11 +273,7 @@ module.exports = {
 			after: true,
 			before: false
 		}],
-		"sort-imports": [2, {
-			ignoreCase: false,
-			ignoreMemberSort: false,
-			memberSyntaxSortOrder: ["none", "all", "multiple", "single"]
-		}],
+		"sort-imports": 0,
 		"sort-vars": [2, { ignoreCase: false }],
 		"space-before-blocks": [2, "always"],
 		"space-before-function-paren": [2, "never"],

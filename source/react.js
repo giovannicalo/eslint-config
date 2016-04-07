@@ -40,10 +40,11 @@ module.exports = {
 		"react/no-string-refs": 0,
 		"react/no-unknown-property": 2,
 		"react/prefer-es6-class": [2, "always"],
-		"react/prefer-stateless-function": 1,
+		"react/prefer-stateless-function": 0,
 		"react/prop-types": 0,
 		"react/react-in-jsx-scope": 2,
 		"react/require-extension": 2,
+		"react/require-render-return": 2,
 		"react/self-closing-comp": 2,
 		"react/sort-comp": [2, {
 			order: [
