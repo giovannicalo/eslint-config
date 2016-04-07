@@ -3,6 +3,7 @@
 		"unused-ignores": [
 			"babel-eslint",
 			"eslint",
+			"eslint-plugin-babel",
 			"eslint-plugin-react"
 		]
 	}
