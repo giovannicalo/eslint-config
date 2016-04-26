@@ -11,6 +11,7 @@ module.exports = {
 		"react/jsx-closing-bracket-location": [2, "tag-aligned"],
 		"react/jsx-curly-spacing": [2, "never", { allowMultiline: false }],
 		"react/jsx-equals-spacing": [2, "never"],
+		"react/jsx-first-prop-new-line": [2, "multiline"],
 		"react/jsx-handler-names": 0,
 		"react/jsx-indent": [2, "tab"],
 		"react/jsx-indent-props": [2, "tab"],
