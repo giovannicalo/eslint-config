@@ -219,6 +219,7 @@ module.exports = {
 		"no-unmodified-loop-condition": 2,
 		"no-unneeded-ternary": [2, { defaultAssignment: false }],
 		"no-unreachable": 2,
+		"no-unsafe-finally": 2,
 		"no-unused-expressions": [2, {
 			allowShortCircuit: true,
 			allowTernary: true
@@ -233,6 +234,7 @@ module.exports = {
 			functions: false
 		}],
 		"no-useless-call": 2,
+		"no-useless-computed-key": 2,
 		"no-useless-concat": 2,
 		"no-useless-constructor": 2,
 		"no-useless-escape": 2,
@@ -258,7 +260,10 @@ module.exports = {
 			blocks: "never",
 			switches: "never"
 		}],
-		"prefer-arrow-callback": 2,
+		"prefer-arrow-callback": [2, {
+			allowNamedFunctions: false,
+			allowUnboundThis: true
+		}],
 		"prefer-const": 2,
 		"prefer-reflect": 2,
 		"prefer-rest-params": 2,

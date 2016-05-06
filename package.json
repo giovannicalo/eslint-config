@@ -9,7 +9,7 @@
 	},
 	"dependencies": {
 		"babel-eslint": "^6.0.4",
-		"eslint": "^2.8.0",
+		"eslint": "^2.9.0",
 		"eslint-plugin-babel": "^3.2.0",
 		"eslint-plugin-react": "^5.0.1"
 	},
@@ -27,5 +27,5 @@
 	"scripts": {
 		"lint": "eslint ."
 	},
-	"version": "1.1.5"
+	"version": "1.1.6"
 }
