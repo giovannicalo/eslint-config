@@ -11,7 +11,7 @@ module.exports = {
 		ecmaVersion: 7,
 		sourceType: "module"
 	},
-	plugins: ["babel"],
+	plugins: ["babel", "import"],
 	rules: {
 		"accessor-pairs": [2, {
 			getWithoutSet: false,
@@ -84,6 +84,38 @@ module.exports = {
 		indent: [2, "tab", {
 			SwitchCase: 1,
 			VariableDeclarator: 0
+		}],
+		"import/default": 2,
+		"import/export": 2,
+		"import/extensions": [2, "never"],
+		"import/imports-first": 2,
+		"import/named": 2,
+		"import/namespace": 2,
+		"import/newline-after-import": 2,
+		"import/no-amd": 2,
+		"import/no-commonjs": 0,
+		"import/no-deprecated": 0,
+		"import/no-duplicates": 2,
+		"import/no-extraneous-dependencies": [2, {
+			devDependencies: true,
+			optionalDependencies: true
+		}],
+		"import/no-mutable-exports": 0,
+		"import/no-named-as-default": 0,
+		"import/no-named-as-default-member": 0,
+		"import/no-namespace": 0,
+		"import/no-nodejs-modules": 0,
+		"import/no-unresolved": [2, {
+			amd: false,
+			commonjs: true
+		}],
+		"import/order": [2, {
+			groups: [
+				"builtin",
+				"external",
+				["index", "internal", "parent", "sibling"]
+			],
+			"newlines-between": "always"
 		}],
 		"init-declarations": [2, "always"],
 		"jsx-quotes": [2, "prefer-double"],
