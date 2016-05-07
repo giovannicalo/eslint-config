@@ -6,8 +6,7 @@ module.exports = {
 	},
 	extends: "./index.js",
 	rules: {
-		"no-console": 1,
-		"no-restricted-imports": [2, "fs"],
-		"no-restricted-modules": [2, "fs"]
+		"import/no-nodejs-modules": 2,
+		"no-console": 1
 	}
 };
