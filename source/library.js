@@ -1,8 +1,4 @@
 module.exports = {
-	env: {
-		browser: true,
-		commonjs: true,
-		node: true
-	},
+	env: { commonjs: true },
 	extends: "./index.js"
 };
