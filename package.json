@@ -26,7 +26,8 @@
 		"url": "https://github.com/giovannicalo/eslint-config.git"
 	},
 	"scripts": {
-		"lint": "eslint ."
+		"lint": "eslint .",
+		"prepublish": "npm run lint"
 	},
 	"version": "2.0.0"
 }
