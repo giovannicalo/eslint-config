@@ -20,8 +20,9 @@ module.exports = {
 		"react/jsx-no-bind": 0,
 		"react/jsx-no-duplicate-props": [2, { ignoreCase: false }],
 		"react/jsx-no-literals": 2,
+		"react/jsx-no-target-blank": 2,
 		"react/jsx-no-undef": 2,
-		"react/jsx-pascal-case": 2,
+		"react/jsx-pascal-case": [2, { allowAllCaps: false }],
 		"react/jsx-sort-props": [2, {
 			callbacksLast: false,
 			ignoreCase: false,

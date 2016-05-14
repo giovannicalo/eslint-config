@@ -109,6 +109,7 @@ module.exports = {
 			amd: false,
 			commonjs: true
 		}],
+		"import/prefer-default-export": 2,
 		"import/order": [2, {
 			groups: [
 				"builtin",
@@ -178,7 +179,11 @@ module.exports = {
 		"no-extra-bind": 2,
 		"no-extra-boolean-cast": 2,
 		"no-extra-label": 2,
-		"no-extra-parens": [2, "all"],
+		"no-extra-parens": [2, "all", {
+			conditionalAssign: true,
+			nestedBinaryExpressions: true,
+			returnAssign: true
+		}],
 		"no-extra-semi": 2,
 		"no-fallthrough": 1,
 		"no-floating-decimal": 2,
@@ -282,7 +287,13 @@ module.exports = {
 			arraysInObjects: true,
 			objectsInObjects: true
 		}],
-		"object-shorthand": [2, "always"],
+		"object-property-newline": [2, {
+			allowMultiplePropertiesPerLine: true
+		}],
+		"object-shorthand": [2, "always", {
+			avoidQuotes: false,
+			ignoreConstructors: false
+		}],
 		"one-var": [2, "never"],
 		"one-var-declaration-per-line": 0,
 		"operator-assignment": [2, "always"],
@@ -296,7 +307,10 @@ module.exports = {
 			allowNamedFunctions: false,
 			allowUnboundThis: true
 		}],
-		"prefer-const": 2,
+		"prefer-const": [2, {
+			destructuring: "any",
+			ignoreReadBeforeAssign: false
+		}],
 		"prefer-reflect": 2,
 		"prefer-rest-params": 2,
 		"prefer-spread": 2,
