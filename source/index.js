@@ -32,6 +32,7 @@ module.exports = {
 		"babel/array-bracket-spacing": 0,
 		"babel/arrow-parens": [2, "always"],
 		"babel/flow-object-type": [2, "comma"],
+		"babel/func-params-comma-dangle": [2, "never"],
 		"babel/generator-star-spacing": [2, {
 			after: true,
 			before: true
