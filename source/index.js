@@ -69,6 +69,7 @@ module.exports = {
 		"dot-notation": [2, { allowKeywords: true }],
 		"eol-last": [2, "unix"],
 		eqeqeq: 2,
+		"func-call-spacing": [2, "never", { allowNewlines: false }],
 		"func-names": 0,
 		"func-style": [1, "expression"],
 		"generator-star-spacing": 0,
@@ -133,10 +134,16 @@ module.exports = {
 		"lines-around-comment": 0,
 		"max-depth": 0,
 		"max-len": 0,
+		"max-lines": [2, {
+			max: 300,
+			skipBlankLines: false,
+			skipComments: false
+		}],
 		"max-nested-callbacks": 0,
 		"max-params": 0,
 		"max-statements": 0,
 		"max-statements-per-line": [2, { max: 1 }],
+		"multiline-ternary": 0,
 		"new-cap": [2, {
 			capIsNew: false,
 			newIsCap: true,
@@ -189,6 +196,7 @@ module.exports = {
 		"no-fallthrough": 1,
 		"no-floating-decimal": 2,
 		"no-func-assign": 2,
+		"no-global-assign": 2,
 		"no-implicit-coercion": 0,
 		"no-implicit-globals": 2,
 		"no-implied-eval": 2,
@@ -204,6 +212,7 @@ module.exports = {
 		"no-lonely-if": 2,
 		"no-loop-func": 2,
 		"no-magic-numbers": 0,
+		"no-mixed-operators": 0,
 		"no-mixed-requires": 0,
 		"no-mixed-spaces-and-tabs": 2,
 		"no-multi-spaces": [2, {
@@ -211,9 +220,7 @@ module.exports = {
 		}],
 		"no-multi-str": 2,
 		"no-multiple-empty-lines": [2, { max: 1 }],
-		"no-native-reassign": 2,
 		"no-negated-condition": 0,
-		"no-negated-in-lhs": 2,
 		"no-nested-ternary": 0,
 		"no-new": 2,
 		"no-new-func": 2,
@@ -230,6 +237,7 @@ module.exports = {
 		"no-process-env": 0,
 		"no-process-exit": 0,
 		"no-proto": 2,
+		"no-prototype-builtins": 0,
 		"no-redeclare": [2, { builtinGlobals: false }],
 		"no-regex-spaces": 2,
 		"no-restricted-globals": 0,
@@ -243,8 +251,9 @@ module.exports = {
 		"no-sequences": 2,
 		"no-shadow": 0,
 		"no-shadow-restricted-names": 2,
-		"no-spaced-func": 2,
 		"no-sparse-arrays": 2,
+		"no-tabs": 0,
+		"no-template-curly-in-string": 2,
 		"no-ternary": 0,
 		"no-this-before-super": 2,
 		"no-throw-literal": 2,
@@ -258,6 +267,7 @@ module.exports = {
 		"no-unneeded-ternary": [2, { defaultAssignment: false }],
 		"no-unreachable": 2,
 		"no-unsafe-finally": 2,
+		"no-unsafe-negation": 2,
 		"no-unused-expressions": [2, {
 			allowShortCircuit: true,
 			allowTernary: true
@@ -276,6 +286,11 @@ module.exports = {
 		"no-useless-concat": 2,
 		"no-useless-constructor": 2,
 		"no-useless-escape": 2,
+		"no-useless-rename": [2, {
+			ignoreDestructuring: false,
+			ignoreExport: false,
+			ignoreImport: false
+		}],
 		"no-var": 1,
 		"no-void": 0,
 		"no-warning-comments": [1, {
@@ -284,6 +299,13 @@ module.exports = {
 		}],
 		"no-whitespace-before-property": 2,
 		"no-with": 2,
+		"object-curly-newline": [2, {
+			ObjectExpression: {
+				minProperties: 2,
+				multiline: true
+			},
+			ObjectPattern: "never"
+		}],
 		"object-curly-spacing": [2, "always", {
 			arraysInObjects: true,
 			objectsInObjects: true
@@ -321,12 +343,17 @@ module.exports = {
 		radix: [2, "as-needed"],
 		"require-jsdoc": 1,
 		"require-yield": 2,
+		"rest-spread-spacing": [2, "never"],
 		semi: [2, "always"],
 		"semi-spacing": [2, {
 			after: true,
 			before: false
 		}],
 		"sort-imports": 0,
+		"sort-keys": [2, "asc", {
+			caseSensitive: true,
+			natural: true
+		}],
 		"sort-vars": [2, { ignoreCase: false }],
 		"space-before-blocks": [2, "always"],
 		"space-before-function-paren": [2, "never"],
@@ -339,6 +366,7 @@ module.exports = {
 		"spaced-comment": [2, "always"],
 		strict: [2, "global"],
 		"template-curly-spacing": [2, "never"],
+		"unicode-bom": [2, "never"],
 		"use-isnan": 2,
 		"valid-jsdoc": [2, {
 			requireParamDescription: true,
