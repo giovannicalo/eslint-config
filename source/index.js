@@ -107,11 +107,11 @@ module.exports = {
 		"import/no-named-as-default-member": 0,
 		"import/no-namespace": 0,
 		"import/no-nodejs-modules": 0,
+		"import/no-restricted-paths": 0,
 		"import/no-unresolved": [2, {
 			amd: false,
 			commonjs: true
 		}],
-		"import/prefer-default-export": 2,
 		"import/order": [2, {
 			groups: [
 				"builtin",
@@ -120,6 +120,7 @@ module.exports = {
 			],
 			"newlines-between": "always"
 		}],
+		"import/prefer-default-export": 2,
 		"init-declarations": [2, "always"],
 		"jsx-quotes": [2, "prefer-double"],
 		"key-spacing": [2, {
