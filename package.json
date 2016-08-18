@@ -29,5 +29,5 @@
 		"lint": "eslint .",
 		"prepublish": "npm run lint"
 	},
-	"version": "2.0.1"
+	"version": "2.0.2"
 }
