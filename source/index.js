@@ -69,7 +69,7 @@ module.exports = {
 		"dot-notation": [2, { allowKeywords: true }],
 		"eol-last": [2, "unix"],
 		eqeqeq: 2,
-		"func-call-spacing": [2, "never", { allowNewlines: false }],
+		"func-call-spacing": [2, "never"],
 		"func-names": 0,
 		"func-style": [1, "expression"],
 		"generator-star-spacing": 0,
