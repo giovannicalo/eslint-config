@@ -63,12 +63,6 @@ module.exports = {
 			html: true
 		}],
 		"react/sort-comp": [2, {
-			order: [
-				"static-methods",
-				"lifecycle",
-				"everything-else",
-				"render"
-			],
 			groups: {
 				lifecycle: [
 					"displayName",
@@ -91,7 +85,13 @@ module.exports = {
 					"componentDidUpdate",
 					"componentWillUnmount"
 				]
-			}
+			},
+			order: [
+				"static-methods",
+				"lifecycle",
+				"everything-else",
+				"render"
+			]
 		}],
 		"react/sort-prop-types": [2, {
 			callbacksLast: false,

@@ -83,10 +83,6 @@ module.exports = {
 			properties: "always"
 		}],
 		"id-match": 0,
-		indent: [2, "tab", {
-			SwitchCase: 1,
-			VariableDeclarator: 0
-		}],
 		"import/default": 2,
 		"import/export": 2,
 		"import/extensions": [2, "never"],
@@ -121,6 +117,10 @@ module.exports = {
 			"newlines-between": "always"
 		}],
 		"import/prefer-default-export": 2,
+		indent: [2, "tab", {
+			SwitchCase: 1,
+			VariableDeclarator: 0
+		}],
 		"init-declarations": [2, "always"],
 		"jsx-quotes": [2, "prefer-double"],
 		"key-spacing": [2, {
@@ -136,7 +136,7 @@ module.exports = {
 		"max-depth": 0,
 		"max-len": 0,
 		"max-lines": [2, {
-			max: 300,
+			max: 500,
 			skipBlankLines: false,
 			skipComments: false
 		}],
@@ -300,13 +300,7 @@ module.exports = {
 		}],
 		"no-whitespace-before-property": 2,
 		"no-with": 2,
-		"object-curly-newline": [2, {
-			ObjectExpression: {
-				minProperties: 2,
-				multiline: true
-			},
-			ObjectPattern: "never"
-		}],
+		"object-curly-newline": 0,
 		"object-curly-spacing": [2, "always", {
 			arraysInObjects: true,
 			objectsInObjects: true
@@ -323,8 +317,8 @@ module.exports = {
 		"operator-assignment": [2, "always"],
 		"operator-linebreak": [2, "none"],
 		"padded-blocks": [2, {
-			classes: "always",
 			blocks: "never",
+			classes: "always",
 			switches: "never"
 		}],
 		"prefer-arrow-callback": [2, {
