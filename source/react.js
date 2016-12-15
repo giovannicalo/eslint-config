@@ -9,7 +9,7 @@ module.exports = {
 		"react/forbid-component-props": 0,
 		"react/forbid-prop-types": 0,
 		"react/jsx-boolean-value": [2, "always"],
-		"react/jsx-closing-bracket-location": 0,
+		"react/jsx-closing-bracket-location": [2, "line-aligned"],
 		"react/jsx-curly-spacing": [2, "never", {
 			allowMultiline: false,
 			spacing: { objectLiterals: "never" }
@@ -36,9 +36,16 @@ module.exports = {
 			shorthandLast: false
 		}],
 		"react/jsx-space-before-closing": [2, "always"],
+		"react/jsx-tag-spacing": [2, {
+			afterOpening: "never",
+			beforeSelfClosing: "always",
+			closingSlash: "never"
+		}],
 		"react/jsx-uses-react": 2,
 		"react/jsx-uses-vars": 2,
 		"react/jsx-wrap-multilines": 0,
+		"react/no-array-index-key": 0,
+		"react/no-children-prop": 2,
 		"react/no-danger": 0,
 		"react/no-danger-with-children": 2,
 		"react/no-deprecated": 2,
@@ -50,12 +57,22 @@ module.exports = {
 		"react/no-multi-comp": [2, { ignoreStateless: false }],
 		"react/no-render-return-value": 2,
 		"react/no-set-state": 0,
-		"react/no-string-refs": 0,
+		"react/no-string-refs": 2,
+		"react/no-unescaped-entities": 2,
 		"react/no-unknown-property": 2,
+		"react/no-unused-prop-types": [2, {
+			customValidators: [],
+			skipShapeProps: true
+		}],
 		"react/prefer-es6-class": [2, "always"],
 		"react/prefer-stateless-function": 0,
-		"react/prop-types": 2,
+		"react/prop-types": [2, {
+			customValidators: [],
+			ignore: [],
+			skipUndeclared: false
+		}],
 		"react/react-in-jsx-scope": 2,
+		"react/require-default-props": 2,
 		"react/require-optimization": 0,
 		"react/require-render-return": 2,
 		"react/self-closing-comp": [2, {
@@ -97,6 +114,7 @@ module.exports = {
 			callbacksLast: false,
 			ignoreCase: false,
 			requiredFirst: false
-		}]
+		}],
+		"react/style-prop-object": 2
 	}
 };
