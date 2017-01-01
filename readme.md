@@ -8,7 +8,9 @@
 
 * [`babel`](https://github.com/babel/eslint-plugin-babel)
 * [`import`](https://github.com/benmosher/eslint-plugin-import)
+* [`promise`](https://github.com/xjamundx/eslint-plugin-promise)
 * [`react`](https://github.com/yannickcr/eslint-plugin-react)
+* [`unicorn`](https://github.com/sindresorhus/eslint-plugin-unicorn)
 
 ## Installation
 
