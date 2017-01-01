@@ -8,7 +8,7 @@ module.exports = {
 			impliedStrict: true,
 			jsx: false
 		},
-		ecmaVersion: 7,
+		ecmaVersion: 8,
 		sourceType: "module"
 	},
 	plugins: ["babel", "import", "promise", "unicorn"],
@@ -43,10 +43,9 @@ module.exports = {
 		camelcase: [2, { properties: "always" }],
 		"capitalized-comments": [2, "always", {
 			ignoreConsecutiveComments: false,
-			ignoreInlineComments: false,
-			ignorePattern: ""
+			ignoreInlineComments: false
 		}],
-		"class-methods-use-this": [2, { exceptMethods: [] }],
+		"class-methods-use-this": 2,
 		"comma-dangle": [2, "never"],
 		"comma-spacing": [2, {
 			after: true,
@@ -68,7 +67,9 @@ module.exports = {
 		}],
 		complexity: 0,
 		"computed-property-spacing": [2, "never"],
-		"consistent-return": 2,
+		"consistent-return": [2, {
+			treatUndefinedAsUnspecified: false
+		}],
 		"consistent-this": [2, "self"],
 		"constructor-super": 2,
 		curly: [2, "all"],
@@ -76,13 +77,15 @@ module.exports = {
 		"dot-location": [2, "property"],
 		"dot-notation": [2, { allowKeywords: true }],
 		"eol-last": [2, "always"],
-		eqeqeq: 2,
+		eqeqeq: [2, "always"],
 		"func-call-spacing": [2, "never"],
 		"func-name-matching": [2, "always", {
 			includeCommonJSModuleExports: false
 		}],
-		"func-names": 0,
-		"func-style": [1, "expression"],
+		"func-names": [2, "never"],
+		"func-style": [1, "expression", {
+			allowArrowFunctions: true
+		}],
 		"generator-star-spacing": [2, {
 			after: true,
 			before: true
@@ -164,7 +167,8 @@ module.exports = {
 		"jsx-quotes": [2, "prefer-double"],
 		"key-spacing": [2, {
 			afterColon: true,
-			beforeColon: false
+			beforeColon: false,
+			mode: "strict"
 		}],
 		"keyword-spacing": [2, {
 			after: true,
@@ -176,11 +180,7 @@ module.exports = {
 		"lines-around-directive": 0,
 		"max-depth": 0,
 		"max-len": 0,
-		"max-lines": [2, {
-			max: 500,
-			skipBlankLines: false,
-			skipComments: false
-		}],
+		"max-lines": 0,
 		"max-nested-callbacks": 0,
 		"max-params": 0,
 		"max-statements": 0,
@@ -188,9 +188,7 @@ module.exports = {
 		"multiline-ternary": [2, "never"],
 		"new-cap": [2, {
 			capIsNew: false,
-			capIsNewExceptions: [],
 			newIsCap: true,
-			newIsCapExceptions: [],
 			properties: true
 		}],
 		"new-parens": 2,
@@ -209,7 +207,7 @@ module.exports = {
 		"no-confusing-arrow": 0,
 		"no-console": 0,
 		"no-const-assign": 2,
-		"no-constant-condition": 2,
+		"no-constant-condition": [2, { checkLoops: true }],
 		"no-continue": 0,
 		"no-control-regex": 2,
 		"no-debugger": 2,
@@ -221,7 +219,7 @@ module.exports = {
 		"no-duplicate-case": 2,
 		"no-duplicate-imports": [2, { includeExports: true }],
 		"no-else-return": 0,
-		"no-empty": 2,
+		"no-empty": [2, { allowEmptyCatch: false }],
 		"no-empty-character-class": 2,
 		"no-empty-function": 2,
 		"no-empty-pattern": 2,
@@ -249,10 +247,18 @@ module.exports = {
 		"no-inner-declarations": [2, "both"],
 		"no-invalid-regexp": 2,
 		"no-invalid-this": 0,
-		"no-irregular-whitespace": 2,
+		"no-irregular-whitespace": [2, {
+			skipComments: false,
+			skipRegExps: false,
+			skipStrings: false,
+			skipTemplates: false
+		}],
 		"no-iterator": 2,
 		"no-label-var": 2,
-		"no-labels": 2,
+		"no-labels": [2, {
+			allowLoop: false,
+			allowSwitch: false
+		}],
 		"no-lone-blocks": 2,
 		"no-lonely-if": 2,
 		"no-loop-func": 2,
@@ -264,7 +270,11 @@ module.exports = {
 			exceptions: { Property: false }
 		}],
 		"no-multi-str": 2,
-		"no-multiple-empty-lines": [2, { max: 1 }],
+		"no-multiple-empty-lines": [2, {
+			max: 1,
+			maxBOF: 0,
+			maxEOF: 1
+		}],
 		"no-negated-condition": 0,
 		"no-nested-ternary": 0,
 		"no-new": 2,
@@ -293,20 +303,21 @@ module.exports = {
 		"no-return-assign": [2, "always"],
 		"no-return-await": 2,
 		"no-script-url": 2,
-		"no-self-assign": 2,
+		"no-self-assign": [2, { props: true }],
 		"no-self-compare": 2,
 		"no-sequences": 2,
 		"no-shadow": 0,
 		"no-shadow-restricted-names": 2,
 		"no-sparse-arrays": 2,
+		"no-sync": 0,
 		"no-tabs": 0,
 		"no-template-curly-in-string": 2,
 		"no-ternary": 0,
 		"no-this-before-super": 2,
 		"no-throw-literal": 2,
 		"no-trailing-spaces": [2, { skipBlankLines: false }],
-		"no-undef": 2,
-		"no-undef-init": 0,
+		"no-undef": [2, { typeof: true }],
+		"no-undef-init": 2,
 		"no-undefined": 2,
 		"no-underscore-dangle": 0,
 		"no-unexpected-multiline": 2,
@@ -322,6 +333,7 @@ module.exports = {
 		"no-unused-labels": 2,
 		"no-unused-vars": [2, {
 			args: "after-used",
+			caughtErrors: "none",
 			vars: "all"
 		}],
 		"no-use-before-define": [2, {
@@ -387,10 +399,17 @@ module.exports = {
 		"promise/no-return-wrap": 2,
 		"promise/param-names": 2,
 		"quote-props": [2, "as-needed"],
-		quotes: [2, "double"],
+		quotes: [2, "double", { avoidEscape: false }],
 		radix: [2, "as-needed"],
 		"require-await": 2,
-		"require-jsdoc": 1,
+		"require-jsdoc": [1, {
+			require: {
+				ArrowFunctionExpression: true,
+				ClassDeclaration: true,
+				FunctionDeclaration: true,
+				MethodDefinition: true
+			}
+		}],
 		"require-yield": 2,
 		"rest-spread-spacing": [2, "never"],
 		semi: [2, "always"],
@@ -405,7 +424,11 @@ module.exports = {
 		}],
 		"sort-vars": [2, { ignoreCase: false }],
 		"space-before-blocks": [2, "always"],
-		"space-before-function-paren": [2, "never"],
+		"space-before-function-paren": [2, {
+			anonymous: "never",
+			asyncArrow: "always",
+			named: "never"
+		}],
 		"space-in-parens": [2, "never"],
 		"space-infix-ops": [2, { int32Hint: false }],
 		"space-unary-ops": [2, {
@@ -421,10 +444,23 @@ module.exports = {
 		"unicorn/explicit-length-check": 0,
 		"unicorn/filename-case": [2, { case: "kebabCase" }],
 		"unicorn/no-abusive-eslint-disable": 2,
-		"unicorn/no-process-exit": 2,
+		"unicorn/no-process-exit": 0,
 		"unicorn/throw-new-error": 2,
 		"use-isnan": 2,
 		"valid-jsdoc": [2, {
+			matchDescription: "[A-Z].*",
+			prefer: {
+				arg: "param",
+				argument: "param",
+				return: "returns"
+			},
+			preferType: {
+				boolean: "Boolean",
+				function: "Function",
+				number: "Number",
+				object: "Object",
+				string: "String"
+			},
 			requireParamDescription: true,
 			requireReturn: true,
 			requireReturnDescription: true,
