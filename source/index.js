@@ -11,7 +11,7 @@ module.exports = {
 		ecmaVersion: 7,
 		sourceType: "module"
 	},
-	plugins: ["babel", "import"],
+	plugins: ["babel", "import", "promise", "unicorn"],
 	rules: {
 		"accessor-pairs": [2, {
 			getWithoutSet: false,
@@ -418,16 +418,10 @@ module.exports = {
 		"template-curly-spacing": [2, "never"],
 		"unicode-bom": [2, "never"],
 		"unicorn/catch-error-name": [2, { name: "error" }],
-		"unicorn/custom-error-definition": 2,
-		"unicorn/escape-case": 2,
 		"unicorn/explicit-length-check": 0,
 		"unicorn/filename-case": [2, { case: "kebabCase" }],
 		"unicorn/no-abusive-eslint-disable": 2,
-		"unicorn/no-array-instanceof": 2,
-		"unicorn/no-hex-escape": 2,
-		"unicorn/no-new-buffer": 2,
 		"unicorn/no-process-exit": 2,
-		"unicorn/number-literal-case": 2,
 		"unicorn/throw-new-error": 2,
 		"use-isnan": 2,
 		"valid-jsdoc": [2, {
