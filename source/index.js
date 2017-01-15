@@ -386,10 +386,7 @@ module.exports = {
 			destructuring: "any",
 			ignoreReadBeforeAssign: false
 		}],
-		"prefer-destructuring": [2, {
-			array: true,
-			object: true
-		}, { enforceForRenamedProperties: true }],
+		"prefer-destructuring": 0,
 		"prefer-numeric-literals": 2,
 		"prefer-rest-params": 2,
 		"prefer-spread": 2,
