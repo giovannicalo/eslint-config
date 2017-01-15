@@ -30,7 +30,7 @@ module.exports = {
 			before: true
 		}],
 		"babel/new-cap": 0,
-		"babel/no-await-in-loop": 2,
+		"babel/no-await-in-loop": 0,
 		"babel/no-invalid-this": 2,
 		"babel/object-curly-spacing": [2, "always", {
 			arraysInObjects: true,
@@ -45,7 +45,7 @@ module.exports = {
 			ignoreConsecutiveComments: false,
 			ignoreInlineComments: false
 		}],
-		"class-methods-use-this": 2,
+		"class-methods-use-this": 0,
 		"comma-dangle": [2, "never"],
 		"comma-spacing": [2, {
 			after: true,
@@ -407,14 +407,7 @@ module.exports = {
 		quotes: [2, "double", { avoidEscape: false }],
 		radix: [2, "as-needed"],
 		"require-await": 2,
-		"require-jsdoc": [1, {
-			require: {
-				ArrowFunctionExpression: true,
-				ClassDeclaration: true,
-				FunctionDeclaration: true,
-				MethodDefinition: true
-			}
-		}],
+		"require-jsdoc": 0,
 		"require-yield": 2,
 		"rest-spread-spacing": [2, "never"],
 		semi: [2, "always"],

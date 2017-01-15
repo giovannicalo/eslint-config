@@ -9,7 +9,7 @@ module.exports = {
 		"react/forbid-component-props": 0,
 		"react/forbid-prop-types": 0,
 		"react/jsx-boolean-value": [2, "always"],
-		"react/jsx-closing-bracket-location": [2, "line-aligned"],
+		"react/jsx-closing-bracket-location": 0,
 		"react/jsx-curly-spacing": [2, "never", {
 			allowMultiline: false,
 			spacing: { objectLiterals: "never" }
