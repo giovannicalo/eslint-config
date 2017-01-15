@@ -365,6 +365,7 @@ module.exports = {
 			allowMultiplePropertiesPerLine: true
 		}],
 		"object-shorthand": [2, "always", {
+			avoidExplicitReturnArrows: true,
 			avoidQuotes: false,
 			ignoreConstructors: false
 		}],
@@ -385,6 +386,10 @@ module.exports = {
 			destructuring: "any",
 			ignoreReadBeforeAssign: false
 		}],
+		"prefer-destructuring": [2, {
+			array: true,
+			object: true
+		}, { enforceForRenamedProperties: true }],
 		"prefer-numeric-literals": 2,
 		"prefer-rest-params": 2,
 		"prefer-spread": 2,
