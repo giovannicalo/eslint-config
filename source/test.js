@@ -3,5 +3,8 @@ module.exports = {
 		mocha: true,
 		node: true
 	},
-	extends: "./index.js"
+	extends: "./index.js",
+	rules: {
+		"no-unused-expressions": 0
+	}
 };
