@@ -232,6 +232,7 @@ module.exports = {
 		"no-extra-label": 2,
 		"no-extra-parens": [2, "all", {
 			conditionalAssign: true,
+			ignoreJSX: "none",
 			nestedBinaryExpressions: true,
 			returnAssign: true
 		}],
@@ -266,6 +267,7 @@ module.exports = {
 		"no-mixed-operators": 0,
 		"no-mixed-requires": 0,
 		"no-mixed-spaces-and-tabs": 2,
+		"no-multi-assign": 2,
 		"no-multi-spaces": [2, {
 			exceptions: { Property: false }
 		}],
@@ -388,6 +390,9 @@ module.exports = {
 		}],
 		"prefer-destructuring": 0,
 		"prefer-numeric-literals": 2,
+		"prefer-promise-reject-errors": [2, {
+			allowEmptyReject: false
+		}],
 		"prefer-rest-params": 2,
 		"prefer-spread": 2,
 		"prefer-template": 2,
