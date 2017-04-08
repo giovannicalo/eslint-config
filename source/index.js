@@ -127,7 +127,7 @@ module.exports = {
 		"import/no-namespace": 0,
 		"import/no-nodejs-modules": 0,
 		"import/no-restricted-paths": 0,
-		"import/no-unassigned-import": 1,
+		"import/no-unassigned-import": 0,
 		"import/no-unresolved": [2, {
 			amd: false,
 			caseSensitive: true,
