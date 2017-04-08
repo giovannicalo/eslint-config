@@ -30,12 +30,12 @@ module.exports = {
 			before: true
 		}],
 		"babel/new-cap": 0,
-		"babel/no-await-in-loop": 0,
 		"babel/no-invalid-this": 2,
 		"babel/object-curly-spacing": [2, "always", {
 			arraysInObjects: true,
 			objectsInObjects: true
 		}],
+		"babel/semi": [2, "always"],
 		"block-scoped-var": 2,
 		"block-spacing": [2, "always"],
 		"brace-style": [2, "1tbs", { allowSingleLine: false }],
@@ -203,6 +203,7 @@ module.exports = {
 		"no-case-declarations": 2,
 		"no-catch-shadow": 0,
 		"no-class-assign": 2,
+		"no-compare-neg-zero": 2,
 		"no-cond-assign": [2, "always"],
 		"no-confusing-arrow": 0,
 		"no-console": 0,
@@ -340,7 +341,8 @@ module.exports = {
 		}],
 		"no-use-before-define": [2, {
 			classes: true,
-			functions: false
+			functions: false,
+			variables: true
 		}],
 		"no-useless-call": 2,
 		"no-useless-computed-key": 2,
@@ -361,6 +363,7 @@ module.exports = {
 		}],
 		"no-whitespace-before-property": 2,
 		"no-with": 2,
+		"nonblock-statement-body-position": 0,
 		"object-curly-newline": 0,
 		"object-curly-spacing": 0,
 		"object-property-newline": [2, {
@@ -405,6 +408,8 @@ module.exports = {
 		"promise/no-promise-in-callback": 0,
 		"promise/no-return-wrap": 2,
 		"promise/param-names": 2,
+		"promise/prefer-await-to-callbacks": 2,
+		"promise/prefer-await-to-then": 2,
 		"quote-props": [2, "as-needed"],
 		quotes: [2, "double", { avoidEscape: false }],
 		radix: [2, "as-needed"],
@@ -412,7 +417,7 @@ module.exports = {
 		"require-jsdoc": 0,
 		"require-yield": 2,
 		"rest-spread-spacing": [2, "never"],
-		semi: [2, "always"],
+		semi: 0,
 		"semi-spacing": [2, {
 			after: true,
 			before: false
@@ -441,10 +446,18 @@ module.exports = {
 		"template-curly-spacing": [2, "never"],
 		"unicode-bom": [2, "never"],
 		"unicorn/catch-error-name": [2, { name: "error" }],
+		"unicorn/custom-error-definition": 2,
+		"unicorn/escape-case": 0,
 		"unicorn/explicit-length-check": 0,
 		"unicorn/filename-case": [2, { case: "kebabCase" }],
 		"unicorn/no-abusive-eslint-disable": 2,
+		"unicorn/no-array-instanceof": 2,
+		"unicorn/no-hex-escape": 0,
+		"unicorn/no-new-buffer": 2,
 		"unicorn/no-process-exit": 0,
+		"unicorn/number-literal-case": 2,
+		"unicorn/prefer-starts-ends-with": 2,
+		"unicorn/prefer-type-error": 2,
 		"unicorn/throw-new-error": 2,
 		"use-isnan": 2,
 		"valid-jsdoc": [2, {
