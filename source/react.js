@@ -7,6 +7,8 @@ module.exports = {
 	rules: {
 		"react/display-name": 0,
 		"react/forbid-component-props": 0,
+		"react/forbid-elements": 0,
+		"react/forbid-foreign-prop-types": 0,
 		"react/forbid-prop-types": 0,
 		"react/jsx-boolean-value": [2, "always"],
 		"react/jsx-closing-bracket-location": 0,
@@ -32,6 +34,7 @@ module.exports = {
 		"react/jsx-sort-props": [2, {
 			callbacksLast: false,
 			ignoreCase: false,
+			noSortAlphabetically: false,
 			shorthandFirst: false,
 			shorthandLast: false
 		}],
@@ -115,6 +118,7 @@ module.exports = {
 			ignoreCase: false,
 			requiredFirst: false
 		}],
-		"react/style-prop-object": 2
+		"react/style-prop-object": 2,
+		"react/void-dom-elements-no-children": 2
 	}
 };
