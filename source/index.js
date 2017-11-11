@@ -17,12 +17,14 @@ module.exports = {
 			getWithoutSet: false,
 			setWithoutGet: true
 		}],
+		"array-bracket-newline": 0,
 		"array-bracket-spacing": [2, "never", {
 			arraysInArrays: false,
 			objectsInArrays: false,
 			singleValue: false
 		}],
 		"array-callback-return": 2,
+		"array-element-newline": 0,
 		"arrow-body-style": [2, "always"],
 		"arrow-parens": [2, "always"],
 		"arrow-spacing": [2, {
@@ -78,6 +80,7 @@ module.exports = {
 		"dot-notation": [2, { allowKeywords: true }],
 		"eol-last": [2, "always"],
 		eqeqeq: [2, "always"],
+		"for-direction": 2,
 		"func-call-spacing": [2, "never"],
 		"func-name-matching": [2, "always", {
 			includeCommonJSModuleExports: false
@@ -86,10 +89,12 @@ module.exports = {
 		"func-style": [1, "expression", {
 			allowArrowFunctions: true
 		}],
+		"function-paren-newline": [2, "multiline"],
 		"generator-star-spacing": [2, {
 			after: true,
 			before: true
 		}],
+		"getter-return": [2, { allowImplicit: true }],
 		"global-require": 0,
 		"guard-for-in": 1,
 		"handle-callback-err": 0,
@@ -102,14 +107,17 @@ module.exports = {
 		"id-match": 0,
 		"import/default": 2,
 		"import/export": 2,
+		"import/exports-last": 2,
 		"import/extensions": [2, "never"],
 		"import/first": [2, "absolute-first"],
+		"import/group-exports": 0,
 		"import/max-dependencies": 0,
 		"import/named": 2,
 		"import/namespace": [2, { allowComputed: true }],
-		"import/newline-after-import": 2,
+		"import/newline-after-import": [2, { count: 1 }],
 		"import/no-absolute-path": 2,
 		"import/no-amd": 2,
+		"import/no-anonymous-default-export": 0,
 		"import/no-commonjs": 0,
 		"import/no-deprecated": 0,
 		"import/no-duplicates": 2,
@@ -121,7 +129,7 @@ module.exports = {
 		}],
 		"import/no-internal-modules": 0,
 		"import/no-mutable-exports": 2,
-		"import/no-named-as-default": 0,
+		"import/no-named-as-default": 2,
 		"import/no-named-as-default-member": 0,
 		"import/no-named-default": 2,
 		"import/no-namespace": 0,
@@ -129,7 +137,7 @@ module.exports = {
 		"import/no-restricted-paths": 0,
 		"import/no-unassigned-import": 0,
 		"import/no-unresolved": [2, {
-			amd: false,
+			amd: true,
 			caseSensitive: true,
 			commonjs: true
 		}],
@@ -157,10 +165,12 @@ module.exports = {
 				body: 1,
 				parameters: 1
 			},
+			ImportDeclaration: 1,
 			MemberExpression: 1,
 			ObjectExpression: 1,
 			SwitchCase: 1,
 			VariableDeclarator: 0,
+			flatTernaryExpressions: false,
 			outerIIFEBody: 1
 		}],
 		"init-declarations": [2, "always"],
@@ -177,7 +187,9 @@ module.exports = {
 		"line-comment-position": 0,
 		"linebreak-style": [2, "unix"],
 		"lines-around-comment": 0,
-		"lines-around-directive": 0,
+		"lines-between-class-members": [2, "always", {
+			exceptAfterSingleLine: false
+		}],
 		"max-depth": 0,
 		"max-len": 0,
 		"max-lines": 0,
@@ -185,6 +197,7 @@ module.exports = {
 		"max-params": 0,
 		"max-statements": 0,
 		"max-statements-per-line": [2, { max: 1 }],
+		"multiline-comment-style": 0,
 		"multiline-ternary": [2, "never"],
 		"new-cap": [2, {
 			capIsNew: false,
@@ -192,13 +205,12 @@ module.exports = {
 			properties: true
 		}],
 		"new-parens": 2,
-		"newline-after-var": 0,
-		"newline-before-return": 0,
 		"newline-per-chained-call": 0,
 		"no-alert": 2,
 		"no-array-constructor": 2,
 		"no-await-in-loop": 2,
 		"no-bitwise": 0,
+		"no-buffer-constructor": 2,
 		"no-caller": 2,
 		"no-case-declarations": 2,
 		"no-catch-shadow": 0,
@@ -233,6 +245,7 @@ module.exports = {
 		"no-extra-label": 2,
 		"no-extra-parens": [2, "all", {
 			conditionalAssign: true,
+			enforceForArrowConditionals: false,
 			ignoreJSX: "none",
 			nestedBinaryExpressions: true,
 			returnAssign: true
@@ -270,7 +283,8 @@ module.exports = {
 		"no-mixed-spaces-and-tabs": 2,
 		"no-multi-assign": 2,
 		"no-multi-spaces": [2, {
-			exceptions: { Property: false }
+			exceptions: { Property: false },
+			ignoreEOLComments: false
 		}],
 		"no-multi-str": 2,
 		"no-multiple-empty-lines": [2, {
@@ -318,7 +332,10 @@ module.exports = {
 		"no-ternary": 0,
 		"no-this-before-super": 2,
 		"no-throw-literal": 2,
-		"no-trailing-spaces": [2, { skipBlankLines: false }],
+		"no-trailing-spaces": [2, {
+			ignoreComments: false,
+			skipBlankLines: false
+		}],
 		"no-undef": [2, { typeof: true }],
 		"no-undef-init": 2,
 		"no-undefined": 2,
@@ -383,6 +400,7 @@ module.exports = {
 			classes: "always",
 			switches: "never"
 		}],
+		"padding-line-between-statements": 0,
 		"prefer-arrow-callback": [2, {
 			allowNamedFunctions: false,
 			allowUnboundThis: true
@@ -406,6 +424,7 @@ module.exports = {
 		"promise/no-native": 0,
 		"promise/no-nesting": 0,
 		"promise/no-promise-in-callback": 0,
+		"promise/no-return-in-finally": 2,
 		"promise/no-return-wrap": 2,
 		"promise/param-names": 2,
 		"promise/prefer-await-to-callbacks": 2,
@@ -422,6 +441,7 @@ module.exports = {
 			after: true,
 			before: false
 		}],
+		"semi-style": [2, "last"],
 		"sort-imports": 0,
 		"sort-keys": [2, "asc", {
 			caseSensitive: true,
@@ -430,7 +450,7 @@ module.exports = {
 		"sort-vars": [2, { ignoreCase: false }],
 		"space-before-blocks": [2, "always"],
 		"space-before-function-paren": [2, {
-			anonymous: "never",
+			anonymous: "always",
 			asyncArrow: "always",
 			named: "never"
 		}],
@@ -442,22 +462,30 @@ module.exports = {
 		}],
 		"spaced-comment": [2, "always"],
 		strict: [2, "global"],
+		"switch-colon-spacing": [2, {
+			after: true,
+			before: false
+		}],
 		"symbol-description": 2,
 		"template-curly-spacing": [2, "never"],
 		"unicode-bom": [2, "never"],
 		"unicorn/catch-error-name": [2, { name: "error" }],
 		"unicorn/custom-error-definition": 2,
-		"unicorn/escape-case": 0,
+		"unicorn/escape-case": 2,
 		"unicorn/explicit-length-check": 0,
 		"unicorn/filename-case": [2, { case: "kebabCase" }],
+		"unicorn/import-index": 2,
+		"unicorn/new-for-builtins": 2,
 		"unicorn/no-abusive-eslint-disable": 2,
 		"unicorn/no-array-instanceof": 2,
-		"unicorn/no-hex-escape": 0,
+		"unicorn/no-fn-reference-in-iterator": 0,
+		"unicorn/no-hex-escape": 2,
 		"unicorn/no-new-buffer": 2,
 		"unicorn/no-process-exit": 0,
 		"unicorn/number-literal-case": 2,
 		"unicorn/prefer-starts-ends-with": 2,
 		"unicorn/prefer-type-error": 2,
+		"unicorn/regex-shorthand": 2,
 		"unicorn/throw-new-error": 2,
 		"use-isnan": 2,
 		"valid-jsdoc": [2, {

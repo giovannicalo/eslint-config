@@ -5,6 +5,11 @@ module.exports = {
 	},
 	plugins: ["react"],
 	rules: {
+		"react/boolean-prop-naming": 2,
+		"react/default-props-match-prop-types": [2, {
+			allowRequiredDefaults: false
+		}],
+		"react/destructuring-assignment": 0,
 		"react/display-name": 0,
 		"react/forbid-component-props": 0,
 		"react/forbid-elements": 0,
@@ -12,9 +17,17 @@ module.exports = {
 		"react/forbid-prop-types": 0,
 		"react/jsx-boolean-value": [2, "always"],
 		"react/jsx-closing-bracket-location": 0,
-		"react/jsx-curly-spacing": [2, "never", {
+		"react/jsx-closing-tag-location": 0,
+		"react/jsx-curly-brace-presence": [2, {
+			children: "never",
+			props: "never"
+		}],
+		"react/jsx-curly-spacing": [2, {
 			allowMultiline: false,
-			spacing: { objectLiterals: "never" }
+			attributes: true,
+			children: true,
+			spacing: { objectLiterals: "never" },
+			when: "never"
 		}],
 		"react/jsx-equals-spacing": [2, "never"],
 		"react/jsx-filename-extension": [2, { extensions: [".js"] }],
@@ -35,10 +48,10 @@ module.exports = {
 			callbacksLast: false,
 			ignoreCase: false,
 			noSortAlphabetically: false,
+			reservedFirst: false,
 			shorthandFirst: false,
 			shorthandLast: false
 		}],
-		"react/jsx-space-before-closing": [2, "always"],
 		"react/jsx-tag-spacing": [2, {
 			afterOpening: "never",
 			beforeSelfClosing: "always",
@@ -58,15 +71,19 @@ module.exports = {
 		"react/no-find-dom-node": 2,
 		"react/no-is-mounted": 2,
 		"react/no-multi-comp": [2, { ignoreStateless: false }],
+		"react/no-redundant-should-component-update": 2,
 		"react/no-render-return-value": 2,
 		"react/no-set-state": 0,
 		"react/no-string-refs": 2,
+		"react/no-typos": 2,
 		"react/no-unescaped-entities": 2,
 		"react/no-unknown-property": 2,
 		"react/no-unused-prop-types": [2, {
 			customValidators: [],
 			skipShapeProps: true
 		}],
+		"react/no-unused-state": 2,
+		"react/no-will-update-set-state": 2,
 		"react/prefer-es6-class": [2, "always"],
 		"react/prefer-stateless-function": 0,
 		"react/prop-types": [2, {
@@ -104,13 +121,14 @@ module.exports = {
 					"componentWillUpdate",
 					"componentDidUpdate",
 					"componentWillUnmount"
-				]
+				],
+				rendering: ["/^render.+$/", "render"]
 			},
 			order: [
 				"static-methods",
 				"lifecycle",
 				"everything-else",
-				"render"
+				"rendering"
 			]
 		}],
 		"react/sort-prop-types": [2, {
