@@ -4,6 +4,5 @@
 	"files.trimTrailingWhitespace": true,
 	"editor.insertSpaces": false,
 	"eslint.enable": true,
-	"javascript.validate.enable": false,
-	"vsicons.presets.angular": false
+	"javascript.validate.enable": false
 }
