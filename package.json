@@ -30,7 +30,7 @@
 	},
 	"scripts": {
 		"lint": "eslint -f pretty .",
-		"prepublish": "npm run lint"
+		"prepublishOnly": "npm run lint"
 	},
 	"version": "3.0.0"
 }
