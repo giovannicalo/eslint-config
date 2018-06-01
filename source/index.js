@@ -3,12 +3,11 @@ module.exports = {
 	parser: "babel-eslint",
 	parserOptions: {
 		ecmaFeatures: {
-			experimentalObjectRestSpread: true,
 			globalReturn: false,
 			impliedStrict: true,
 			jsx: false
 		},
-		ecmaVersion: 8,
+		ecmaVersion: 9,
 		sourceType: "module"
 	},
 	plugins: ["babel", "import", "promise", "unicorn"],
@@ -23,7 +22,7 @@ module.exports = {
 			objectsInArrays: false,
 			singleValue: false
 		}],
-		"array-callback-return": 2,
+		"array-callback-return": [2, { allowImplicit: false }],
 		"array-element-newline": 0,
 		"arrow-body-style": [2, "always"],
 		"arrow-parens": [2, "always"],
@@ -33,10 +32,15 @@ module.exports = {
 		}],
 		"babel/new-cap": 0,
 		"babel/no-invalid-this": 2,
+		"babel/no-unused-expressions": [2, {
+			allowShortCircuit: true,
+			allowTernary: true
+		}],
 		"babel/object-curly-spacing": [2, "always", {
 			arraysInObjects: true,
 			objectsInObjects: true
 		}],
+		"babel/quotes": [2, "double", { avoidEscape: false }],
 		"babel/semi": [2, "always"],
 		"block-scoped-var": 2,
 		"block-spacing": [2, "always"],
@@ -62,6 +66,7 @@ module.exports = {
 				FunctionDeclaration: false,
 				FunctionExpression: false,
 				ImportDeclaration: false,
+				NewExpression: false,
 				ObjectExpression: false,
 				ObjectPattern: false,
 				VariableDeclaration: false
@@ -105,7 +110,9 @@ module.exports = {
 			properties: "always"
 		}],
 		"id-match": 0,
+		"implicit-arrow-linebreak": [2, "beside"],
 		"import/default": 2,
+		"import/dynamic-import-chunkname": 0,
 		"import/export": 2,
 		"import/exports-last": 2,
 		"import/extensions": [2, "never"],
@@ -119,6 +126,12 @@ module.exports = {
 		"import/no-amd": 2,
 		"import/no-anonymous-default-export": 0,
 		"import/no-commonjs": 0,
+		"import/no-cycle": [2, {
+			amd: true,
+			commonjs: true,
+			maxDepth: 1
+		}],
+		"import/no-default-export": 0,
 		"import/no-deprecated": 0,
 		"import/no-duplicates": 2,
 		"import/no-dynamic-require": 0,
@@ -134,13 +147,16 @@ module.exports = {
 		"import/no-named-default": 2,
 		"import/no-namespace": 0,
 		"import/no-nodejs-modules": 0,
+		"import/no-relative-parent-imports": 0,
 		"import/no-restricted-paths": 0,
+		"import/no-self-import": 2,
 		"import/no-unassigned-import": 0,
 		"import/no-unresolved": [2, {
 			amd: true,
 			caseSensitive: true,
 			commonjs: true
 		}],
+		"import/no-useless-path-segments": 2,
 		"import/no-webpack-loader-syntax": 2,
 		"import/order": [2, {
 			groups: [
@@ -346,10 +362,6 @@ module.exports = {
 		"no-unreachable": 2,
 		"no-unsafe-finally": 2,
 		"no-unsafe-negation": 2,
-		"no-unused-expressions": [2, {
-			allowShortCircuit: true,
-			allowTernary: true
-		}],
 		"no-unused-labels": 2,
 		"no-unused-vars": [2, {
 			args: "after-used",
@@ -384,7 +396,7 @@ module.exports = {
 		"object-curly-newline": 0,
 		"object-curly-spacing": 0,
 		"object-property-newline": [2, {
-			allowMultiplePropertiesPerLine: true
+			allowAllPropertiesOnSameLine: true
 		}],
 		"object-shorthand": [2, "always", {
 			avoidExplicitReturnArrows: true,
@@ -423,14 +435,15 @@ module.exports = {
 		"promise/no-callback-in-promise": 0,
 		"promise/no-native": 0,
 		"promise/no-nesting": 0,
+		"promise/no-new-statics": 2,
 		"promise/no-promise-in-callback": 0,
 		"promise/no-return-in-finally": 2,
 		"promise/no-return-wrap": 2,
 		"promise/param-names": 2,
 		"promise/prefer-await-to-callbacks": 2,
 		"promise/prefer-await-to-then": 2,
+		"promise/valid-params": 2,
 		"quote-props": [2, "as-needed"],
-		quotes: [2, "double", { avoidEscape: false }],
 		radix: [2, "as-needed"],
 		"require-await": 2,
 		"require-jsdoc": 0,
@@ -471,6 +484,7 @@ module.exports = {
 		"unicode-bom": [2, "never"],
 		"unicorn/catch-error-name": [2, { name: "error" }],
 		"unicorn/custom-error-definition": 2,
+		"unicorn/error-message": 2,
 		"unicorn/escape-case": 2,
 		"unicorn/explicit-length-check": 0,
 		"unicorn/filename-case": [2, { case: "kebabCase" }],
@@ -482,7 +496,10 @@ module.exports = {
 		"unicorn/no-hex-escape": 2,
 		"unicorn/no-new-buffer": 2,
 		"unicorn/no-process-exit": 0,
+		"unicorn/no-unsafe-regex": 0,
 		"unicorn/number-literal-case": 2,
+		"unicorn/prefer-add-event-listener": 2,
+		"unicorn/prefer-spread": 2,
 		"unicorn/prefer-starts-ends-with": 2,
 		"unicorn/prefer-type-error": 2,
 		"unicorn/regex-shorthand": 2,
