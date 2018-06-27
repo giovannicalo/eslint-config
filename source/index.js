@@ -46,7 +46,10 @@ module.exports = {
 		"block-spacing": [2, "always"],
 		"brace-style": [2, "1tbs", { allowSingleLine: false }],
 		"callback-return": 0,
-		camelcase: [2, { properties: "always" }],
+		camelcase: [2, {
+			ignoreDestructuring: false,
+			properties: "always"
+		}],
 		"capitalized-comments": [2, "always", {
 			ignoreConsecutiveComments: false,
 			ignoreInlineComments: false
@@ -88,6 +91,7 @@ module.exports = {
 		"for-direction": 2,
 		"func-call-spacing": [2, "never"],
 		"func-name-matching": [2, "always", {
+			considerPropertyDescriptor: true,
 			includeCommonJSModuleExports: false
 		}],
 		"func-names": [2, "never"],
@@ -206,9 +210,11 @@ module.exports = {
 		"lines-between-class-members": [2, "always", {
 			exceptAfterSingleLine: false
 		}],
+		"max-classes-per-file": [2, 1],
 		"max-depth": 0,
 		"max-len": 0,
 		"max-lines": 0,
+		"max-lines-per-function": 0,
 		"max-nested-callbacks": 0,
 		"max-params": 0,
 		"max-statements": 0,
@@ -423,6 +429,7 @@ module.exports = {
 		}],
 		"prefer-destructuring": 0,
 		"prefer-numeric-literals": 2,
+		"prefer-object-spread": 2,
 		"prefer-promise-reject-errors": [2, {
 			allowEmptyReject: false
 		}],
@@ -520,6 +527,7 @@ module.exports = {
 				string: "String"
 			},
 			requireParamDescription: true,
+			requireParamType: true,
 			requireReturn: true,
 			requireReturnDescription: true,
 			requireReturnType: true

@@ -49,10 +49,13 @@ module.exports = {
 		"react/jsx-no-comment-textnodes": 2,
 		"react/jsx-no-duplicate-props": [2, { ignoreCase: false }],
 		"react/jsx-no-literals": 2,
-		"react/jsx-no-target-blank": 2,
+		"react/jsx-no-target-blank": [2, {
+			enforceDynamicLinks: "always"
+		}],
 		"react/jsx-no-undef": 2,
 		"react/jsx-one-expression-per-line": 2,
 		"react/jsx-pascal-case": [2, { allowAllCaps: false }],
+		"react/jsx-props-no-multi-spaces": 2,
 		"react/jsx-sort-default-props": [2, { ignoreCase: false }],
 		"react/jsx-sort-props": [2, {
 			callbacksLast: false,
@@ -91,6 +94,7 @@ module.exports = {
 		"react/no-typos": 2,
 		"react/no-unescaped-entities": 2,
 		"react/no-unknown-property": 2,
+		"react/no-unsafe": 2,
 		"react/no-unused-prop-types": [2, {
 			customValidators: [],
 			skipShapeProps: true
