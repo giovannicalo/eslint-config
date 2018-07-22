@@ -235,7 +235,6 @@ module.exports = {
 		"no-buffer-constructor": 2,
 		"no-caller": 2,
 		"no-case-declarations": 2,
-		"no-catch-shadow": 0,
 		"no-class-assign": 2,
 		"no-compare-neg-zero": 2,
 		"no-cond-assign": [2, "always"],
