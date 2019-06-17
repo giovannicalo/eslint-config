@@ -1,5 +1,9 @@
 module.exports = {
 	env: { es6: true },
+	overrides: [{
+		env: { jest: true },
+		files: ["*.spec.js"]
+	}],
 	parser: "babel-eslint",
 	parserOptions: {
 		ecmaFeatures: {
@@ -163,10 +167,7 @@ module.exports = {
 			caseSensitive: true,
 			commonjs: true
 		}],
-		"import/no-unused-modules": [2, {
-			missingExports: false,
-			unusedExports: true
-		}],
+		"import/no-unused-modules": 0,
 		"import/no-useless-path-segments": [2, {
 			noUselessIndex: true
 		}],
