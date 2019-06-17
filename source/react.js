@@ -165,5 +165,8 @@ module.exports = {
 		}],
 		"react/style-prop-object": 2,
 		"react/void-dom-elements-no-children": 2
+	},
+	settings: {
+		react: { version: "detect" }
 	}
 };
