@@ -7,7 +7,7 @@ module.exports = {
 			impliedStrict: true,
 			jsx: false
 		},
-		ecmaVersion: 9,
+		ecmaVersion: 10,
 		sourceType: "module"
 	},
 	plugins: ["babel", "import", "promise", "unicorn"],
@@ -30,6 +30,10 @@ module.exports = {
 			after: true,
 			before: true
 		}],
+		"babel/camelcase": [2, {
+			ignoreDestructuring: false,
+			properties: "always"
+		}],
 		"babel/new-cap": 0,
 		"babel/no-invalid-this": 2,
 		"babel/no-unused-expressions": [2, {
@@ -42,14 +46,12 @@ module.exports = {
 		}],
 		"babel/quotes": [2, "double", { avoidEscape: false }],
 		"babel/semi": [2, "always"],
+		"babel/valid-typeof": [2, { requireStringLiterals: true }],
 		"block-scoped-var": 2,
 		"block-spacing": [2, "always"],
 		"brace-style": [2, "1tbs", { allowSingleLine: false }],
 		"callback-return": 0,
-		camelcase: [2, {
-			ignoreDestructuring: false,
-			properties: "always"
-		}],
+		camelcase: 0,
 		"capitalized-comments": [2, "always", {
 			ignoreConsecutiveComments: false,
 			ignoreInlineComments: false
@@ -149,6 +151,7 @@ module.exports = {
 		"import/no-named-as-default": 2,
 		"import/no-named-as-default-member": 0,
 		"import/no-named-default": 2,
+		"import/no-named-export": 0,
 		"import/no-namespace": 0,
 		"import/no-nodejs-modules": 0,
 		"import/no-relative-parent-imports": 0,
@@ -160,7 +163,13 @@ module.exports = {
 			caseSensitive: true,
 			commonjs: true
 		}],
-		"import/no-useless-path-segments": 2,
+		"import/no-unused-modules": [2, {
+			missingExports: false,
+			unusedExports: true
+		}],
+		"import/no-useless-path-segments": [2, {
+			noUselessIndex: true
+		}],
 		"import/no-webpack-loader-syntax": 2,
 		"import/order": [2, {
 			groups: [
@@ -230,6 +239,7 @@ module.exports = {
 		"newline-per-chained-call": 0,
 		"no-alert": 2,
 		"no-array-constructor": 2,
+		"no-async-promise-executor": 2,
 		"no-await-in-loop": 2,
 		"no-bitwise": 0,
 		"no-buffer-constructor": 2,
@@ -299,6 +309,7 @@ module.exports = {
 		"no-lonely-if": 2,
 		"no-loop-func": 2,
 		"no-magic-numbers": 0,
+		"no-misleading-character-class": 2,
 		"no-mixed-operators": 0,
 		"no-mixed-requires": 0,
 		"no-mixed-spaces-and-tabs": 2,
@@ -348,7 +359,7 @@ module.exports = {
 		"no-shadow-restricted-names": 2,
 		"no-sparse-arrays": 2,
 		"no-sync": 0,
-		"no-tabs": 0,
+		"no-tabs": [2, { allowIndentationTabs: true }],
 		"no-template-curly-in-string": 2,
 		"no-ternary": 0,
 		"no-this-before-super": 2,
@@ -379,6 +390,7 @@ module.exports = {
 			variables: true
 		}],
 		"no-useless-call": 2,
+		"no-useless-catch": 2,
 		"no-useless-computed-key": 2,
 		"no-useless-concat": 2,
 		"no-useless-constructor": 2,
@@ -416,7 +428,7 @@ module.exports = {
 			blocks: "never",
 			classes: "always",
 			switches: "never"
-		}],
+		}, { allowSingleLineBlocks: false }],
 		"padding-line-between-statements": 0,
 		"prefer-arrow-callback": [2, {
 			allowNamedFunctions: false,
@@ -427,6 +439,7 @@ module.exports = {
 			ignoreReadBeforeAssign: false
 		}],
 		"prefer-destructuring": 0,
+		"prefer-named-capture-group": 2,
 		"prefer-numeric-literals": 2,
 		"prefer-object-spread": 2,
 		"prefer-promise-reject-errors": [2, {
@@ -451,8 +464,10 @@ module.exports = {
 		"promise/valid-params": 2,
 		"quote-props": [2, "as-needed"],
 		radix: [2, "as-needed"],
+		"require-atomic-updates": 2,
 		"require-await": 2,
 		"require-jsdoc": 0,
+		"require-unicode-regexp": 2,
 		"require-yield": 2,
 		"rest-spread-spacing": [2, "never"],
 		semi: 0,
@@ -461,7 +476,12 @@ module.exports = {
 			before: false
 		}],
 		"semi-style": [2, "last"],
-		"sort-imports": 0,
+		"sort-imports": [2, {
+			ignoreCase: false,
+			ignoreDeclarationSort: true,
+			ignoreMemberSort: false,
+			memberSyntaxSortOrder: ["none", "all", "multiple", "single"]
+		}],
 		"sort-keys": [2, "asc", {
 			caseSensitive: true,
 			natural: true
@@ -498,16 +518,30 @@ module.exports = {
 		"unicorn/new-for-builtins": 2,
 		"unicorn/no-abusive-eslint-disable": 2,
 		"unicorn/no-array-instanceof": 2,
+		"unicorn/no-console-spaces": 2,
 		"unicorn/no-fn-reference-in-iterator": 0,
+		"unicorn/no-for-loop": 2,
 		"unicorn/no-hex-escape": 2,
 		"unicorn/no-new-buffer": 2,
 		"unicorn/no-process-exit": 0,
+		"unicorn/no-unreadable-array-destructuring": 0,
 		"unicorn/no-unsafe-regex": 0,
+		"unicorn/no-unused-properties": 2,
+		"unicorn/no-zero-fractions": 2,
 		"unicorn/number-literal-case": 2,
 		"unicorn/prefer-add-event-listener": 2,
+		"unicorn/prefer-event-key": 2,
+		"unicorn/prefer-exponentiation-operator": 2,
+		"unicorn/prefer-flat-map": 2,
+		"unicorn/prefer-includes": 2,
+		"unicorn/prefer-node-append": 2,
+		"unicorn/prefer-node-remove": 2,
+		"unicorn/prefer-query-selector": 2,
 		"unicorn/prefer-spread": 2,
 		"unicorn/prefer-starts-ends-with": 2,
+		"unicorn/prefer-text-content": 2,
 		"unicorn/prefer-type-error": 2,
+		"unicorn/prevent-abbreviations": 0,
 		"unicorn/regex-shorthand": 2,
 		"unicorn/throw-new-error": 2,
 		"use-isnan": 2,
@@ -531,7 +565,7 @@ module.exports = {
 			requireReturnDescription: true,
 			requireReturnType: true
 		}],
-		"valid-typeof": [2, { requireStringLiterals: true }],
+		"valid-typeof": 0,
 		"vars-on-top": 0,
 		"wrap-iife": [2, "inside", { functionPrototypeMethods: true }],
 		"wrap-regex": 0,
