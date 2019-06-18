@@ -14,7 +14,7 @@ module.exports = {
 		ecmaVersion: 10,
 		sourceType: "module"
 	},
-	plugins: ["babel", "import", "promise", "unicorn"],
+	plugins: ["babel", "import", "jsdoc", "promise", "unicorn"],
 	rules: {
 		"accessor-pairs": [2, {
 			getWithoutSet: false,
@@ -204,6 +204,38 @@ module.exports = {
 			outerIIFEBody: 1
 		}],
 		"init-declarations": [2, "always"],
+		"jsdoc/check-alignment": 2,
+		"jsdoc/check-examples": 2,
+		"jsdoc/check-indentation": 2,
+		"jsdoc/check-param-names": 2,
+		"jsdoc/check-syntax": 2,
+		"jsdoc/check-tag-names": 2,
+		"jsdoc/check-types": [2, { noDefaults: true }],
+		"jsdoc/implements-on-classes": 2,
+		"jsdoc/match-description": [2, {
+			matchDescription: "[A-Z].*"
+		}],
+		"jsdoc/newline-after-description": [2, "always"],
+		"jsdoc/no-types": 0,
+		"jsdoc/no-undefined-types": [2, {
+			preferredTypesDefined: true
+		}],
+		"jsdoc/require-description": 0,
+		"jsdoc/require-description-complete-sentence": 2,
+		"jsdoc/require-example": 0,
+		"jsdoc/require-hyphen-before-param-description": [2, "always"],
+		"jsdoc/require-jsdoc": 0,
+		"jsdoc/require-param": 2,
+		"jsdoc/require-param-description": 2,
+		"jsdoc/require-param-name": 2,
+		"jsdoc/require-param-type": 2,
+		"jsdoc/require-returns": [2, {
+			forceReturnsWithAsync: true
+		}],
+		"jsdoc/require-returns-check": 0,
+		"jsdoc/require-returns-description": 2,
+		"jsdoc/require-returns-type": 2,
+		"jsdoc/valid-types": 2,
 		"jsx-quotes": [2, "prefer-double"],
 		"key-spacing": [2, {
 			afterColon: true,
@@ -546,26 +578,7 @@ module.exports = {
 		"unicorn/regex-shorthand": 2,
 		"unicorn/throw-new-error": 2,
 		"use-isnan": 2,
-		"valid-jsdoc": [2, {
-			matchDescription: "[A-Z].*",
-			prefer: {
-				arg: "param",
-				argument: "param",
-				return: "returns"
-			},
-			preferType: {
-				boolean: "Boolean",
-				function: "Function",
-				number: "Number",
-				object: "Object",
-				string: "String"
-			},
-			requireParamDescription: true,
-			requireParamType: true,
-			requireReturn: true,
-			requireReturnDescription: true,
-			requireReturnType: true
-		}],
+		"valid-jsdoc": 0,
 		"valid-typeof": 0,
 		"vars-on-top": 0,
 		"wrap-iife": [2, "inside", { functionPrototypeMethods: true }],
@@ -578,5 +591,41 @@ module.exports = {
 			exceptRange: false,
 			onlyEquality: false
 		}]
+	},
+	settings: {
+		jsdoc: {
+			preferredTypes: {
+				array: "Array",
+				bigint: "BigInt",
+				boolean: "Boolean",
+				date: "Date",
+				function: "Function",
+				number: "Number",
+				object: "Object",
+				regexp: "RegExp",
+				string: "String"
+			},
+			tagNamePreference: {
+				arg: "param",
+				argument: "param",
+				augments: "extends",
+				const: "constant",
+				constructor: "class",
+				defaultvalue: "default",
+				desc: "description",
+				exception: "throws",
+				fileoverview: "file",
+				fires: "emits",
+				func: "function",
+				host: "external",
+				method: "function",
+				overview: "file",
+				prop: "property",
+				return: "returns",
+				var: "member",
+				virtual: "abstract",
+				yield: "yields"
+			}
+		}
 	}
 };
