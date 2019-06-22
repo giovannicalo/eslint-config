@@ -50,7 +50,7 @@ module.exports = {
 		}],
 		"babel/quotes": [2, "double", { avoidEscape: false }],
 		"babel/semi": [2, "always"],
-		"babel/valid-typeof": [2, { requireStringLiterals: true }],
+		"babel/valid-typeof": 0,
 		"block-scoped-var": 2,
 		"block-spacing": [2, "always"],
 		"brace-style": [2, "1tbs", { allowSingleLine: false }],
@@ -268,7 +268,7 @@ module.exports = {
 			newIsCap: true,
 			properties: true
 		}],
-		"new-parens": 2,
+		"new-parens": [2, "always"],
 		"newline-per-chained-call": 0,
 		"no-alert": 2,
 		"no-array-constructor": 2,
@@ -517,6 +517,7 @@ module.exports = {
 		}],
 		"sort-keys": [2, "asc", {
 			caseSensitive: true,
+			minKeys: 2,
 			natural: true
 		}],
 		"sort-vars": [2, { ignoreCase: false }],
@@ -579,7 +580,7 @@ module.exports = {
 		"unicorn/throw-new-error": 2,
 		"use-isnan": 2,
 		"valid-jsdoc": 0,
-		"valid-typeof": 0,
+		"valid-typeof": [2, { requireStringLiterals: true }],
 		"vars-on-top": 0,
 		"wrap-iife": [2, "inside", { functionPrototypeMethods: true }],
 		"wrap-regex": 0,
