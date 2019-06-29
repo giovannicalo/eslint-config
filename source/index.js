@@ -104,7 +104,7 @@ module.exports = {
 		"func-style": [1, "expression", {
 			allowArrowFunctions: true
 		}],
-		"function-paren-newline": [2, "multiline"],
+		"function-paren-newline": [2, "multiline-arguments"],
 		"generator-star-spacing": [2, {
 			after: true,
 			before: true
