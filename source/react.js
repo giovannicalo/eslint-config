@@ -29,6 +29,7 @@ module.exports = {
 			children: "never",
 			props: "never"
 		}],
+		"react/jsx-curly-newline": [2, "never"],
 		"react/jsx-curly-spacing": [2, {
 			allowMultiline: false,
 			attributes: true,
