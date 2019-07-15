@@ -217,9 +217,7 @@ module.exports = {
 		}],
 		"jsdoc/newline-after-description": [2, "always"],
 		"jsdoc/no-types": 0,
-		"jsdoc/no-undefined-types": [2, {
-			preferredTypesDefined: true
-		}],
+		"jsdoc/no-undefined-types": 2,
 		"jsdoc/require-description": 0,
 		"jsdoc/require-description-complete-sentence": 2,
 		"jsdoc/require-example": 0,
@@ -230,12 +228,16 @@ module.exports = {
 		"jsdoc/require-param-name": 2,
 		"jsdoc/require-param-type": 2,
 		"jsdoc/require-returns": [2, {
+			forceRequireReturn: true,
 			forceReturnsWithAsync: true
 		}],
 		"jsdoc/require-returns-check": 0,
 		"jsdoc/require-returns-description": 2,
 		"jsdoc/require-returns-type": 2,
-		"jsdoc/valid-types": 2,
+		"jsdoc/valid-types": [2, {
+			allowEmptyNamepaths: true,
+			checkSeesForNamepaths: false
+		}],
 		"jsx-quotes": [2, "prefer-double"],
 		"key-spacing": [2, {
 			afterColon: true,
