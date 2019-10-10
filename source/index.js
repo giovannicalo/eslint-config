@@ -15,8 +15,10 @@ module.exports = {
 		sourceType: "module"
 	},
 	plugins: ["babel", "import", "jsdoc", "promise", "unicorn"],
+	reportUnusedDisableDirectives: true,
 	rules: {
 		"accessor-pairs": [2, {
+			enforceForClassMembers: true,
 			getWithoutSet: false,
 			setWithoutGet: true
 		}],
@@ -90,6 +92,7 @@ module.exports = {
 		"constructor-super": 2,
 		curly: [2, "all"],
 		"default-case": 0,
+		"default-param-last": 2,
 		"dot-location": [2, "property"],
 		"dot-notation": [2, { allowKeywords: true }],
 		"eol-last": [2, "always"],
@@ -104,6 +107,7 @@ module.exports = {
 		"func-style": [1, "expression", {
 			allowArrowFunctions: true
 		}],
+		"function-call-argument-newline": [2, "consistent"],
 		"function-paren-newline": [2, "multiline-arguments"],
 		"generator-star-spacing": [2, {
 			after: true,
@@ -311,7 +315,8 @@ module.exports = {
 		"no-extra-label": 2,
 		"no-extra-parens": [2, "all", {
 			conditionalAssign: true,
-			enforceForArrowConditionals: false,
+			enforceForArrowConditionals: true,
+			enforceForSequenceExpressions: true,
 			ignoreJSX: "none",
 			nestedBinaryExpressions: true,
 			returnAssign: true
@@ -324,6 +329,7 @@ module.exports = {
 		"no-implicit-coercion": 0,
 		"no-implicit-globals": 2,
 		"no-implied-eval": 2,
+		"no-import-assign": 2,
 		"no-inline-comments": 0,
 		"no-inner-declarations": [2, "both"],
 		"no-invalid-regexp": 2,
@@ -480,6 +486,7 @@ module.exports = {
 		"prefer-promise-reject-errors": [2, {
 			allowEmptyReject: false
 		}],
+		"prefer-regex-literals": 2,
 		"prefer-rest-params": 2,
 		"prefer-spread": 2,
 		"prefer-template": 2,
@@ -545,9 +552,11 @@ module.exports = {
 		"template-curly-spacing": [2, "never"],
 		"unicode-bom": [2, "never"],
 		"unicorn/catch-error-name": [2, { name: "error" }],
+		"unicorn/consistent-function-scoping": 2,
 		"unicorn/custom-error-definition": 2,
 		"unicorn/error-message": 2,
 		"unicorn/escape-case": 2,
+		"unicorn/expiring-todo-comments": 0,
 		"unicorn/explicit-length-check": 0,
 		"unicorn/filename-case": [2, { case: "kebabCase" }],
 		"unicorn/import-index": 2,
@@ -558,6 +567,8 @@ module.exports = {
 		"unicorn/no-fn-reference-in-iterator": 0,
 		"unicorn/no-for-loop": 2,
 		"unicorn/no-hex-escape": 2,
+		"unicorn/no-keyword-prefix": 0,
+		"unicorn/no-nested-ternary": 0,
 		"unicorn/no-new-buffer": 2,
 		"unicorn/no-process-exit": 0,
 		"unicorn/no-unreadable-array-destructuring": 0,
@@ -566,6 +577,7 @@ module.exports = {
 		"unicorn/no-zero-fractions": 2,
 		"unicorn/number-literal-case": 2,
 		"unicorn/prefer-add-event-listener": 2,
+		"unicorn/prefer-dataset": 2,
 		"unicorn/prefer-event-key": 2,
 		"unicorn/prefer-exponentiation-operator": 2,
 		"unicorn/prefer-flat-map": 2,
@@ -573,14 +585,16 @@ module.exports = {
 		"unicorn/prefer-node-append": 2,
 		"unicorn/prefer-node-remove": 2,
 		"unicorn/prefer-query-selector": 2,
+		"unicorn/prefer-reflect-apply": 0,
 		"unicorn/prefer-spread": 2,
 		"unicorn/prefer-starts-ends-with": 2,
+		"unicorn/prefer-string-slice": 2,
 		"unicorn/prefer-text-content": 2,
 		"unicorn/prefer-type-error": 2,
 		"unicorn/prevent-abbreviations": 0,
 		"unicorn/regex-shorthand": 2,
 		"unicorn/throw-new-error": 2,
-		"use-isnan": 2,
+		"use-isnan": [2, { enforceForSwitchCase: true }],
 		"valid-jsdoc": 0,
 		"valid-typeof": [2, { requireStringLiterals: true }],
 		"vars-on-top": 0,

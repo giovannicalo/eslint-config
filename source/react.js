@@ -56,11 +56,12 @@ module.exports = {
 		}],
 		"react/jsx-no-comment-textnodes": 2,
 		"react/jsx-no-duplicate-props": [2, { ignoreCase: false }],
-		"react/jsx-no-literals": 2,
+		"react/jsx-no-literals": [2, { noStrings: false }],
 		"react/jsx-no-target-blank": [2, {
 			enforceDynamicLinks: "always"
 		}],
 		"react/jsx-no-undef": 2,
+		"react/jsx-no-useless-fragment": 2,
 		"react/jsx-one-expression-per-line": [2, { allow: "none" }],
 		"react/jsx-pascal-case": [2, { allowAllCaps: false }],
 		"react/jsx-props-no-multi-spaces": 2,
@@ -128,32 +129,16 @@ module.exports = {
 		}],
 		"react/sort-comp": [2, {
 			groups: {
-				lifecycle: [
-					"displayName",
-					"propTypes",
-					"contextTypes",
-					"childContextTypes",
-					"mixins",
-					"statics",
-					"defaultProps",
-					"constructor",
-					"getDefaultProps",
-					"getInitialState",
-					"state",
-					"getChildContext",
-					"componentWillMount",
-					"componentDidMount",
-					"componentWillReceiveProps",
-					"shouldComponentUpdate",
-					"componentWillUpdate",
-					"componentDidUpdate",
-					"componentWillUnmount"
-				],
 				rendering: ["/^render.+$/", "render"]
 			},
 			order: [
-				"static-methods",
+				"static-variables",
+				"instance-variables",
 				"lifecycle",
+				"getters",
+				"setters",
+				"static-methods",
+				"instance-methods",
 				"everything-else",
 				"rendering"
 			]
