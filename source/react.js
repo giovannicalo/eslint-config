@@ -26,7 +26,7 @@ module.exports = {
 		"react/jsx-closing-bracket-location": 0,
 		"react/jsx-closing-tag-location": 0,
 		"react/jsx-curly-brace-presence": [2, {
-			children: "never",
+			children: "ignore",
 			props: "never"
 		}],
 		"react/jsx-curly-newline": [2, "never"],
