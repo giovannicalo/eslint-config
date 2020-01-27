@@ -28,7 +28,9 @@ module.exports = {
 			objectsInArrays: false,
 			singleValue: false
 		}],
-		"array-callback-return": [2, { allowImplicit: false }],
+		"array-callback-return": [2, {
+			allowImplicit: false
+		}],
 		"array-element-newline": 0,
 		"arrow-body-style": [2, "always"],
 		"arrow-parens": [2, "always"],
@@ -50,12 +52,16 @@ module.exports = {
 			arraysInObjects: true,
 			objectsInObjects: true
 		}],
-		"babel/quotes": [2, "double", { avoidEscape: false }],
+		"babel/quotes": [2, "double", {
+			avoidEscape: false
+		}],
 		"babel/semi": [2, "always"],
 		"babel/valid-typeof": 0,
 		"block-scoped-var": 2,
 		"block-spacing": [2, "always"],
-		"brace-style": [2, "1tbs", { allowSingleLine: false }],
+		"brace-style": [2, "1tbs", {
+			allowSingleLine: false
+		}],
 		"callback-return": 0,
 		camelcase: 0,
 		"capitalized-comments": [2, "always", {
@@ -113,8 +119,11 @@ module.exports = {
 			after: true,
 			before: true
 		}],
-		"getter-return": [2, { allowImplicit: true }],
+		"getter-return": [2, {
+			allowImplicit: true
+		}],
 		"global-require": 0,
+		"grouped-accessor-pairs": [2, "getBeforeSet"],
 		"guard-for-in": 1,
 		"handle-callback-err": 0,
 		"id-blacklist": 0,
@@ -134,7 +143,9 @@ module.exports = {
 		"import/group-exports": 0,
 		"import/max-dependencies": 0,
 		"import/named": 2,
-		"import/namespace": [2, { allowComputed: true }],
+		"import/namespace": [2, {
+			allowComputed: true
+		}],
 		"import/newline-after-import": [2, { count: 1 }],
 		"import/no-absolute-path": 2,
 		"import/no-amd": 2,
@@ -147,9 +158,12 @@ module.exports = {
 		}],
 		"import/no-default-export": 0,
 		"import/no-deprecated": 0,
-		"import/no-duplicates": 2,
+		"import/no-duplicates": [2, {
+			considerQueryString: false
+		}],
 		"import/no-dynamic-require": 0,
 		"import/no-extraneous-dependencies": [2, {
+			bundledDependencies: true,
 			devDependencies: true,
 			optionalDependencies: true,
 			peerDependencies: true
@@ -177,6 +191,10 @@ module.exports = {
 		}],
 		"import/no-webpack-loader-syntax": 2,
 		"import/order": [2, {
+			alphabetize: {
+				caseInsensitive: false,
+				order: "asc"
+			},
 			groups: [
 				"builtin",
 				"external",
@@ -208,29 +226,46 @@ module.exports = {
 			outerIIFEBody: 1
 		}],
 		"init-declarations": [2, "always"],
+		"jsdoc/check-access": 2,
 		"jsdoc/check-alignment": 2,
 		"jsdoc/check-examples": 2,
 		"jsdoc/check-indentation": 2,
-		"jsdoc/check-param-names": 2,
+		"jsdoc/check-param-names": [2, {
+			allowExtraTrailingParamDocs: false
+		}],
+		"jsdoc/check-property-names": 2,
 		"jsdoc/check-syntax": 2,
 		"jsdoc/check-tag-names": 2,
 		"jsdoc/check-types": [2, { noDefaults: true }],
+		"jsdoc/check-values": 2,
+		"jsdoc/empty-tags": 2,
 		"jsdoc/implements-on-classes": 2,
 		"jsdoc/match-description": [2, {
 			matchDescription: "[A-Z].*"
 		}],
 		"jsdoc/newline-after-description": [2, "always"],
+		"jsdoc/no-bad-blocks": 2,
+		"jsdoc/no-defaults": 0,
 		"jsdoc/no-types": 0,
 		"jsdoc/no-undefined-types": 2,
 		"jsdoc/require-description": 0,
-		"jsdoc/require-description-complete-sentence": 2,
+		"jsdoc/require-description-complete-sentence": [2, {
+			abbreviations: ["e.g.", "i.e."]
+		}],
 		"jsdoc/require-example": 0,
-		"jsdoc/require-hyphen-before-param-description": [2, "always"],
+		"jsdoc/require-file-overview": 0,
+		"jsdoc/require-hyphen-before-param-description": [2, "always", {
+			checkProperties: true
+		}],
 		"jsdoc/require-jsdoc": 0,
 		"jsdoc/require-param": 2,
 		"jsdoc/require-param-description": 2,
 		"jsdoc/require-param-name": 2,
 		"jsdoc/require-param-type": 2,
+		"jsdoc/require-property": 0,
+		"jsdoc/require-property-description": 2,
+		"jsdoc/require-property-name": 2,
+		"jsdoc/require-property-type": 2,
 		"jsdoc/require-returns": [2, {
 			forceRequireReturn: true,
 			forceReturnsWithAsync: true
@@ -290,7 +325,10 @@ module.exports = {
 		"no-confusing-arrow": 0,
 		"no-console": 0,
 		"no-const-assign": 2,
-		"no-constant-condition": [2, { checkLoops: true }],
+		"no-constant-condition": [2, {
+			checkLoops: true
+		}],
+		"no-constructor-return": 2,
 		"no-continue": 0,
 		"no-control-regex": 2,
 		"no-debugger": 2,
@@ -298,16 +336,23 @@ module.exports = {
 		"no-div-regex": 0,
 		"no-dupe-args": 2,
 		"no-dupe-class-members": 2,
+		"no-dupe-else-if": 2,
 		"no-dupe-keys": 2,
 		"no-duplicate-case": 2,
-		"no-duplicate-imports": [2, { includeExports: true }],
+		"no-duplicate-imports": [2, {
+			includeExports: true
+		}],
 		"no-else-return": 0,
-		"no-empty": [2, { allowEmptyCatch: false }],
+		"no-empty": [2, {
+			allowEmptyCatch: false
+		}],
 		"no-empty-character-class": 2,
 		"no-empty-function": 2,
 		"no-empty-pattern": 2,
 		"no-eq-null": 2,
-		"no-eval": [2, { allowIndirect: false }],
+		"no-eval": [2, {
+			allowIndirect: false
+		}],
 		"no-ex-assign": 2,
 		"no-extend-native": 2,
 		"no-extra-bind": 2,
@@ -316,6 +361,7 @@ module.exports = {
 		"no-extra-parens": [2, "all", {
 			conditionalAssign: true,
 			enforceForArrowConditionals: true,
+			enforceForNewInMemberExpressions: true, // eslint-disable-line id-length
 			enforceForSequenceExpressions: true,
 			ignoreJSX: "none",
 			nestedBinaryExpressions: true,
@@ -327,7 +373,9 @@ module.exports = {
 		"no-func-assign": 2,
 		"no-global-assign": 2,
 		"no-implicit-coercion": 0,
-		"no-implicit-globals": 2,
+		"no-implicit-globals": [2, {
+			lexicalBindings: true
+		}],
 		"no-implied-eval": 2,
 		"no-import-assign": 2,
 		"no-inline-comments": 0,
@@ -383,7 +431,9 @@ module.exports = {
 		"no-process-exit": 0,
 		"no-proto": 2,
 		"no-prototype-builtins": 0,
-		"no-redeclare": [2, { builtinGlobals: false }],
+		"no-redeclare": [2, {
+			builtinGlobals: false
+		}],
 		"no-regex-spaces": 2,
 		"no-restricted-globals": 0,
 		"no-restricted-imports": 0,
@@ -396,11 +446,14 @@ module.exports = {
 		"no-self-assign": [2, { props: true }],
 		"no-self-compare": 2,
 		"no-sequences": 2,
+		"no-setter-return": 2,
 		"no-shadow": 0,
 		"no-shadow-restricted-names": 2,
 		"no-sparse-arrays": 2,
 		"no-sync": 0,
-		"no-tabs": [2, { allowIndentationTabs: true }],
+		"no-tabs": [2, {
+			allowIndentationTabs: true
+		}],
 		"no-template-curly-in-string": 2,
 		"no-ternary": 0,
 		"no-this-before-super": 2,
@@ -415,10 +468,14 @@ module.exports = {
 		"no-underscore-dangle": 0,
 		"no-unexpected-multiline": 2,
 		"no-unmodified-loop-condition": 2,
-		"no-unneeded-ternary": [2, { defaultAssignment: false }],
+		"no-unneeded-ternary": [2, {
+			defaultAssignment: false
+		}],
 		"no-unreachable": 2,
 		"no-unsafe-finally": 2,
-		"no-unsafe-negation": 2,
+		"no-unsafe-negation": [2, {
+			enforceForOrderingRelations: true
+		}],
 		"no-unused-labels": 2,
 		"no-unused-vars": [2, {
 			args: "after-used",
@@ -432,7 +489,9 @@ module.exports = {
 		}],
 		"no-useless-call": 2,
 		"no-useless-catch": 2,
-		"no-useless-computed-key": 2,
+		"no-useless-computed-key": [2, {
+			enforceForClassMembers: true
+		}],
 		"no-useless-concat": 2,
 		"no-useless-constructor": 2,
 		"no-useless-escape": 2,
@@ -480,6 +539,7 @@ module.exports = {
 			ignoreReadBeforeAssign: false
 		}],
 		"prefer-destructuring": 0,
+		"prefer-exponentiation-operator": 2,
 		"prefer-named-capture-group": 2,
 		"prefer-numeric-literals": 2,
 		"prefer-object-spread": 2,
@@ -537,7 +597,9 @@ module.exports = {
 			named: "never"
 		}],
 		"space-in-parens": [2, "never"],
-		"space-infix-ops": [2, { int32Hint: false }],
+		"space-infix-ops": [2, {
+			int32Hint: false
+		}],
 		"space-unary-ops": [2, {
 			nonwords: false,
 			words: true
@@ -582,6 +644,8 @@ module.exports = {
 		"unicorn/prefer-exponentiation-operator": 2,
 		"unicorn/prefer-flat-map": 2,
 		"unicorn/prefer-includes": 2,
+		"unicorn/prefer-modern-dom-apis": 2,
+		"unicorn/prefer-negative-index": 2,
 		"unicorn/prefer-node-append": 2,
 		"unicorn/prefer-node-remove": 2,
 		"unicorn/prefer-query-selector": 2,
@@ -590,15 +654,23 @@ module.exports = {
 		"unicorn/prefer-starts-ends-with": 2,
 		"unicorn/prefer-string-slice": 2,
 		"unicorn/prefer-text-content": 2,
+		"unicorn/prefer-trim-start-end": 2,
 		"unicorn/prefer-type-error": 2,
 		"unicorn/prevent-abbreviations": 0,
 		"unicorn/regex-shorthand": 2,
 		"unicorn/throw-new-error": 2,
-		"use-isnan": [2, { enforceForSwitchCase: true }],
+		"use-isnan": [2, {
+			enforceForIndexOf: true,
+			enforceForSwitchCase: true
+		}],
 		"valid-jsdoc": 0,
-		"valid-typeof": [2, { requireStringLiterals: true }],
+		"valid-typeof": [2, {
+			requireStringLiterals: true
+		}],
 		"vars-on-top": 0,
-		"wrap-iife": [2, "inside", { functionPrototypeMethods: true }],
+		"wrap-iife": [2, "inside", {
+			functionPrototypeMethods: true
+		}],
 		"wrap-regex": 0,
 		"yield-star-spacing": [2, {
 			after: true,
@@ -611,6 +683,7 @@ module.exports = {
 	},
 	settings: {
 		jsdoc: {
+			mode: "jsdoc",
 			preferredTypes: {
 				array: "Array",
 				bigint: "BigInt",

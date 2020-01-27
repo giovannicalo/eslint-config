@@ -21,6 +21,10 @@ module.exports = {
 		"react/forbid-elements": 0,
 		"react/forbid-foreign-prop-types": 0,
 		"react/forbid-prop-types": 0,
+		"react/function-component-definition": [2, {
+			namedComponents: "arrow-function",
+			unnamedComponents: "arrow-function"
+		}],
 		"react/jsx-boolean-value": [2, "always"],
 		"react/jsx-child-element-spacing": 0,
 		"react/jsx-closing-bracket-location": 0,
@@ -57,7 +61,9 @@ module.exports = {
 		"react/jsx-no-comment-textnodes": 2,
 		"react/jsx-no-duplicate-props": [2, { ignoreCase: false }],
 		"react/jsx-no-literals": [2, { noStrings: false }],
+		"react/jsx-no-script-url": 2,
 		"react/jsx-no-target-blank": [2, {
+			allowReferrer: false,
 			enforceDynamicLinks: "always"
 		}],
 		"react/jsx-no-undef": 2,
@@ -65,6 +71,7 @@ module.exports = {
 		"react/jsx-one-expression-per-line": [2, { allow: "none" }],
 		"react/jsx-pascal-case": [2, { allowAllCaps: false }],
 		"react/jsx-props-no-multi-spaces": 2,
+		"react/jsx-props-no-spreading": 0,
 		"react/jsx-sort-default-props": [2, { ignoreCase: false }],
 		"react/jsx-sort-props": [2, {
 			callbacksLast: false,
@@ -84,6 +91,7 @@ module.exports = {
 		"react/jsx-uses-vars": 2,
 		"react/jsx-wrap-multilines": 0,
 		"react/no-access-state-in-setstate": 2,
+		"react/no-adjacent-inline-elements": 2,
 		"react/no-array-index-key": 0,
 		"react/no-children-prop": 2,
 		"react/no-danger": 0,
@@ -111,6 +119,7 @@ module.exports = {
 		"react/no-unused-state": 2,
 		"react/no-will-update-set-state": 2,
 		"react/prefer-es6-class": [2, "always"],
+		"react/prefer-read-only-props": 0,
 		"react/prefer-stateless-function": 0,
 		"react/prop-types": [2, {
 			customValidators: [],
@@ -119,7 +128,8 @@ module.exports = {
 		}],
 		"react/react-in-jsx-scope": 2,
 		"react/require-default-props": [2, {
-			forbidDefaultForRequired: true
+			forbidDefaultForRequired: true,
+			ignoreFunctionalComponents: false
 		}],
 		"react/require-optimization": 0,
 		"react/require-render-return": 2,
@@ -149,6 +159,8 @@ module.exports = {
 			requiredFirst: false,
 			sortShapeProp: true
 		}],
+		"react/state-in-constructor": [2, "never"],
+		"react/static-property-placement": [2, "static public field"],
 		"react/style-prop-object": 2,
 		"react/void-dom-elements-no-children": 2
 	},
