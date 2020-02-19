@@ -11,7 +11,7 @@ module.exports = {
 			impliedStrict: true,
 			jsx: false
 		},
-		ecmaVersion: 10,
+		ecmaVersion: 11,
 		sourceType: "module"
 	},
 	plugins: ["babel", "import", "jsdoc", "promise", "unicorn"],
