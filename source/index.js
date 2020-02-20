@@ -649,7 +649,7 @@ module.exports = {
 		"unicorn/prefer-node-remove": 2,
 		"unicorn/prefer-query-selector": 2,
 		"unicorn/prefer-reflect-apply": 0,
-		"unicorn/refer-replace-all": 2,
+		"unicorn/prefer-replace-all": 2,
 		"unicorn/prefer-spread": 2,
 		"unicorn/prefer-starts-ends-with": 2,
 		"unicorn/prefer-string-slice": 2,
