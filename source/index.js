@@ -1,5 +1,5 @@
 module.exports = {
-	env: { es6: true },
+	env: { es2020: true },
 	overrides: [{
 		env: { jest: true },
 		files: ["*.spec.js"]
