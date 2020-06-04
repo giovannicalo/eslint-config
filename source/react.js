@@ -60,7 +60,10 @@ module.exports = {
 		}],
 		"react/jsx-no-comment-textnodes": 2,
 		"react/jsx-no-duplicate-props": [2, { ignoreCase: false }],
-		"react/jsx-no-literals": [2, { noStrings: false }],
+		"react/jsx-no-literals": [2, {
+			ignoreProps: false,
+			noStrings: false
+		}],
 		"react/jsx-no-script-url": 2,
 		"react/jsx-no-target-blank": [2, {
 			allowReferrer: false,
