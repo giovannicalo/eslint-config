@@ -3,7 +3,7 @@ module.exports = {
 	parserOptions: {
 		ecmaFeatures: { jsx: true }
 	},
-	plugins: ["react"],
+	plugins: ["react", "react-hooks"],
 	rules: {
 		"react/boolean-prop-naming": 2,
 		"react/button-has-type": [2, {
@@ -165,7 +165,9 @@ module.exports = {
 		"react/state-in-constructor": [2, "never"],
 		"react/static-property-placement": [2, "static public field"],
 		"react/style-prop-object": 2,
-		"react/void-dom-elements-no-children": 2
+		"react/void-dom-elements-no-children": 2,
+		"react-hooks/exhaustive-deps": 2,
+		"react-hooks/rules-of-hooks": 2
 	},
 	settings: {
 		react: { version: "detect" }

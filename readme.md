@@ -11,6 +11,7 @@
 * [`jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc)
 * [`promise`](https://github.com/xjamundx/eslint-plugin-promise)
 * [`react`](https://github.com/yannickcr/eslint-plugin-react)
+* [`react-hooks`](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks)
 * [`unicorn`](https://github.com/sindresorhus/eslint-plugin-unicorn)
 
 ## Installation
