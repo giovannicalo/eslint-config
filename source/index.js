@@ -155,6 +155,7 @@ module.exports = {
 		"import/no-cycle": [2, {
 			amd: true,
 			commonjs: true,
+			ignoreExternal: false,
 			maxDepth: 1
 		}],
 		"import/no-default-export": 0,
@@ -381,6 +382,7 @@ module.exports = {
 		"no-extra-parens": [2, "all", {
 			conditionalAssign: true,
 			enforceForArrowConditionals: true,
+			enforceForFunctionPrototypeMethods: true, // eslint-disable-line id-length
 			enforceForNewInMemberExpressions: true, // eslint-disable-line id-length
 			enforceForSequenceExpressions: true,
 			ignoreJSX: "none",
