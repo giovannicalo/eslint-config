@@ -127,7 +127,7 @@ module.exports = {
 		}],
 		"grouped-accessor-pairs": [2, "getBeforeSet"],
 		"guard-for-in": 1,
-		"id-blacklist": 0,
+		"id-denylist": 0,
 		"id-length": [1, {
 			max: 30,
 			min: 1,
@@ -292,9 +292,9 @@ module.exports = {
 		"jsdoc/require-returns-check": 0,
 		"jsdoc/require-returns-description": 2,
 		"jsdoc/require-returns-type": 2,
+		"jsdoc/require-throws": 0,
 		"jsdoc/valid-types": [2, {
-			allowEmptyNamepaths: true,
-			checkSeesForNamepaths: false
+			allowEmptyNamepaths: true
 		}],
 		"jsx-quotes": [2, "prefer-double"],
 		"key-spacing": [2, {
@@ -447,6 +447,7 @@ module.exports = {
 		"no-octal-escape": 2,
 		"no-param-reassign": [1, { props: true }],
 		"no-plusplus": 0,
+		"no-promise-executor-return": 2,
 		"no-proto": 2,
 		"no-prototype-builtins": 0,
 		"no-redeclare": [2, {
@@ -489,6 +490,7 @@ module.exports = {
 			defaultAssignment: false
 		}],
 		"no-unreachable": 2,
+		"no-unreachable-loop": [2, { ignore: [] }],
 		"no-unsafe-finally": 2,
 		"no-unsafe-negation": [2, {
 			enforceForOrderingRelations: true
@@ -579,8 +581,8 @@ module.exports = {
 		"promise/no-return-in-finally": 2,
 		"promise/no-return-wrap": 2,
 		"promise/param-names": 2,
-		"promise/prefer-await-to-callbacks": 2,
-		"promise/prefer-await-to-then": 2,
+		"promise/prefer-await-to-callbacks": 0,
+		"promise/prefer-await-to-then": 0,
 		"promise/valid-params": 2,
 		"quote-props": [2, "as-needed"],
 		radix: [2, "as-needed"],
@@ -654,6 +656,7 @@ module.exports = {
 		"unicorn/no-nested-ternary": 0,
 		"unicorn/no-new-buffer": 2,
 		"unicorn/no-null": 0,
+		"unicorn/no-object-as-default-parameter": 2,
 		"unicorn/no-process-exit": 0,
 		"unicorn/no-reduce": 0,
 		"unicorn/no-unreadable-array-destructuring": 0,
@@ -663,6 +666,7 @@ module.exports = {
 		"unicorn/no-zero-fractions": 2,
 		"unicorn/number-literal-case": 2,
 		"unicorn/prefer-add-event-listener": 2,
+		"unicorn/prefer-array-find": 2,
 		"unicorn/prefer-dataset": 2,
 		"unicorn/prefer-event-key": 2,
 		"unicorn/prefer-flat-map": 2,
