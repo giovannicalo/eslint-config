@@ -1,3 +1,28 @@
+const indentOptions = {
+	ArrayExpression: 1,
+	CallExpression: {
+		arguments: 1
+	},
+	FunctionDeclaration: {
+		body: 1,
+		parameters: 1
+	},
+	FunctionExpression: {
+		body: 1,
+		parameters: 1
+	},
+	ImportDeclaration: 1,
+	MemberExpression: 1,
+	ObjectExpression: 1,
+	SwitchCase: 1,
+	VariableDeclarator: 0,
+	flatTernaryExpressions: false,
+	ignoreComments: false,
+	ignoredNodes: [],
+	offsetTernaryExpressions: false,
+	outerIIFEBody: 1
+};
+
 module.exports = {
 	env: { es2020: true },
 	overrides: [{
@@ -206,34 +231,18 @@ module.exports = {
 		}],
 		"import/prefer-default-export": 2,
 		"import/unambiguous": 0,
-		indent: [2, "tab", {
-			ArrayExpression: 1,
-			CallExpression: {
-				arguments: 1
-			},
-			FunctionDeclaration: {
-				body: 1,
-				parameters: 1
-			},
-			FunctionExpression: {
-				body: 1,
-				parameters: 1
-			},
-			ImportDeclaration: 1,
-			MemberExpression: 1,
-			ObjectExpression: 1,
-			SwitchCase: 1,
-			VariableDeclarator: 0,
-			flatTernaryExpressions: false,
-			ignoreComments: false,
-			ignoredNodes: [],
-			offsetTernaryExpressions: false,
-			outerIIFEBody: 1
-		}],
+		indent: [2, "tab", indentOptions],
 		"init-declarations": [2, "always"],
 		"jsdoc/check-access": 2,
 		"jsdoc/check-alignment": 2,
-		"jsdoc/check-examples": 2,
+		"jsdoc/check-examples": [2, {
+			baseConfig: {
+				overrides: [{
+					files: ["*"],
+					rules: { indent: [2, 4, indentOptions] }
+				}]
+			}
+		}],
 		"jsdoc/check-indentation": 2,
 		"jsdoc/check-param-names": [2, {
 			allowExtraTrailingParamDocs: false,
@@ -262,9 +271,7 @@ module.exports = {
 		}],
 		"jsdoc/require-example": 0,
 		"jsdoc/require-file-overview": 0,
-		"jsdoc/require-hyphen-before-param-description": [2, "always", {
-			tags: { "*": "always" }
-		}],
+		"jsdoc/require-hyphen-before-param-description": [2, "always"],
 		"jsdoc/require-jsdoc": 0,
 		"jsdoc/require-param": [2, {
 			autoIncrementBase: 0,
@@ -333,7 +340,7 @@ module.exports = {
 		"no-alert": 2,
 		"no-array-constructor": 2,
 		"no-async-promise-executor": 2,
-		"no-await-in-loop": 2,
+		"no-await-in-loop": 1,
 		"no-bitwise": 0,
 		"no-buffer-constructor": 2,
 		"no-caller": 2,
