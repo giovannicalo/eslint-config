@@ -21,7 +21,6 @@
 		"eslint-plugin-unicorn": "^21.0.0"
 	},
 	"description": "ESLint Config",
-	"devDependencies": {},
 	"homepage": "https://github.com/giovannicalo/eslint-config",
 	"keywords": ["config", "eslint"],
 	"license": "MIT",
