@@ -148,10 +148,6 @@ module.exports = {
 				"static-variables",
 				"instance-variables",
 				"lifecycle",
-				"getters",
-				"setters",
-				"static-methods",
-				"instance-methods",
 				"everything-else",
 				"rendering"
 			]
