@@ -127,12 +127,12 @@ module.exports = {
 		"react/prop-types": [2, {
 			customValidators: [],
 			ignore: [],
-			skipUndeclared: false
+			skipUndeclared: true
 		}],
 		"react/react-in-jsx-scope": 2,
 		"react/require-default-props": [2, {
 			forbidDefaultForRequired: true,
-			ignoreFunctionalComponents: false
+			ignoreFunctionalComponents: true
 		}],
 		"react/require-optimization": 0,
 		"react/require-render-return": 2,
