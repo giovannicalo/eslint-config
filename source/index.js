@@ -29,19 +29,32 @@ module.exports = {
 		env: { jest: true },
 		files: ["*.spec.js"]
 	}],
-	parser: "babel-eslint",
+	parser: "@babel/eslint-parser",
 	parserOptions: {
-		ecmaFeatures: {
-			globalReturn: false,
-			impliedStrict: true,
-			jsx: false
-		},
-		ecmaVersion: 11,
+		allowImportExportEverywhere: false,
+		ecmaFeatures: { globalReturn: false },
+		requireConfigFile: false,
 		sourceType: "module"
 	},
-	plugins: ["babel", "import", "jsdoc", "promise", "unicorn"],
+	plugins: ["@babel", "import", "jsdoc", "promise", "unicorn"],
 	reportUnusedDisableDirectives: true,
 	rules: {
+		"@babel/new-cap": [2, {
+			capIsNew: false,
+			newIsCap: true,
+			properties: true
+		}],
+		"@babel/no-invalid-this": 2,
+		"@babel/no-unused-expressions": [2, {
+			allowShortCircuit: true,
+			allowTaggedTemplates: true,
+			allowTernary: true
+		}],
+		"@babel/object-curly-spacing": [2, "always", {
+			arraysInObjects: true,
+			objectsInObjects: true
+		}],
+		"@babel/semi": [2, "always"],
 		"accessor-pairs": [2, {
 			enforceForClassMembers: true,
 			getWithoutSet: false,
@@ -64,31 +77,17 @@ module.exports = {
 			after: true,
 			before: true
 		}],
-		"babel/camelcase": [2, {
-			ignoreDestructuring: false,
-			properties: "always"
-		}],
-		"babel/new-cap": 0,
-		"babel/no-invalid-this": 2,
-		"babel/no-unused-expressions": [2, {
-			allowShortCircuit: true,
-			allowTernary: true
-		}],
-		"babel/object-curly-spacing": [2, "always", {
-			arraysInObjects: true,
-			objectsInObjects: true
-		}],
-		"babel/quotes": [2, "double", {
-			avoidEscape: false
-		}],
-		"babel/semi": [2, "always"],
-		"babel/valid-typeof": 0,
 		"block-scoped-var": 2,
 		"block-spacing": [2, "always"],
 		"brace-style": [2, "1tbs", {
 			allowSingleLine: false
 		}],
-		camelcase: 0,
+		camelcase: [2, {
+			ignoreDestructuring: false,
+			ignoreGlobals: false,
+			ignoreImports: true,
+			properties: "always"
+		}],
 		"capitalized-comments": [2, "always", {
 			ignoreConsecutiveComments: false,
 			ignoreInlineComments: false
@@ -332,11 +331,7 @@ module.exports = {
 		"max-statements-per-line": [2, { max: 1 }],
 		"multiline-comment-style": 0,
 		"multiline-ternary": [2, "never"],
-		"new-cap": [2, {
-			capIsNew: false,
-			newIsCap: true,
-			properties: true
-		}],
+		"new-cap": 0,
 		"new-parens": [2, "always"],
 		"newline-per-chained-call": 0,
 		"no-alert": 2,
@@ -594,6 +589,10 @@ module.exports = {
 		"promise/prefer-await-to-then": 0,
 		"promise/valid-params": 2,
 		"quote-props": [2, "as-needed"],
+		quotes: [2, "double", {
+			allowTemplateLiterals: false,
+			avoidEscape: false
+		}],
 		radix: [2, "as-needed"],
 		"require-atomic-updates": 2,
 		"require-await": 2,

@@ -9,7 +9,7 @@
 
 `eslint-plugin-`
 
-* [`babel`](https://github.com/babel/eslint-plugin-babel)
+* [`babel`](https://github.com/babel/babel/tree/main/eslint/babel-eslint-plugin)
 * [`import`](https://github.com/benmosher/eslint-plugin-import)
 * [`jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc)
 * [`node`](https://github.com/mysticatea/eslint-plugin-node)

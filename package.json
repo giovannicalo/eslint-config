@@ -8,10 +8,11 @@
 		"url": "https://github.com/giovannicalo/eslint-config/issues"
 	},
 	"dependencies": {
-		"babel-eslint": "^10.1.0",
+		"@babel/core": "^7.11.1",
+		"@babel/eslint-parser": "^7.11.3",
+		"@babel/eslint-plugin": "^7.11.3",
 		"eslint": "^7.7.0",
 		"eslint-formatter-pretty": "^4.0.0",
-		"eslint-plugin-babel": "^5.3.1",
 		"eslint-plugin-import": "^2.22.0",
 		"eslint-plugin-jsdoc": "^30.2.4",
 		"eslint-plugin-node": "^11.1.0",
