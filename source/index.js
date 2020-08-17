@@ -276,6 +276,8 @@ module.exports = {
 		"jsdoc/require-param": [2, {
 			autoIncrementBase: 0,
 			checkConstructors: true,
+			checkDestructured: true,
+			checkDestructuredRoots: true,
 			checkGetters: true,
 			checkRestProperty: true,
 			checkSetters: true,
