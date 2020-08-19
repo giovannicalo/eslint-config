@@ -36,10 +36,10 @@ Depending on the project and the folder, include instead the relevant specific c
 
 ```javascript
 module.exports = {
-	extends: [
-		"giovanni/browser",
-		"giovanni/react"
-	]
+    extends: [
+        "giovanni/browser",
+        "giovanni/react"
+    ]
 };
 ```
 
