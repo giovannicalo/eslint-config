@@ -24,7 +24,7 @@ const indentOptions = {
 };
 
 module.exports = {
-	env: { es2020: true },
+	env: { es2021: true },
 	overrides: [{
 		env: { jest: true },
 		files: ["*.spec.js"]
