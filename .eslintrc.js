@@ -1,1 +1,4 @@
-module.exports = { extends: "./source/library.js" };
+module.exports = {
+	extends: "./source/library.js",
+	rules: { "id-length": 0 }
+};

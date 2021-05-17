@@ -42,15 +42,25 @@ module.exports = {
 			when: "never"
 		}],
 		"react/jsx-equals-spacing": [2, "never"],
-		"react/jsx-filename-extension": [2, { extensions: [".js"] }],
+		"react/jsx-filename-extension": [2, {
+			allow: "always",
+			extensions: [".js"]
+		}],
 		"react/jsx-first-prop-new-line": 0,
 		"react/jsx-fragments": [2, "element"],
 		"react/jsx-handler-names": 0,
 		"react/jsx-indent": [2, "tab", { checkAttributes: true }],
-		"react/jsx-indent-props": [2, "tab"],
-		"react/jsx-key": 2,
+		"react/jsx-indent-props": [2, {
+			ignoreTernaryOperator: true,
+			indentMode: "tab"
+		}],
+		"react/jsx-key": [2, {
+			checkFragmentShorthand: true,
+			checkKeyMustBeforeSpread: false
+		}],
 		"react/jsx-max-depth": 0,
 		"react/jsx-max-props-per-line": 0,
+		"react/jsx-newline": [2, { prevent: true }],
 		"react/jsx-no-bind": [2, {
 			allowArrowFunctions: false,
 			allowBind: false,
@@ -59,20 +69,27 @@ module.exports = {
 			ignoreRefs: false
 		}],
 		"react/jsx-no-comment-textnodes": 2,
+		"react/jsx-no-constructed-context-values": 2,
 		"react/jsx-no-duplicate-props": [2, { ignoreCase: false }],
 		"react/jsx-no-literals": [2, {
 			ignoreProps: false,
+			noAttributeStrings: false,
 			noStrings: false
 		}],
 		"react/jsx-no-script-url": 2,
 		"react/jsx-no-target-blank": [2, {
 			allowReferrer: false,
-			enforceDynamicLinks: "always"
+			enforceDynamicLinks: "always",
+			warnOnSpreadAttributes: false
 		}],
 		"react/jsx-no-undef": 2,
 		"react/jsx-no-useless-fragment": 2,
 		"react/jsx-one-expression-per-line": [2, { allow: "none" }],
-		"react/jsx-pascal-case": [2, { allowAllCaps: false }],
+		"react/jsx-pascal-case": [2, {
+			allowAllCaps: false,
+			allowNamespace: false,
+			ignore: []
+		}],
 		"react/jsx-props-no-multi-spaces": 2,
 		"react/jsx-props-no-spreading": 0,
 		"react/jsx-sort-default-props": [2, { ignoreCase: false }],
@@ -115,6 +132,9 @@ module.exports = {
 		"react/no-unescaped-entities": 2,
 		"react/no-unknown-property": 2,
 		"react/no-unsafe": 2,
+		"react/no-unstable-nested-components": [2, {
+			allowAsProps: false
+		}],
 		"react/no-unused-prop-types": [2, {
 			customValidators: [],
 			skipShapeProps: true

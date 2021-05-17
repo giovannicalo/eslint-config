@@ -48,7 +48,8 @@ module.exports = {
 		"@babel/no-unused-expressions": [2, {
 			allowShortCircuit: true,
 			allowTaggedTemplates: true,
-			allowTernary: true
+			allowTernary: true,
+			enforceForJSX: true
 		}],
 		"@babel/object-curly-spacing": [2, "always", {
 			arraysInObjects: true,
@@ -194,6 +195,7 @@ module.exports = {
 			optionalDependencies: true,
 			peerDependencies: true
 		}],
+		"import/no-import-module-exports": 0,
 		"import/no-internal-modules": 0,
 		"import/no-mutable-exports": 2,
 		"import/no-named-as-default": 2,
@@ -202,6 +204,7 @@ module.exports = {
 		"import/no-named-export": 0,
 		"import/no-namespace": 0,
 		"import/no-nodejs-modules": 0,
+		"import/no-relative-packages": 0,
 		"import/no-relative-parent-imports": 0,
 		"import/no-restricted-paths": 0,
 		"import/no-self-import": 2,
@@ -224,9 +227,12 @@ module.exports = {
 			groups: [
 				"builtin",
 				"external",
-				["index", "internal", "parent", "sibling"]
+				["index", "internal", "parent", "sibling"],
+				"type",
+				"object"
 			],
-			"newlines-between": "always"
+			"newlines-between": "always",
+			warnOnUnassignedImports: false
 		}],
 		"import/prefer-default-export": 2,
 		"import/unambiguous": 0,
@@ -243,6 +249,9 @@ module.exports = {
 			}
 		}],
 		"jsdoc/check-indentation": 2,
+		"jsdoc/check-line-alignment": [2, "never", {
+			preserveMainDescriptionPostDelimiter: false
+		}],
 		"jsdoc/check-param-names": [2, {
 			allowExtraTrailingParamDocs: false,
 			checkRestProperty: false,
@@ -258,15 +267,21 @@ module.exports = {
 		"jsdoc/match-description": [2, {
 			matchDescription: "[A-Z].*"
 		}],
+		"jsdoc/multiline-blocks": 0,
 		"jsdoc/newline-after-description": [2, "always"],
 		"jsdoc/no-bad-blocks": 2,
 		"jsdoc/no-defaults": 0,
+		"jsdoc/no-multi-asterisks": [2, {
+			preventAtEnd: true,
+			preventAtMiddleLines: true
+		}],
 		"jsdoc/no-types": 0,
 		"jsdoc/no-undefined-types": 2,
+		"jsdoc/require-asterisk-prefix": [2, "always"],
 		"jsdoc/require-description": 0,
 		"jsdoc/require-description-complete-sentence": [2, {
 			abbreviations: ["e.g.", "i.e."],
-			newlineBeforeCapsAssumesBadSentenceEnd: false // eslint-disable-line id-length
+			newlineBeforeCapsAssumesBadSentenceEnd: false
 		}],
 		"jsdoc/require-example": 0,
 		"jsdoc/require-file-overview": 0,
@@ -301,6 +316,7 @@ module.exports = {
 		"jsdoc/require-returns-description": 2,
 		"jsdoc/require-returns-type": 2,
 		"jsdoc/require-throws": 0,
+		"jsdoc/tag-lines": [2, "never"],
 		"jsdoc/valid-types": [2, {
 			allowEmptyNamepaths: true
 		}],
@@ -386,8 +402,8 @@ module.exports = {
 		"no-extra-parens": [2, "all", {
 			conditionalAssign: true,
 			enforceForArrowConditionals: true,
-			enforceForFunctionPrototypeMethods: true, // eslint-disable-line id-length
-			enforceForNewInMemberExpressions: true, // eslint-disable-line id-length
+			enforceForFunctionPrototypeMethods: true,
+			enforceForNewInMemberExpressions: true,
 			enforceForSequenceExpressions: true,
 			ignoreJSX: "none",
 			nestedBinaryExpressions: true,
@@ -398,7 +414,13 @@ module.exports = {
 		"no-floating-decimal": 2,
 		"no-func-assign": 2,
 		"no-global-assign": 2,
-		"no-implicit-coercion": 0,
+		"no-implicit-coercion": [2, {
+			allow: ["!!", "~"],
+			boolean: false,
+			disallowTemplateShorthand: false,
+			number: true,
+			string: true
+		}],
 		"no-implicit-globals": [2, {
 			lexicalBindings: true
 		}],
@@ -428,7 +450,9 @@ module.exports = {
 		"no-misleading-character-class": 2,
 		"no-mixed-operators": 0,
 		"no-mixed-spaces-and-tabs": 2,
-		"no-multi-assign": 2,
+		"no-multi-assign": [2, {
+			ignoreNonDeclaration: false
+		}],
 		"no-multi-spaces": [2, {
 			exceptions: { Property: false },
 			ignoreEOLComments: false
@@ -446,6 +470,7 @@ module.exports = {
 		"no-new-object": 2,
 		"no-new-symbol": 2,
 		"no-new-wrappers": 2,
+		"no-nonoctal-decimal-escape": 2,
 		"no-obj-calls": 2,
 		"no-octal": 2,
 		"no-octal-escape": 2,
@@ -468,7 +493,9 @@ module.exports = {
 		"no-script-url": 2,
 		"no-self-assign": [2, { props: true }],
 		"no-self-compare": 2,
-		"no-sequences": 2,
+		"no-sequences": [2, {
+			allowInParentheses: false
+		}],
 		"no-setter-return": 2,
 		"no-shadow": 0,
 		"no-shadow-restricted-names": 2,
@@ -498,6 +525,9 @@ module.exports = {
 		"no-unsafe-finally": 2,
 		"no-unsafe-negation": [2, {
 			enforceForOrderingRelations: true
+		}],
+		"no-unsafe-optional-chaining": [2, {
+			disallowArithmeticOperators: true
 		}],
 		"no-unused-labels": 2,
 		"no-unused-vars": [2, {
@@ -645,55 +675,99 @@ module.exports = {
 			sortCharacterClasses: true
 		}],
 		"unicorn/catch-error-name": [2, { name: "error" }],
-		"unicorn/consistent-function-scoping": 2,
+		"unicorn/consistent-destructuring": 2,
+		"unicorn/consistent-function-scoping": [2, {
+			checkArrowFunctions: true
+		}],
 		"unicorn/custom-error-definition": 2,
+		"unicorn/empty-brace-spaces": 2,
 		"unicorn/error-message": 2,
 		"unicorn/escape-case": 2,
 		"unicorn/expiring-todo-comments": 0,
 		"unicorn/explicit-length-check": 0,
 		"unicorn/filename-case": [2, { case: "kebabCase" }],
 		"unicorn/import-index": 2,
+		"unicorn/import-style": 0,
 		"unicorn/new-for-builtins": 2,
 		"unicorn/no-abusive-eslint-disable": 2,
-		"unicorn/no-array-instanceof": 2,
+		"unicorn/no-array-callback-reference": 0,
+		"unicorn/no-array-for-each": 0,
+		"unicorn/no-array-push-push": 0,
+		"unicorn/no-array-reduce": 0,
 		"unicorn/no-console-spaces": 2,
-		"unicorn/no-fn-reference-in-iterator": 0,
+		"unicorn/no-document-cookie": 2,
 		"unicorn/no-for-loop": 2,
 		"unicorn/no-hex-escape": 2,
+		"unicorn/no-instanceof-array": 2,
 		"unicorn/no-keyword-prefix": 0,
+		"unicorn/no-lonely-if": 2,
 		"unicorn/no-nested-ternary": 0,
+		"unicorn/no-new-array": 0,
 		"unicorn/no-new-buffer": 2,
 		"unicorn/no-null": 0,
 		"unicorn/no-object-as-default-parameter": 2,
 		"unicorn/no-process-exit": 0,
-		"unicorn/no-reduce": 0,
+		"unicorn/no-static-only-class": 2,
+		"unicorn/no-this-assignment": 2,
 		"unicorn/no-unreadable-array-destructuring": 0,
 		"unicorn/no-unsafe-regex": 0,
 		"unicorn/no-unused-properties": 2,
-		"unicorn/no-useless-undefined": 2,
+		"unicorn/no-useless-undefined": [2, {
+			checkArguments: true
+		}],
 		"unicorn/no-zero-fractions": 2,
 		"unicorn/number-literal-case": 2,
+		"unicorn/numeric-separators-style": [2, {
+			binary: {
+				groupLength: 4,
+				minimumDigits: 8
+			},
+			hexadecimal: {
+				groupLength: 2,
+				minimumDigits: 8
+			},
+			number: {
+				groupLength: 3,
+				minimumDigits: 6
+			},
+			octal: {
+				groupLength: 4,
+				minimumDigits: 8
+			},
+			onlyIfContainsSeparator: true
+		}],
 		"unicorn/prefer-add-event-listener": 2,
 		"unicorn/prefer-array-find": 2,
-		"unicorn/prefer-dataset": 2,
-		"unicorn/prefer-event-key": 2,
-		"unicorn/prefer-flat-map": 2,
+		"unicorn/prefer-array-flat": [2, { functions: [] }],
+		"unicorn/prefer-array-flat-map": 2,
+		"unicorn/prefer-array-index-of": 2,
+		"unicorn/prefer-array-some": 2,
+		"unicorn/prefer-date-now": 2,
+		"unicorn/prefer-default-parameters": 2,
+		"unicorn/prefer-dom-node-append": 2,
+		"unicorn/prefer-dom-node-dataset": 2,
+		"unicorn/prefer-dom-node-remove": 2,
+		"unicorn/prefer-dom-node-text-content": 2,
 		"unicorn/prefer-includes": 2,
+		"unicorn/prefer-keyboard-event-key": 2,
+		"unicorn/prefer-math-trunc": 2,
 		"unicorn/prefer-modern-dom-apis": 2,
+		"unicorn/prefer-module": 0,
 		"unicorn/prefer-negative-index": 2,
-		"unicorn/prefer-node-append": 2,
-		"unicorn/prefer-node-remove": 2,
+		"unicorn/prefer-node-protocol": 0,
 		"unicorn/prefer-number-properties": 0,
 		"unicorn/prefer-optional-catch-binding": 2,
 		"unicorn/prefer-query-selector": 2,
 		"unicorn/prefer-reflect-apply": 0,
-		"unicorn/prefer-replace-all": 2,
+		"unicorn/prefer-regexp-test": 2,
 		"unicorn/prefer-set-has": 1,
 		"unicorn/prefer-spread": 2,
-		"unicorn/prefer-starts-ends-with": 2,
+		"unicorn/prefer-string-replace-all": 2,
 		"unicorn/prefer-string-slice": 2,
-		"unicorn/prefer-text-content": 2,
-		"unicorn/prefer-trim-start-end": 2,
+		"unicorn/prefer-string-starts-ends-with": 2,
+		"unicorn/prefer-string-trim-start-end": 2,
+		"unicorn/prefer-switch": 0,
+		"unicorn/prefer-ternary": 0,
 		"unicorn/prefer-type-error": 2,
 		"unicorn/prevent-abbreviations": 0,
 		"unicorn/string-content": 0,
