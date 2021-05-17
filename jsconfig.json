@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"checkJs": true,
 		"experimentalDecorators": true,
-		"module": "commonjs",
+		"module": "commonJS",
 		"target": "es2020"
 	},
 	"exclude": ["node_modules"]
