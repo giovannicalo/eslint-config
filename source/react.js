@@ -107,7 +107,7 @@ module.exports = {
 			beforeSelfClosing: "always",
 			closingSlash: "never"
 		}],
-		"react/jsx-uses-react": 2,
+		"react/jsx-uses-react": 0,
 		"react/jsx-uses-vars": 2,
 		"react/jsx-wrap-multilines": 0,
 		"react/no-access-state-in-setstate": 2,
@@ -149,7 +149,7 @@ module.exports = {
 			ignore: [],
 			skipUndeclared: true
 		}],
-		"react/react-in-jsx-scope": 2,
+		"react/react-in-jsx-scope": 0,
 		"react/require-default-props": [2, {
 			forbidDefaultForRequired: true,
 			ignoreFunctionalComponents: true
