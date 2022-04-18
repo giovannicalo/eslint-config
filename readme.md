@@ -1,6 +1,7 @@
 # ESLint Settings
 
 [![NPM version](https://badge.fury.io/js/eslint-config-giovanni.svg)](https://www.npmjs.com/package/eslint-config-giovanni)
+[![Build Status](https://github.com/giovannicalo/eslint-config/actions/workflows/build.yml/badge.svg)](https://github.com/giovannicalo/eslint-config/actions/workflows/build.yml)
 [![Build Status](https://app.travis-ci.com/giovannicalo/eslint-config.svg?branch=master)](https://app.travis-ci.com/giovannicalo/eslint-config)
 
 [ESLint](https://github.com/eslint/eslint) settings.
