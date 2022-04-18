@@ -25,12 +25,15 @@ module.exports = {
 			namedComponents: "arrow-function",
 			unnamedComponents: "arrow-function"
 		}],
+		"react/hook-use-state": 0,
+		"react/iframe-missing-sandbox": 2,
 		"react/jsx-boolean-value": [2, "always"],
 		"react/jsx-child-element-spacing": 0,
 		"react/jsx-closing-bracket-location": 0,
 		"react/jsx-closing-tag-location": 0,
 		"react/jsx-curly-brace-presence": [2, {
 			children: "ignore",
+			propElementValues: "always",
 			props: "never"
 		}],
 		"react/jsx-curly-newline": [2, "never"],
@@ -56,7 +59,8 @@ module.exports = {
 		}],
 		"react/jsx-key": [2, {
 			checkFragmentShorthand: true,
-			checkKeyMustBeforeSpread: false
+			checkKeyMustBeforeSpread: false,
+			warnOnDuplicates: true
 		}],
 		"react/jsx-max-depth": 0,
 		"react/jsx-max-props-per-line": 0,
@@ -80,13 +84,18 @@ module.exports = {
 		"react/jsx-no-target-blank": [2, {
 			allowReferrer: false,
 			enforceDynamicLinks: "always",
+			forms: true,
+			links: true,
 			warnOnSpreadAttributes: false
 		}],
 		"react/jsx-no-undef": 2,
-		"react/jsx-no-useless-fragment": 2,
+		"react/jsx-no-useless-fragment": [2, {
+			allowExpressions: false
+		}],
 		"react/jsx-one-expression-per-line": [2, { allow: "none" }],
 		"react/jsx-pascal-case": [2, {
 			allowAllCaps: false,
+			allowLeadingUnderscore: false,
 			allowNamespace: false,
 			ignore: []
 		}],
@@ -96,6 +105,8 @@ module.exports = {
 		"react/jsx-sort-props": [2, {
 			callbacksLast: false,
 			ignoreCase: false,
+			locale: "auto",
+			multiline: "ignore",
 			noSortAlphabetically: false,
 			reservedFirst: false,
 			shorthandFirst: false,
@@ -113,7 +124,10 @@ module.exports = {
 		"react/no-access-state-in-setstate": 2,
 		"react/no-adjacent-inline-elements": 2,
 		"react/no-array-index-key": 0,
-		"react/no-children-prop": 2,
+		"react/no-arrow-function-lifecycle": 2,
+		"react/no-children-prop": [2, {
+			allowFunctions: false
+		}],
 		"react/no-danger": 0,
 		"react/no-danger-with-children": 2,
 		"react/no-deprecated": 2,
@@ -121,8 +135,10 @@ module.exports = {
 		"react/no-did-update-set-state": 2,
 		"react/no-direct-mutation-state": 2,
 		"react/no-find-dom-node": 2,
+		"react/no-invalid-html-attribute": 2,
 		"react/no-is-mounted": 2,
 		"react/no-multi-comp": [2, { ignoreStateless: false }],
+		"react/no-namespace": 2,
 		"react/no-redundant-should-component-update": 2,
 		"react/no-render-return-value": 2,
 		"react/no-set-state": 0,
@@ -135,13 +151,16 @@ module.exports = {
 		"react/no-unstable-nested-components": [2, {
 			allowAsProps: false
 		}],
+		"react/no-unused-class-component-methods": 2,
 		"react/no-unused-prop-types": [2, {
 			customValidators: [],
+			ignore: [],
 			skipShapeProps: true
 		}],
 		"react/no-unused-state": 2,
 		"react/no-will-update-set-state": 2,
 		"react/prefer-es6-class": [2, "always"],
+		"react/prefer-exact-props": 0,
 		"react/prefer-read-only-props": 0,
 		"react/prefer-stateless-function": 0,
 		"react/prop-types": [2, {

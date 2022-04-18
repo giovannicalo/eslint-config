@@ -24,7 +24,7 @@ const indentOptions = {
 };
 
 module.exports = {
-	env: { es2021: true },
+	env: { es2022: true },
 	overrides: [{
 		env: { jest: true },
 		files: ["*.spec.js"]
@@ -56,11 +56,7 @@ module.exports = {
 			objectsInObjects: true
 		}],
 		"@babel/semi": [2, "always"],
-		"accessor-pairs": [2, {
-			enforceForClassMembers: true,
-			getWithoutSet: false,
-			setWithoutGet: true
-		}],
+		"accessor-pairs": 0,
 		"array-bracket-newline": 0,
 		"array-bracket-spacing": [2, "never", {
 			arraysInArrays: false,
@@ -93,7 +89,10 @@ module.exports = {
 			ignoreConsecutiveComments: false,
 			ignoreInlineComments: false
 		}],
-		"class-methods-use-this": 0,
+		"class-methods-use-this": [2, {
+			enforceForClassFields: true,
+			exceptMethods: []
+		}],
 		"comma-dangle": [2, "never"],
 		"comma-spacing": [2, {
 			after: true,
@@ -188,7 +187,7 @@ module.exports = {
 		"import/no-duplicates": [2, {
 			considerQueryString: false
 		}],
-		"import/no-dynamic-require": 0,
+		"import/no-dynamic-require": 1,
 		"import/no-extraneous-dependencies": [2, {
 			bundledDependencies: true,
 			devDependencies: true,
@@ -212,6 +211,7 @@ module.exports = {
 		"import/no-unresolved": [2, {
 			amd: true,
 			caseSensitive: true,
+			caseSensitiveStrict: true,
 			commonjs: true
 		}],
 		"import/no-unused-modules": 0,
@@ -240,14 +240,7 @@ module.exports = {
 		"init-declarations": [2, "always"],
 		"jsdoc/check-access": 2,
 		"jsdoc/check-alignment": 2,
-		"jsdoc/check-examples": [2, {
-			baseConfig: {
-				overrides: [{
-					files: ["*"],
-					rules: { indent: [2, 4, indentOptions] }
-				}]
-			}
-		}],
+		"jsdoc/check-examples": 0,
 		"jsdoc/check-indentation": 2,
 		"jsdoc/check-line-alignment": [2, "never", {
 			preserveMainDescriptionPostDelimiter: false
@@ -265,13 +258,23 @@ module.exports = {
 		"jsdoc/empty-tags": 2,
 		"jsdoc/implements-on-classes": 2,
 		"jsdoc/match-description": [2, {
-			matchDescription: "[A-Z].*"
+			matchDescription: "[A-Z].*\\."
 		}],
-		"jsdoc/multiline-blocks": 0,
+		"jsdoc/match-name": 0,
+		"jsdoc/multiline-blocks": [2, {
+			allowMultipleTags: true,
+			multilineTags: [],
+			noFinalLineText: true,
+			noMultilineBlocks: false,
+			noSingleLineBlocks: false,
+			noZeroLineText: true,
+			singleLineTags: []
+		}],
 		"jsdoc/newline-after-description": [2, "always"],
 		"jsdoc/no-bad-blocks": 2,
 		"jsdoc/no-defaults": 0,
 		"jsdoc/no-multi-asterisks": [2, {
+			allowWhitespace: false,
 			preventAtEnd: true,
 			preventAtMiddleLines: true
 		}],
@@ -316,7 +319,13 @@ module.exports = {
 		"jsdoc/require-returns-description": 2,
 		"jsdoc/require-returns-type": 2,
 		"jsdoc/require-throws": 0,
-		"jsdoc/tag-lines": [2, "never"],
+		"jsdoc/sort-tags": 2,
+		"jsdoc/tag-lines": [2, "never", {
+			count: 0,
+			dropEndLines: true,
+			noEndLines: true,
+			tags: {}
+		}],
 		"jsdoc/valid-types": [2, {
 			allowEmptyNamepaths: true
 		}],
@@ -336,7 +345,10 @@ module.exports = {
 		"lines-between-class-members": [2, "always", {
 			exceptAfterSingleLine: false
 		}],
-		"max-classes-per-file": [2, 1],
+		"max-classes-per-file": [2, {
+			ignoreExpressions: false,
+			max: 1
+		}],
 		"max-depth": 0,
 		"max-len": 0,
 		"max-lines": 0,
@@ -353,7 +365,7 @@ module.exports = {
 		"no-alert": 2,
 		"no-array-constructor": 2,
 		"no-async-promise-executor": 2,
-		"no-await-in-loop": 1,
+		"no-await-in-loop": 0,
 		"no-bitwise": 0,
 		"no-buffer-constructor": 2,
 		"no-caller": 2,
@@ -474,7 +486,7 @@ module.exports = {
 		"no-obj-calls": 2,
 		"no-octal": 2,
 		"no-octal-escape": 2,
-		"no-param-reassign": [1, { props: true }],
+		"no-param-reassign": [2, { props: false }],
 		"no-plusplus": 0,
 		"no-promise-executor-return": 2,
 		"no-proto": 2,
@@ -530,9 +542,11 @@ module.exports = {
 			disallowArithmeticOperators: true
 		}],
 		"no-unused-labels": 2,
+		"no-unused-private-class-members": 2,
 		"no-unused-vars": [2, {
 			args: "after-used",
-			caughtErrors: "none",
+			caughtErrors: "all",
+			ignoreRestSiblings: false,
 			vars: "all"
 		}],
 		"no-use-before-define": [2, {
@@ -596,6 +610,7 @@ module.exports = {
 		"prefer-exponentiation-operator": 2,
 		"prefer-named-capture-group": 2,
 		"prefer-numeric-literals": 2,
+		"prefer-object-has-own": 2,
 		"prefer-object-spread": 2,
 		"prefer-promise-reject-errors": [2, {
 			allowEmptyReject: false
@@ -624,7 +639,9 @@ module.exports = {
 			avoidEscape: false
 		}],
 		radix: [2, "as-needed"],
-		"require-atomic-updates": 2,
+		"require-atomic-updates": [2, {
+			allowProperties: false
+		}],
 		"require-await": 2,
 		"require-jsdoc": 0,
 		"require-unicode-regexp": 2,
@@ -692,13 +709,17 @@ module.exports = {
 		"unicorn/no-abusive-eslint-disable": 2,
 		"unicorn/no-array-callback-reference": 0,
 		"unicorn/no-array-for-each": 0,
+		"unicorn/no-array-method-this-argument": 2,
 		"unicorn/no-array-push-push": 0,
 		"unicorn/no-array-reduce": 0,
+		"unicorn/no-await-expression-member": 0,
 		"unicorn/no-console-spaces": 2,
 		"unicorn/no-document-cookie": 2,
+		"unicorn/no-empty-file": 2,
 		"unicorn/no-for-loop": 2,
 		"unicorn/no-hex-escape": 2,
 		"unicorn/no-instanceof-array": 2,
+		"unicorn/no-invalid-remove-event-listener": 2,
 		"unicorn/no-keyword-prefix": 0,
 		"unicorn/no-lonely-if": 2,
 		"unicorn/no-nested-ternary": 0,
@@ -708,10 +729,17 @@ module.exports = {
 		"unicorn/no-object-as-default-parameter": 2,
 		"unicorn/no-process-exit": 0,
 		"unicorn/no-static-only-class": 2,
+		"unicorn/no-thenable": 2,
 		"unicorn/no-this-assignment": 2,
 		"unicorn/no-unreadable-array-destructuring": 0,
+		"unicorn/no-unreadable-iife": 2,
 		"unicorn/no-unsafe-regex": 0,
 		"unicorn/no-unused-properties": 2,
+		"unicorn/no-useless-fallback-in-spread": 2,
+		"unicorn/no-useless-length-check": 2,
+		"unicorn/no-useless-promise-resolve-reject": 2,
+		"unicorn/no-useless-spread": 2,
+		"unicorn/no-useless-switch-case": 2,
 		"unicorn/no-useless-undefined": [2, {
 			checkArguments: true
 		}],
@@ -742,21 +770,34 @@ module.exports = {
 		"unicorn/prefer-array-flat-map": 2,
 		"unicorn/prefer-array-index-of": 2,
 		"unicorn/prefer-array-some": 2,
+		"unicorn/prefer-at": [2, {
+			checkAllIndexAccess: false,
+			getLastElementFunctions: []
+		}],
+		"unicorn/prefer-code-point": 2,
 		"unicorn/prefer-date-now": 2,
 		"unicorn/prefer-default-parameters": 2,
 		"unicorn/prefer-dom-node-append": 2,
 		"unicorn/prefer-dom-node-dataset": 2,
 		"unicorn/prefer-dom-node-remove": 2,
 		"unicorn/prefer-dom-node-text-content": 2,
+		"unicorn/prefer-export-from": 2,
 		"unicorn/prefer-includes": 2,
+		"unicorn/prefer-json-parse-buffer": 0,
 		"unicorn/prefer-keyboard-event-key": 2,
 		"unicorn/prefer-math-trunc": 2,
 		"unicorn/prefer-modern-dom-apis": 2,
+		"unicorn/prefer-modern-math-apis": 2,
 		"unicorn/prefer-module": 0,
+		"unicorn/prefer-native-coercion-functions": 2,
 		"unicorn/prefer-negative-index": 2,
 		"unicorn/prefer-node-protocol": 0,
 		"unicorn/prefer-number-properties": 0,
+		"unicorn/prefer-object-from-entries": [2, {
+			functions: []
+		}],
 		"unicorn/prefer-optional-catch-binding": 2,
+		"unicorn/prefer-prototype-methods": 2,
 		"unicorn/prefer-query-selector": 2,
 		"unicorn/prefer-reflect-apply": 0,
 		"unicorn/prefer-regexp-test": 2,
@@ -768,9 +809,22 @@ module.exports = {
 		"unicorn/prefer-string-trim-start-end": 2,
 		"unicorn/prefer-switch": 0,
 		"unicorn/prefer-ternary": 0,
+		"unicorn/prefer-top-level-await": 0,
 		"unicorn/prefer-type-error": 2,
 		"unicorn/prevent-abbreviations": 0,
+		"unicorn/relative-url-style": [2, "never"],
+		"unicorn/require-array-join-separator": 2,
+		"unicorn/require-number-to-fixed-digits-argument": 2,
+		"unicorn/require-post-message-target-origin": 2,
 		"unicorn/string-content": 0,
+		"unicorn/template-indent": [2, {
+			comments: [],
+			functions: [],
+			indent: "\t",
+			selectors: ["TemplateLiteral"],
+			tags: []
+		}],
+		"unicorn/text-encoding-identifier-case": 2,
 		"unicorn/throw-new-error": 2,
 		"use-isnan": [2, {
 			enforceForIndexOf: true,
