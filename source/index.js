@@ -781,7 +781,7 @@ module.exports = {
 		"unicorn/prefer-dom-node-dataset": 2,
 		"unicorn/prefer-dom-node-remove": 2,
 		"unicorn/prefer-dom-node-text-content": 2,
-		"unicorn/prefer-export-from": 2,
+		"unicorn/prefer-export-from": 0,
 		"unicorn/prefer-includes": 2,
 		"unicorn/prefer-json-parse-buffer": 0,
 		"unicorn/prefer-keyboard-event-key": 2,
