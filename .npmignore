@@ -3,6 +3,4 @@
 .gitattributes
 .gitignore
 .npmignore
-.travis.yml
-.vscode
 jsconfig.json
