@@ -20,8 +20,10 @@
 ## Installation
 
 ```bash
-npm install eslint-config-giovanni
+npm install giovannicalo/eslint-config
 ```
+
+> The version published to NPM is outdated. This will install it from GitHub.
 
 ## Usage
 
