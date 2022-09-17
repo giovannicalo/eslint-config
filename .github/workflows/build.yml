@@ -18,9 +18,9 @@ jobs:
     strategy:
       matrix:
         os:
-        - macos-10.15
-        - ubuntu-20.04
-        - windows-2019
+        - macos-12
+        - ubuntu-22.04
+        - windows-2022
 name: Build
 on:
 - pull_request
