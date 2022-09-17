@@ -64,7 +64,10 @@ module.exports = {
 		}],
 		"react/jsx-max-depth": 0,
 		"react/jsx-max-props-per-line": 0,
-		"react/jsx-newline": [2, { prevent: true }],
+		"react/jsx-newline": [2, {
+			allowMultilines: true,
+			prevent: true
+		}],
 		"react/jsx-no-bind": [2, {
 			allowArrowFunctions: false,
 			allowBind: false,
@@ -75,6 +78,9 @@ module.exports = {
 		"react/jsx-no-comment-textnodes": 2,
 		"react/jsx-no-constructed-context-values": 2,
 		"react/jsx-no-duplicate-props": [2, { ignoreCase: false }],
+		"react/jsx-no-leaked-render": [2, {
+			validStrategies: ["coerce"]
+		}],
 		"react/jsx-no-literals": [2, {
 			ignoreProps: false,
 			noAttributeStrings: false,
@@ -170,8 +176,9 @@ module.exports = {
 		}],
 		"react/react-in-jsx-scope": 0,
 		"react/require-default-props": [2, {
+			classes: "defaultProps",
 			forbidDefaultForRequired: true,
-			ignoreFunctionalComponents: true
+			functions: "ignore"
 		}],
 		"react/require-optimization": 0,
 		"react/require-render-return": 2,

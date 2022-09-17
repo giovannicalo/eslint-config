@@ -14,6 +14,7 @@ const indentOptions = {
 	ImportDeclaration: 1,
 	MemberExpression: 1,
 	ObjectExpression: 1,
+	StaticBlock: { body: 1 },
 	SwitchCase: 1,
 	VariableDeclarator: 0,
 	flatTernaryExpressions: false,
@@ -376,6 +377,7 @@ module.exports = {
 		"no-confusing-arrow": 0,
 		"no-console": 0,
 		"no-const-assign": 2,
+		"no-constant-binary-expression": 2,
 		"no-constant-condition": [2, {
 			checkLoops: true
 		}],
@@ -422,7 +424,10 @@ module.exports = {
 			returnAssign: true
 		}],
 		"no-extra-semi": 2,
-		"no-fallthrough": 1,
+		"no-fallthrough": [2, {
+			allowEmptyCase: false,
+			commentPattern: "Fall through"
+		}],
 		"no-floating-decimal": 2,
 		"no-func-assign": 2,
 		"no-global-assign": 2,
@@ -526,7 +531,15 @@ module.exports = {
 		"no-undef": [2, { typeof: true }],
 		"no-undef-init": 2,
 		"no-undefined": 2,
-		"no-underscore-dangle": 0,
+		"no-underscore-dangle": [2, {
+			allow: [],
+			allowAfterSuper: false,
+			allowAfterThis: false,
+			allowAfterThisConstructor: false,
+			allowFunctionParams: false,
+			enforceInClassFields: false,
+			enforceInMethodNames: false
+		}],
 		"no-unexpected-multiline": 2,
 		"no-unmodified-loop-condition": 2,
 		"no-unneeded-ternary": [2, {
@@ -550,6 +563,7 @@ module.exports = {
 			vars: "all"
 		}],
 		"no-use-before-define": [2, {
+			allowNamedExports: false,
 			classes: true,
 			functions: false,
 			variables: true
@@ -660,6 +674,7 @@ module.exports = {
 			memberSyntaxSortOrder: ["none", "all", "multiple", "single"]
 		}],
 		"sort-keys": [2, "asc", {
+			allowLineSeparatedGroups: false,
 			caseSensitive: true,
 			minKeys: 2,
 			natural: true
@@ -781,10 +796,12 @@ module.exports = {
 		"unicorn/prefer-dom-node-dataset": 2,
 		"unicorn/prefer-dom-node-remove": 2,
 		"unicorn/prefer-dom-node-text-content": 2,
+		"unicorn/prefer-event-target": 0,
 		"unicorn/prefer-export-from": 0,
 		"unicorn/prefer-includes": 2,
 		"unicorn/prefer-json-parse-buffer": 0,
 		"unicorn/prefer-keyboard-event-key": 2,
+		"unicorn/prefer-logical-operator-over-ternary": 2,
 		"unicorn/prefer-math-trunc": 2,
 		"unicorn/prefer-modern-dom-apis": 2,
 		"unicorn/prefer-modern-math-apis": 2,
