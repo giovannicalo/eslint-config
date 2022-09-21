@@ -25,7 +25,10 @@ const indentOptions = {
 };
 
 module.exports = {
-	env: { es2022: true },
+	env: {
+		commonjs: true,
+		es2022: true
+	},
 	overrides: [{
 		env: { jest: true },
 		files: ["*.spec.js"]

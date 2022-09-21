@@ -50,6 +50,5 @@ In this case, there's no need to include the base settings, as they're already i
 
 * Base settings: `giovanni`
 * Browser: `giovanni/browser`
-* Library: `giovanni/library`
 * [Node](https://github.com/nodejs/node): `giovanni/node`
 * [React](https://github.com/facebook/react): `giovanni/react`

@@ -1,8 +1,5 @@
 module.exports = {
-	env: {
-		browser: true,
-		commonjs: true
-	},
+	env: { browser: true },
 	extends: "./index.js",
 	overrides: [{
 		env: { node: true },
