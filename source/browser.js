@@ -3,7 +3,7 @@ module.exports = {
 	extends: "./index.js",
 	overrides: [{
 		env: { node: true },
-		files: ["webpack.config.js"]
+		files: ["scripts/**/*.js", "webpack.config.js"]
 	}],
 	rules: {
 		"import/no-nodejs-modules": 2,
