@@ -65,7 +65,7 @@ module.exports = {
 		"react/jsx-max-depth": 0,
 		"react/jsx-max-props-per-line": 0,
 		"react/jsx-newline": [2, {
-			allowMultilines: true,
+			allowMultilines: false,
 			prevent: true
 		}],
 		"react/jsx-no-bind": [2, {
