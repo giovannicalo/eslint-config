@@ -349,6 +349,9 @@ module.exports = {
 		"lines-between-class-members": [2, "always", {
 			exceptAfterSingleLine: false
 		}],
+		"logical-assignment-operators": [2, "always", {
+			enforceForIfStatements: true
+		}],
 		"max-classes-per-file": [2, {
 			ignoreExpressions: false,
 			max: 1
