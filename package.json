@@ -13,7 +13,7 @@
 	},
 	"description": "ESLint Config",
 	"engines": {
-		"node": ">=18.9.0"
+		"node": ">=18.10.0"
 	},
 	"homepage": "https://github.com/giovannicalo/eslint-config",
 	"keywords": ["config", "eslint"],
