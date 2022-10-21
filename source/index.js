@@ -24,7 +24,7 @@ const indentOptions = {
 	outerIIFEBody: 1
 };
 
-module.exports = {
+const configuration = {
 	env: {
 		commonjs: true,
 		es2022: true
@@ -919,3 +919,5 @@ module.exports = {
 		}
 	}
 };
+
+module.exports = configuration;

@@ -1,4 +1,4 @@
-module.exports = {
+const react = {
 	extends: "./index.js",
 	parserOptions: {
 		ecmaFeatures: { jsx: true }
@@ -215,3 +215,5 @@ module.exports = {
 		react: { version: "detect" }
 	}
 };
+
+module.exports = react;

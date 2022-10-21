@@ -1,4 +1,4 @@
-module.exports = {
+const node = {
 	env: { node: true },
 	extends: "./index.js",
 	plugins: ["node"],
@@ -46,3 +46,5 @@ module.exports = {
 		"node/shebang": 0
 	}
 };
+
+module.exports = node;

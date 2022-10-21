@@ -1,4 +1,4 @@
-module.exports = {
+const browser = {
 	env: { browser: true },
 	extends: "./index.js",
 	overrides: [{
@@ -10,3 +10,5 @@ module.exports = {
 		"no-console": 1
 	}
 };
+
+module.exports = browser;
