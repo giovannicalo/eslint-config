@@ -22,15 +22,15 @@
 	"name": "eslint-config-giovanni",
 	"peerDependencies": {
 		"@babel/eslint-plugin": "^7.19.1",
-		"eslint": "^8.24.0",
+		"eslint": "^8.25.0",
 		"eslint-formatter-pretty": "^4.1.0",
 		"eslint-plugin-import": "^2.26.0",
-		"eslint-plugin-jsdoc": "^39.3.6",
+		"eslint-plugin-jsdoc": "^39.3.14",
 		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-promise": "^6.0.1",
-		"eslint-plugin-react": "^7.31.8",
+		"eslint-plugin-promise": "^6.1.1",
+		"eslint-plugin-react": "^7.31.10",
 		"eslint-plugin-react-hooks": "^4.6.0",
-		"eslint-plugin-unicorn": "^43.0.2"
+		"eslint-plugin-unicorn": "^44.0.2"
 	},
 	"repository": {
 		"type": "git",

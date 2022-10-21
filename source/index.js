@@ -639,17 +639,23 @@ module.exports = {
 		"prefer-rest-params": 2,
 		"prefer-spread": 2,
 		"prefer-template": 2,
-		"promise/always-return": 2,
+		"promise/always-return": [2, {
+			ignoreLastCallback: false
+		}],
 		"promise/avoid-new": 0,
 		"promise/catch-or-return": 2,
 		"promise/no-callback-in-promise": 0,
+		"promise/no-multiple-resolved": 2,
 		"promise/no-native": 0,
 		"promise/no-nesting": 0,
 		"promise/no-new-statics": 2,
 		"promise/no-promise-in-callback": 0,
 		"promise/no-return-in-finally": 2,
 		"promise/no-return-wrap": 2,
-		"promise/param-names": 2,
+		"promise/param-names": [2, {
+			rejectPattern: "^reject$",
+			resolvePattern: "^resolve$"
+		}],
 		"promise/prefer-await-to-callbacks": 0,
 		"promise/prefer-await-to-then": 0,
 		"promise/valid-params": 2,
@@ -752,6 +758,7 @@ module.exports = {
 		"unicorn/no-static-only-class": 2,
 		"unicorn/no-thenable": 2,
 		"unicorn/no-this-assignment": 2,
+		"unicorn/no-unnecessary-await": 2,
 		"unicorn/no-unreadable-array-destructuring": 0,
 		"unicorn/no-unreadable-iife": 2,
 		"unicorn/no-unsafe-regex": 0,
@@ -786,7 +793,9 @@ module.exports = {
 			onlyIfContainsSeparator: true
 		}],
 		"unicorn/prefer-add-event-listener": 2,
-		"unicorn/prefer-array-find": 2,
+		"unicorn/prefer-array-find": [2, {
+			checkFromLast: true
+		}],
 		"unicorn/prefer-array-flat": [2, { functions: [] }],
 		"unicorn/prefer-array-flat-map": 2,
 		"unicorn/prefer-array-index-of": 2,
@@ -840,6 +849,7 @@ module.exports = {
 		"unicorn/require-number-to-fixed-digits-argument": 2,
 		"unicorn/require-post-message-target-origin": 2,
 		"unicorn/string-content": 0,
+		"unicorn/switch-case-braces": [2, "avoid"],
 		"unicorn/template-indent": [2, {
 			comments: [],
 			functions: [],
