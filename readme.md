@@ -10,6 +10,7 @@
 
 * [`babel`](https://github.com/babel/babel/tree/main/eslint/babel-eslint-plugin)
 * [`import`](https://github.com/benmosher/eslint-plugin-import)
+* [`jest`](https://github.com/jest-community/eslint-plugin-jest)
 * [`jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc)
 * [`node`](https://github.com/mysticatea/eslint-plugin-node)
 * [`promise`](https://github.com/xjamundx/eslint-plugin-promise)

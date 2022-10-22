@@ -1,3 +1,5 @@
+const jest = require("./jest");
+
 const indentOptions = {
 	ArrayExpression: 1,
 	CallExpression: {
@@ -29,10 +31,7 @@ const configuration = {
 		commonjs: true,
 		es2022: true
 	},
-	overrides: [{
-		env: { jest: true },
-		files: ["*.spec.js"]
-	}],
+	overrides: [jest],
 	parser: "@babel/eslint-parser",
 	parserOptions: {
 		allowImportExportEverywhere: false,
@@ -40,7 +39,7 @@ const configuration = {
 		requireConfigFile: false,
 		sourceType: "module"
 	},
-	plugins: ["@babel", "import", "jsdoc", "promise", "unicorn"],
+	plugins: ["@babel", "import", "jest", "jsdoc", "promise", "unicorn"],
 	reportUnusedDisableDirectives: true,
 	rules: {
 		"@babel/new-cap": [2, {
