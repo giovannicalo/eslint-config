@@ -107,7 +107,6 @@ const react = {
 		}],
 		"react/jsx-props-no-multi-spaces": 2,
 		"react/jsx-props-no-spreading": 0,
-		"react/jsx-sort-default-props": [2, { ignoreCase: false }],
 		"react/jsx-sort-props": [2, {
 			callbacksLast: false,
 			ignoreCase: false,
@@ -145,6 +144,7 @@ const react = {
 		"react/no-is-mounted": 2,
 		"react/no-multi-comp": [2, { ignoreStateless: false }],
 		"react/no-namespace": 2,
+		"react/no-object-type-as-default-prop": 2,
 		"react/no-redundant-should-component-update": 2,
 		"react/no-render-return-value": 2,
 		"react/no-set-state": 0,
@@ -198,6 +198,7 @@ const react = {
 				"rendering"
 			]
 		}],
+		"react/sort-default-props": [2, { ignoreCase: false }],
 		"react/sort-prop-types": [2, {
 			callbacksLast: false,
 			ignoreCase: false,

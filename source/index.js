@@ -29,7 +29,7 @@ const indentOptions = {
 const configuration = {
 	env: {
 		commonjs: true,
-		es2022: true
+		es2024: true
 	},
 	overrides: [jest],
 	parser: "@babel/eslint-parser",
@@ -48,6 +48,7 @@ const configuration = {
 			properties: true
 		}],
 		"@babel/no-invalid-this": 2,
+		"@babel/no-undef": [2, { typeof: true }],
 		"@babel/no-unused-expressions": [2, {
 			allowShortCircuit: true,
 			allowTaggedTemplates: true,
@@ -58,7 +59,10 @@ const configuration = {
 			arraysInObjects: true,
 			objectsInObjects: true
 		}],
-		"@babel/semi": [2, "always"],
+		"@babel/semi": [2, "always", {
+			omitLastInOneLineBlock: false,
+			omitLastInOneLineClassBody: false
+		}],
 		"accessor-pairs": 0,
 		"array-bracket-newline": 0,
 		"array-bracket-spacing": [2, "never", {
@@ -68,6 +72,7 @@ const configuration = {
 		}],
 		"array-callback-return": [2, {
 			allowImplicit: true,
+			allowVoid: false,
 			checkForEach: true
 		}],
 		"array-element-newline": 0,
@@ -162,6 +167,7 @@ const configuration = {
 		}],
 		"id-match": 0,
 		"implicit-arrow-linebreak": [2, "beside"],
+		"import/consistent-type-specifier-style": 0,
 		"import/default": 2,
 		"import/dynamic-import-chunkname": 0,
 		"import/export": 2,
@@ -174,26 +180,42 @@ const configuration = {
 		"import/namespace": [2, {
 			allowComputed: true
 		}],
-		"import/newline-after-import": [2, { count: 1 }],
+		"import/newline-after-import": [2, {
+			considerComments: true,
+			count: 1,
+			exactCount: true
+		}],
 		"import/no-absolute-path": 2,
 		"import/no-amd": 2,
-		"import/no-anonymous-default-export": 0,
+		"import/no-anonymous-default-export": [2, {
+			allowAnonymousClass: false,
+			allowAnonymousFunction: false,
+			allowArray: false,
+			allowArrowFunction: false,
+			allowCallExpression: false,
+			allowLiteral: false,
+			allowNew: false,
+			allowObject: false
+		}],
 		"import/no-commonjs": 0,
 		"import/no-cycle": [2, {
-			amd: true,
-			commonjs: true,
+			allowUnsafeDynamicCyclicDependency: false,
 			ignoreExternal: false,
 			maxDepth: 1
 		}],
 		"import/no-default-export": 0,
 		"import/no-deprecated": 0,
 		"import/no-duplicates": [2, {
-			considerQueryString: false
+			considerQueryString: false,
+			"prefer-inline": false
 		}],
 		"import/no-dynamic-require": 1,
+		"import/no-empty-named-blocks": 2,
 		"import/no-extraneous-dependencies": [2, {
 			bundledDependencies: true,
 			devDependencies: true,
+			includeInternal: false,
+			includeTypes: false,
 			optionalDependencies: true,
 			peerDependencies: true
 		}],
@@ -230,14 +252,15 @@ const configuration = {
 			groups: [
 				"builtin",
 				"external",
-				["index", "internal", "parent", "sibling"],
+				"internal",
+				["parent", "index", "sibling"],
 				"type",
 				"object"
 			],
 			"newlines-between": "always",
 			warnOnUnassignedImports: false
 		}],
-		"import/prefer-default-export": 2,
+		"import/prefer-default-export": [2, { target: "single" }],
 		"import/unambiguous": 0,
 		indent: [2, "tab", indentOptions],
 		"init-declarations": [2, "always"],
@@ -256,10 +279,12 @@ const configuration = {
 		"jsdoc/check-property-names": 2,
 		"jsdoc/check-syntax": 2,
 		"jsdoc/check-tag-names": 2,
-		"jsdoc/check-types": [2, { noDefaults: true }],
+		"jsdoc/check-types": [2, { noDefaults: false }],
 		"jsdoc/check-values": 2,
 		"jsdoc/empty-tags": 2,
 		"jsdoc/implements-on-classes": 2,
+		"jsdoc/imports-as-dependencies": 0,
+		"jsdoc/informative-docs": 0,
 		"jsdoc/match-description": [2, {
 			matchDescription: "[A-Z].*\\."
 		}],
@@ -273,8 +298,9 @@ const configuration = {
 			noZeroLineText: true,
 			singleLineTags: []
 		}],
-		"jsdoc/newline-after-description": [2, "always"],
 		"jsdoc/no-bad-blocks": 2,
+		"jsdoc/no-blank-block-descriptions": 2,
+		"jsdoc/no-blank-blocks": 2,
 		"jsdoc/no-defaults": 0,
 		"jsdoc/no-multi-asterisks": [2, {
 			allowWhitespace: false,
@@ -282,7 +308,10 @@ const configuration = {
 			preventAtMiddleLines: true
 		}],
 		"jsdoc/no-types": 0,
-		"jsdoc/no-undefined-types": 2,
+		"jsdoc/no-undefined-types": [2, {
+			disableReporting: false,
+			markVariablesAsUsed: false
+		}],
 		"jsdoc/require-asterisk-prefix": [2, "always"],
 		"jsdoc/require-description": 0,
 		"jsdoc/require-description-complete-sentence": [2, {
@@ -324,11 +353,13 @@ const configuration = {
 		"jsdoc/require-throws": 0,
 		"jsdoc/sort-tags": 2,
 		"jsdoc/tag-lines": [2, "never", {
+			applyToEndTag: true,
 			count: 0,
-			dropEndLines: true,
-			noEndLines: true,
+			endLines: 0,
+			startLines: 0,
 			tags: {}
 		}],
+		"jsdoc/text-escaping": 0,
 		"jsdoc/valid-types": [2, {
 			allowEmptyNamepaths: true
 		}],
@@ -407,6 +438,7 @@ const configuration = {
 		"no-empty-character-class": 2,
 		"no-empty-function": 2,
 		"no-empty-pattern": 2,
+		"no-empty-static-block": 2,
 		"no-eq-null": 2,
 		"no-eval": [2, {
 			allowIndirect: false
@@ -426,7 +458,8 @@ const configuration = {
 			enforceForSequenceExpressions: true,
 			ignoreJSX: "none",
 			nestedBinaryExpressions: true,
-			returnAssign: true
+			returnAssign: true,
+			ternaryOperandBinaryExpressions: true
 		}],
 		"no-extra-semi": 2,
 		"no-fallthrough": [2, {
@@ -454,6 +487,7 @@ const configuration = {
 		"no-invalid-this": 0,
 		"no-irregular-whitespace": [2, {
 			skipComments: false,
+			skipJSXText: false,
 			skipRegExps: false,
 			skipStrings: false,
 			skipTemplates: false
@@ -489,16 +523,17 @@ const configuration = {
 		"no-nested-ternary": 0,
 		"no-new": 2,
 		"no-new-func": 2,
-		"no-new-object": 2,
+		"no-new-native-nonconstructor": 2,
 		"no-new-symbol": 2,
 		"no-new-wrappers": 2,
 		"no-nonoctal-decimal-escape": 2,
 		"no-obj-calls": 2,
+		"no-object-constructor": 2,
 		"no-octal": 2,
 		"no-octal-escape": 2,
 		"no-param-reassign": [2, { props: false }],
 		"no-plusplus": 0,
-		"no-promise-executor-return": 2,
+		"no-promise-executor-return": [2, { allowVoid: false }],
 		"no-proto": 2,
 		"no-prototype-builtins": 0,
 		"no-redeclare": [2, {
@@ -533,7 +568,7 @@ const configuration = {
 			ignoreComments: false,
 			skipBlankLines: false
 		}],
-		"no-undef": [2, { typeof: true }],
+		"no-undef": 0,
 		"no-undef-init": 2,
 		"no-undefined": 2,
 		"no-underscore-dangle": [2, {
@@ -748,6 +783,7 @@ const configuration = {
 		"unicorn/no-invalid-remove-event-listener": 2,
 		"unicorn/no-keyword-prefix": 0,
 		"unicorn/no-lonely-if": 2,
+		"unicorn/no-negated-condition": 0,
 		"unicorn/no-nested-ternary": 0,
 		"unicorn/no-new-array": 0,
 		"unicorn/no-new-buffer": 2,
@@ -757,10 +793,11 @@ const configuration = {
 		"unicorn/no-static-only-class": 2,
 		"unicorn/no-thenable": 2,
 		"unicorn/no-this-assignment": 2,
+		"unicorn/no-typeof-undefined": 0,
 		"unicorn/no-unnecessary-await": 2,
+		"unicorn/no-unnecessary-polyfills": 2,
 		"unicorn/no-unreadable-array-destructuring": 0,
 		"unicorn/no-unreadable-iife": 2,
-		"unicorn/no-unsafe-regex": 0,
 		"unicorn/no-unused-properties": 2,
 		"unicorn/no-useless-fallback-in-spread": 2,
 		"unicorn/no-useless-length-check": 2,
@@ -768,7 +805,8 @@ const configuration = {
 		"unicorn/no-useless-spread": 2,
 		"unicorn/no-useless-switch-case": 2,
 		"unicorn/no-useless-undefined": [2, {
-			checkArguments: true
+			checkArguments: true,
+			checkArrowFunctionBody: true
 		}],
 		"unicorn/no-zero-fractions": 2,
 		"unicorn/number-literal-case": 2,
@@ -803,6 +841,7 @@ const configuration = {
 			checkAllIndexAccess: false,
 			getLastElementFunctions: []
 		}],
+		"unicorn/prefer-blob-reading-methods": 2,
 		"unicorn/prefer-code-point": 2,
 		"unicorn/prefer-date-now": 2,
 		"unicorn/prefer-default-parameters": 2,
@@ -832,7 +871,8 @@ const configuration = {
 		"unicorn/prefer-query-selector": 2,
 		"unicorn/prefer-reflect-apply": 0,
 		"unicorn/prefer-regexp-test": 2,
-		"unicorn/prefer-set-has": 1,
+		"unicorn/prefer-set-has": 2,
+		"unicorn/prefer-set-size": 2,
 		"unicorn/prefer-spread": 2,
 		"unicorn/prefer-string-replace-all": 2,
 		"unicorn/prefer-string-slice": 2,

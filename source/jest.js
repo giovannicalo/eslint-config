@@ -15,6 +15,7 @@ const jest = {
 		"jest/no-commented-out-tests": 2,
 		"jest/no-conditional-expect": 2,
 		"jest/no-conditional-in-test": 2,
+		"jest/no-confusing-set-timeout": 2,
 		"jest/no-deprecated-functions": 2,
 		"jest/no-disabled-tests": 2,
 		"jest/no-done-callback": 2,
@@ -34,6 +35,7 @@ const jest = {
 		}],
 		"jest/no-test-prefixes": 2,
 		"jest/no-test-return-statement": 2,
+		"jest/no-untyped-mock-factory": 0,
 		"jest/prefer-called-with": 2,
 		"jest/prefer-comparison-matcher": 2,
 		"jest/prefer-each": 2,
@@ -71,6 +73,7 @@ const jest = {
 		"jest/valid-expect-in-promise": 2,
 		"jest/valid-title": [2, {
 			disallowedWords: [],
+			ignoreSpaces: false,
 			ignoreTypeOfDescribeName: false,
 			mustMatch: {
 				it: "^should"
