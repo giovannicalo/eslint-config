@@ -1,31 +1,5 @@
 const jest = require("./jest");
 
-const indentOptions = {
-	ArrayExpression: 1,
-	CallExpression: {
-		arguments: 1
-	},
-	FunctionDeclaration: {
-		body: 1,
-		parameters: 1
-	},
-	FunctionExpression: {
-		body: 1,
-		parameters: 1
-	},
-	ImportDeclaration: 1,
-	MemberExpression: 1,
-	ObjectExpression: 1,
-	StaticBlock: { body: 1 },
-	SwitchCase: 1,
-	VariableDeclarator: 0,
-	flatTernaryExpressions: false,
-	ignoreComments: false,
-	ignoredNodes: [],
-	offsetTernaryExpressions: false,
-	outerIIFEBody: 1
-};
-
 const configuration = {
 	env: {
 		commonjs: true,
@@ -262,7 +236,31 @@ const configuration = {
 		}],
 		"import/prefer-default-export": ["error", { target: "single" }],
 		"import/unambiguous": "off",
-		indent: ["error", "tab", indentOptions],
+		indent: ["error", "tab", {
+			ArrayExpression: 1,
+			CallExpression: {
+				arguments: 1
+			},
+			FunctionDeclaration: {
+				body: 1,
+				parameters: 1
+			},
+			FunctionExpression: {
+				body: 1,
+				parameters: 1
+			},
+			ImportDeclaration: 1,
+			MemberExpression: 1,
+			ObjectExpression: 1,
+			StaticBlock: { body: 1 },
+			SwitchCase: 1,
+			VariableDeclarator: 0,
+			flatTernaryExpressions: false,
+			ignoreComments: false,
+			ignoredNodes: [],
+			offsetTernaryExpressions: false,
+			outerIIFEBody: 1
+		}],
 		"init-declarations": ["error", "always"],
 		"jsdoc/check-access": "error",
 		"jsdoc/check-alignment": "error",
