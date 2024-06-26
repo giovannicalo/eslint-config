@@ -16,6 +16,7 @@
 * [`promise`](https://github.com/xjamundx/eslint-plugin-promise)
 * [`react`](https://github.com/yannickcr/eslint-plugin-react)
 * [`react-hooks`](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks)
+* [`stylistic`](https://github.com/eslint-stylistic/eslint-stylistic/tree/main/packages/eslint-plugin)
 * [`unicorn`](https://github.com/sindresorhus/eslint-plugin-unicorn)
 
 ## Installation
