@@ -320,11 +320,7 @@ const configuration = {
 		"grouped-accessor-pairs": ["error", "getBeforeSet"],
 		"guard-for-in": "warn",
 		"id-denylist": "off",
-		"id-length": ["warn", {
-			max: 30,
-			min: 1,
-			properties: "always"
-		}],
+		"id-length": "off",
 		"id-match": "off",
 		"import/consistent-type-specifier-style": "off",
 		"import/default": "error",

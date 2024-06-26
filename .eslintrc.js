@@ -1,4 +1,1 @@
-module.exports = {
-	extends: "./source",
-	rules: { "id-length": "off" }
-};
+module.exports = { extends: "./source" };
