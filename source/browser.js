@@ -6,8 +6,8 @@ const browser = {
 		files: ["scripts/**/*.js", "webpack.config.js"]
 	}],
 	rules: {
-		"import/no-nodejs-modules": 2,
-		"no-console": 1
+		"import/no-nodejs-modules": "error",
+		"no-console": "warn"
 	}
 };
 
