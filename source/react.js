@@ -11,6 +11,10 @@ const react = {
 			reset: true,
 			submit: true
 		}],
+		"react/checked-requires-onchange-or-readonly": ["error", {
+			ignoreExclusiveCheckedAttribute: false,
+			ignoreMissingProperties: false
+		}],
 		"react/default-props-match-prop-types": ["error", {
 			allowRequiredDefaults: false
 		}],
@@ -47,7 +51,8 @@ const react = {
 		"react/jsx-equals-spacing": ["error", "never"],
 		"react/jsx-filename-extension": ["error", {
 			allow: "always",
-			extensions: [".js"]
+			extensions: [".js"],
+			ignoreFilesWithoutCode: false
 		}],
 		"react/jsx-first-prop-new-line": "off",
 		"react/jsx-fragments": ["error", "element"],
@@ -86,7 +91,9 @@ const react = {
 			noAttributeStrings: false,
 			noStrings: false
 		}],
-		"react/jsx-no-script-url": "error",
+		"react/jsx-no-script-url": ["error", {
+			includeFromSettings: true
+		}],
 		"react/jsx-no-target-blank": ["error", {
 			allowReferrer: false,
 			enforceDynamicLinks: "always",
@@ -125,7 +132,15 @@ const react = {
 		}],
 		"react/jsx-uses-react": "off",
 		"react/jsx-uses-vars": "error",
-		"react/jsx-wrap-multilines": "off",
+		"react/jsx-wrap-multilines": ["error", {
+			arrow: "never",
+			assignment: "never",
+			condition: "never",
+			declaration: "never",
+			logical: "never",
+			prop: "never",
+			return: "never"
+		}],
 		"react/no-access-state-in-setstate": "error",
 		"react/no-adjacent-inline-elements": "error",
 		"react/no-array-index-key": "off",
@@ -152,7 +167,10 @@ const react = {
 		"react/no-this-in-sfc": "error",
 		"react/no-typos": "error",
 		"react/no-unescaped-entities": "error",
-		"react/no-unknown-property": "error",
+		"react/no-unknown-property": ["error", {
+			ignore: [],
+			requireDataLowercase: true
+		}],
 		"react/no-unsafe": "error",
 		"react/no-unstable-nested-components": ["error", {
 			allowAsProps: false

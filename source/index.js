@@ -30,7 +30,9 @@ const configuration = {
 			properties: true
 		}],
 		"@babel/no-invalid-this": "error",
-		"@babel/no-undef": ["error", { typeof: true }],
+		"@babel/no-undef": ["error", {
+			typeof: true
+		}],
 		"@babel/no-unused-expressions": ["error", {
 			allowShortCircuit: true,
 			allowTaggedTemplates: true,
@@ -303,7 +305,9 @@ const configuration = {
 		"default-case": "off",
 		"default-case-last": "error",
 		"default-param-last": "error",
-		"dot-notation": ["error", { allowKeywords: true }],
+		"dot-notation": ["error", {
+			allowKeywords: true
+		}],
 		eqeqeq: ["error", "always"],
 		"for-direction": "error",
 		"func-name-matching": ["error", "always", {
@@ -415,7 +419,9 @@ const configuration = {
 			"newlines-between": "always",
 			warnOnUnassignedImports: false
 		}],
-		"import/prefer-default-export": ["error", { target: "single" }],
+		"import/prefer-default-export": ["error", {
+			target: "single"
+		}],
 		"import/unambiguous": "off",
 		"init-declarations": ["error", "always"],
 		"jsdoc/check-access": "error",
@@ -433,7 +439,9 @@ const configuration = {
 		"jsdoc/check-property-names": "error",
 		"jsdoc/check-syntax": "error",
 		"jsdoc/check-tag-names": "error",
-		"jsdoc/check-types": ["error", { noDefaults: false }],
+		"jsdoc/check-types": ["error", {
+			noDefaults: false
+		}],
 		"jsdoc/check-values": "error",
 		"jsdoc/empty-tags": "error",
 		"jsdoc/implements-on-classes": "error",
@@ -639,9 +647,13 @@ const configuration = {
 		"no-object-constructor": "error",
 		"no-octal": "error",
 		"no-octal-escape": "error",
-		"no-param-reassign": ["error", { props: false }],
+		"no-param-reassign": ["error", {
+			props: false
+		}],
 		"no-plusplus": "off",
-		"no-promise-executor-return": ["error", { allowVoid: false }],
+		"no-promise-executor-return": ["error", {
+			allowVoid: false
+		}],
 		"no-proto": "error",
 		"no-prototype-builtins": "off",
 		"no-redeclare": ["error", {
@@ -656,7 +668,9 @@ const configuration = {
 		"no-return-assign": ["error", "always"],
 		"no-return-await": "error",
 		"no-script-url": "error",
-		"no-self-assign": ["error", { props: true }],
+		"no-self-assign": ["error", {
+			props: true
+		}],
 		"no-self-compare": "error",
 		"no-sequences": ["error", {
 			allowInParentheses: false
@@ -687,7 +701,9 @@ const configuration = {
 			defaultAssignment: false
 		}],
 		"no-unreachable": "error",
-		"no-unreachable-loop": ["error", { ignore: [] }],
+		"no-unreachable-loop": ["error", {
+			ignore: []
+		}],
 		"no-unsafe-finally": "error",
 		"no-unsafe-negation": ["error", {
 			enforceForOrderingRelations: true
@@ -799,15 +815,20 @@ const configuration = {
 			minKeys: 2,
 			natural: true
 		}],
-		"sort-vars": ["error", { ignoreCase: false }],
+		"sort-vars": ["error", {
+			ignoreCase: false
+		}],
 		strict: ["error", "global"],
 		"symbol-description": "error",
 		"unicode-bom": ["error", "never"],
 		"unicorn/better-regex": ["error", {
 			sortCharacterClasses: true
 		}],
-		"unicorn/catch-error-name": ["error", { name: "error" }],
+		"unicorn/catch-error-name": ["error", {
+			name: "error"
+		}],
 		"unicorn/consistent-destructuring": "error",
+		"unicorn/consistent-empty-array-spread": "error",
 		"unicorn/consistent-function-scoping": ["error", {
 			checkArrowFunctions: true
 		}],
@@ -817,33 +838,43 @@ const configuration = {
 		"unicorn/escape-case": "error",
 		"unicorn/expiring-todo-comments": "off",
 		"unicorn/explicit-length-check": "off",
-		"unicorn/filename-case": ["error", { case: "kebabCase" }],
+		"unicorn/filename-case": ["error", {
+			case: "kebabCase",
+			ignore: [],
+			multipleFileExtensions: true
+		}],
 		"unicorn/import-index": "error",
 		"unicorn/import-style": "off",
 		"unicorn/new-for-builtins": "error",
 		"unicorn/no-abusive-eslint-disable": "error",
+		"unicorn/no-anonymous-default-export": "error",
 		"unicorn/no-array-callback-reference": "off",
 		"unicorn/no-array-for-each": "off",
 		"unicorn/no-array-method-this-argument": "error",
 		"unicorn/no-array-push-push": "off",
 		"unicorn/no-array-reduce": "off",
 		"unicorn/no-await-expression-member": "off",
+		"unicorn/no-await-in-promise-methods": "error",
 		"unicorn/no-console-spaces": "error",
 		"unicorn/no-document-cookie": "error",
 		"unicorn/no-empty-file": "error",
 		"unicorn/no-for-loop": "error",
 		"unicorn/no-hex-escape": "error",
 		"unicorn/no-instanceof-array": "error",
+		"unicorn/no-invalid-fetch-options": "error",
 		"unicorn/no-invalid-remove-event-listener": "error",
 		"unicorn/no-keyword-prefix": "off",
 		"unicorn/no-lonely-if": "error",
+		"unicorn/no-magic-array-flat-depth": "off",
 		"unicorn/no-negated-condition": "off",
+		"unicorn/no-negation-in-equality-check": "error",
 		"unicorn/no-nested-ternary": "off",
 		"unicorn/no-new-array": "off",
 		"unicorn/no-new-buffer": "error",
 		"unicorn/no-null": "off",
 		"unicorn/no-object-as-default-parameter": "error",
 		"unicorn/no-process-exit": "off",
+		"unicorn/no-single-promise-in-promise-methods": "error",
 		"unicorn/no-static-only-class": "error",
 		"unicorn/no-thenable": "error",
 		"unicorn/no-this-assignment": "error",
@@ -928,10 +959,14 @@ const configuration = {
 		"unicorn/prefer-set-has": "error",
 		"unicorn/prefer-set-size": "error",
 		"unicorn/prefer-spread": "error",
+		"unicorn/prefer-string-raw": "off",
 		"unicorn/prefer-string-replace-all": "error",
 		"unicorn/prefer-string-slice": "error",
 		"unicorn/prefer-string-starts-ends-with": "error",
 		"unicorn/prefer-string-trim-start-end": "error",
+		"unicorn/prefer-structured-clone": ["error", {
+			functions: []
+		}],
 		"unicorn/prefer-switch": "off",
 		"unicorn/prefer-ternary": "off",
 		"unicorn/prefer-top-level-await": "off",

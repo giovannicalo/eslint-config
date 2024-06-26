@@ -44,6 +44,8 @@ const jest = {
 		"jest/prefer-expect-resolves": "error",
 		"jest/prefer-hooks-in-order": "off",
 		"jest/prefer-hooks-on-top": "error",
+		"jest/prefer-importing-jest-globals": "off",
+		"jest/prefer-jest-mocked": "error",
 		"jest/prefer-lowercase-title": ["error", {
 			allowedPrefixes: [],
 			ignore: ["describe"],
