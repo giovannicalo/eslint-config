@@ -525,7 +525,6 @@ const configuration = {
 		"jsdoc/valid-types": ["error", {
 			allowEmptyNamepaths: true
 		}],
-		"jsx-quotes": ["error", "prefer-double"],
 		"logical-assignment-operators": ["error", "always", {
 			enforceForIfStatements: true
 		}],

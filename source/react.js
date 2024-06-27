@@ -32,33 +32,38 @@ const react = {
 		"react/hook-use-state": "off",
 		"react/iframe-missing-sandbox": "error",
 		"react/jsx-boolean-value": ["error", "always"],
-		"react/jsx-child-element-spacing": "off",
-		"react/jsx-closing-bracket-location": "off",
-		"react/jsx-closing-tag-location": "off",
-		"react/jsx-curly-brace-presence": ["error", {
+		"@stylistic/jsx-child-element-spacing": "off",
+		"@stylistic/jsx-closing-bracket-location": "off",
+		"@stylistic/jsx-closing-tag-location": "off",
+		"@stylistic/jsx-curly-brace-presence": ["error", {
 			children: "ignore",
 			propElementValues: "always",
 			props: "never"
 		}],
-		"react/jsx-curly-newline": ["error", "never"],
-		"react/jsx-curly-spacing": ["error", {
+		"@stylistic/jsx-curly-newline": ["error", "never"],
+		"@stylistic/jsx-curly-spacing": ["error", {
 			allowMultiline: false,
 			attributes: true,
 			children: true,
-			spacing: { objectLiterals: "never" },
+			spacing: {
+				objectLiterals: "never"
+			},
 			when: "never"
 		}],
-		"react/jsx-equals-spacing": ["error", "never"],
+		"@stylistic/jsx-equals-spacing": ["error", "never"],
 		"react/jsx-filename-extension": ["error", {
 			allow: "always",
 			extensions: [".js"],
 			ignoreFilesWithoutCode: false
 		}],
-		"react/jsx-first-prop-new-line": "off",
+		"@stylistic/jsx-first-prop-new-line": "off",
 		"react/jsx-fragments": ["error", "element"],
+		"@stylistic/jsx-function-call-newline": "off",
 		"react/jsx-handler-names": "off",
-		"react/jsx-indent": ["error", "tab", { checkAttributes: true }],
-		"react/jsx-indent-props": ["error", {
+		"react/jsx-indent": ["error", "tab", {
+			checkAttributes: true
+		}],
+		"@stylistic/jsx-indent-props": ["error", {
 			ignoreTernaryOperator: true,
 			indentMode: "tab"
 		}],
@@ -68,8 +73,8 @@ const react = {
 			warnOnDuplicates: true
 		}],
 		"react/jsx-max-depth": "off",
-		"react/jsx-max-props-per-line": "off",
-		"react/jsx-newline": ["error", {
+		"@stylistic/jsx-max-props-per-line": "off",
+		"@stylistic/jsx-newline": ["error", {
 			allowMultilines: false,
 			prevent: true
 		}],
@@ -82,7 +87,9 @@ const react = {
 		}],
 		"react/jsx-no-comment-textnodes": "error",
 		"react/jsx-no-constructed-context-values": "error",
-		"react/jsx-no-duplicate-props": ["error", { ignoreCase: false }],
+		"react/jsx-no-duplicate-props": ["error", {
+			ignoreCase: false
+		}],
 		"react/jsx-no-leaked-render": ["error", {
 			validStrategies: ["coerce"]
 		}],
@@ -105,16 +112,19 @@ const react = {
 		"react/jsx-no-useless-fragment": ["error", {
 			allowExpressions: false
 		}],
-		"react/jsx-one-expression-per-line": ["error", { allow: "none" }],
-		"react/jsx-pascal-case": ["error", {
+		"@stylistic/jsx-one-expression-per-line": ["error", {
+			allow: "none"
+		}],
+		"@stylistic/jsx-pascal-case": ["error", {
 			allowAllCaps: false,
 			allowLeadingUnderscore: false,
 			allowNamespace: false,
 			ignore: []
 		}],
-		"react/jsx-props-no-multi-spaces": "error",
+		"@stylistic/jsx-props-no-multi-spaces": "error",
 		"react/jsx-props-no-spreading": "off",
-		"react/jsx-sort-props": ["error", {
+		"@stylistic/jsx-quotes": ["error", "prefer-double"],
+		"@stylistic/jsx-sort-props": ["error", {
 			callbacksLast: false,
 			ignoreCase: false,
 			locale: "auto",
@@ -124,7 +134,7 @@ const react = {
 			shorthandFirst: false,
 			shorthandLast: false
 		}],
-		"react/jsx-tag-spacing": ["error", {
+		"@stylistic/jsx-tag-spacing": ["error", {
 			afterOpening: "never",
 			beforeClosing: "never",
 			beforeSelfClosing: "always",
@@ -132,13 +142,14 @@ const react = {
 		}],
 		"react/jsx-uses-react": "off",
 		"react/jsx-uses-vars": "error",
-		"react/jsx-wrap-multilines": ["error", {
+		"@stylistic/jsx-wrap-multilines": ["error", {
 			arrow: "never",
 			assignment: "never",
 			condition: "never",
 			declaration: "never",
 			logical: "never",
 			prop: "never",
+			propertyValue: "never",
 			return: "never"
 		}],
 		"react/no-access-state-in-setstate": "error",
@@ -157,7 +168,9 @@ const react = {
 		"react/no-find-dom-node": "error",
 		"react/no-invalid-html-attribute": "error",
 		"react/no-is-mounted": "error",
-		"react/no-multi-comp": ["error", { ignoreStateless: false }],
+		"react/no-multi-comp": ["error", {
+			ignoreStateless: false
+		}],
 		"react/no-namespace": "error",
 		"react/no-object-type-as-default-prop": "error",
 		"react/no-redundant-should-component-update": "error",
@@ -200,7 +213,7 @@ const react = {
 		}],
 		"react/require-optimization": "off",
 		"react/require-render-return": "error",
-		"react/self-closing-comp": ["error", {
+		"@stylistic/jsx-self-closing-comp": ["error", {
 			component: true,
 			html: true
 		}],
@@ -216,7 +229,9 @@ const react = {
 				"rendering"
 			]
 		}],
-		"react/sort-default-props": ["error", { ignoreCase: false }],
+		"react/sort-default-props": ["error", {
+			ignoreCase: false
+		}],
 		"react/sort-prop-types": ["error", {
 			callbacksLast: false,
 			ignoreCase: false,
