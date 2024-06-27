@@ -6,18 +6,16 @@
 
 ## Included Plugins
 
-`eslint-plugin-`
-
-* [`babel`](https://github.com/babel/babel/tree/main/eslint/babel-eslint-plugin)
-* [`import`](https://github.com/benmosher/eslint-plugin-import)
-* [`jest`](https://github.com/jest-community/eslint-plugin-jest)
-* [`jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc)
-* [`node`](https://github.com/mysticatea/eslint-plugin-node)
-* [`promise`](https://github.com/xjamundx/eslint-plugin-promise)
-* [`react`](https://github.com/yannickcr/eslint-plugin-react)
-* [`react-hooks`](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks)
-* [`stylistic`](https://github.com/eslint-stylistic/eslint-stylistic/tree/main/packages/eslint-plugin)
-* [`unicorn`](https://github.com/sindresorhus/eslint-plugin-unicorn)
+* [`@babel/eslint-plugin`](https://github.com/babel/babel/tree/main/eslint/babel-eslint-plugin)
+* [`@stylistic/eslint-plugin`](https://github.com/eslint-stylistic/eslint-stylistic/tree/main/packages/eslint-plugin)
+* [`eslint-plugin-import`](https://github.com/benmosher/eslint-plugin-import)
+* [`eslint-plugin-jest`](https://github.com/jest-community/eslint-plugin-jest)
+* [`eslint-plugin-jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc)
+* [`eslint-plugin-node`](https://github.com/mysticatea/eslint-plugin-node)
+* [`eslint-plugin-promise`](https://github.com/xjamundx/eslint-plugin-promise)
+* [`eslint-plugin-react`](https://github.com/yannickcr/eslint-plugin-react)
+* [`eslint-plugin-react-hooks`](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks)
+* [`eslint-plugin-unicorn`](https://github.com/sindresorhus/eslint-plugin-unicorn)
 
 ## Installation
 
@@ -29,28 +27,35 @@ npm install giovannicalo/eslint-config
 
 ## Usage
 
-Create an ESLint settings file as follows.
+Create an `eslint.config.js` file as follows.
 
 ```javascript
-module.exports = { extends: "giovanni" };
+const config = require("eslint-config-giovanni");
+
+module.exports = config;
 ```
 
-Depending on the project and the folder, include instead the relevant specific configurations, for instance:
+Depending on the project and the folder, include instead the relevant specific configuration, for instance:
 
 ```javascript
-module.exports = {
-    extends: [
-        "giovanni/browser",
-        "giovanni/react"
-    ]
-};
-```
+const { react } = require("eslint-configuration-giovanni");
 
-In this case, there's no need to include the base settings, as they're already included in the specific ones.
+module.exports = react;
+```
 
 ### Available configurations
 
-* Base settings: `giovanni`
-* Browser: `giovanni/browser`
-* [Node](https://github.com/nodejs/node): `giovanni/node`
-* [React](https://github.com/facebook/react): `giovanni/react`
+* Base settings: the `default` import
+* Browser: `browser`
+* [Node](https://github.com/nodejs/node): `node`
+* [React](https://github.com/facebook/react) (includes Browser): `react`
+
+These settings can be further overridden as normal, for instance:
+
+```javascript
+const { node } = require("eslint-configuration-giovanni");
+
+module.exports = [...node, {
+	rules: { camelcase: "off" }
+}];
+```

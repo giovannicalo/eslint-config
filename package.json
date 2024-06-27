@@ -30,7 +30,7 @@
 	"homepage": "https://github.com/giovannicalo/eslint-config",
 	"keywords": ["config", "eslint"],
 	"license": "MIT",
-	"main": "index.js",
+	"main": "source/index.js",
 	"name": "eslint-config-giovanni",
 	"peerDependencies": {
 		"eslint": "^8.57.0"

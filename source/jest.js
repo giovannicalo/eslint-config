@@ -1,6 +1,11 @@
+const plugin = require("eslint-plugin-jest");
+const { jest: globals } = require("globals");
+
 const jest = {
-	env: { jest: true },
-	files: ["*.spec.js"],
+	files: ["**/*.spec.js"],
+	languageOptions: { globals },
+	name: "giovanni/jest",
+	plugins: { jest: plugin },
 	rules: {
 		"jest/consistent-test-it": ["error", {
 			fn: "it",
@@ -82,6 +87,11 @@ const jest = {
 			},
 			mustNotMatch: {}
 		}]
+	},
+	settings: {
+		jest: {
+			version: "29.7.0"
+		}
 	}
 };
 

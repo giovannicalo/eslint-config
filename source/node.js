@@ -1,7 +1,10 @@
+const plugin = require("eslint-plugin-node");
+const { node: globals } = require("globals");
+
 const node = {
-	env: { node: true },
-	extends: "./index.js",
-	plugins: ["node"],
+	languageOptions: { globals },
+	name: "giovanni/node",
+	plugins: { node: plugin },
 	rules: {
 		"node/callback-return": "off",
 		"node/exports-style": ["error", "module.exports", {

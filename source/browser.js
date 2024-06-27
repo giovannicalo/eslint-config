@@ -1,10 +1,10 @@
+const { browser: globals } = require("globals");
+
+const scaffoldingFiles = require("./scaffolding-files");
+
 const browser = {
-	env: { browser: true },
-	extends: "./index.js",
-	overrides: [{
-		env: { node: true },
-		files: ["scripts/**/*.js", "webpack.config.js"]
-	}],
+	ignores: scaffoldingFiles,
+	languageOptions: { globals },
 	rules: {
 		"import/no-nodejs-modules": "error",
 		"no-console": "warn"

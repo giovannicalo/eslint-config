@@ -1,9 +1,19 @@
+const plugin = require("eslint-plugin-react");
+const hooksPlugin = require("eslint-plugin-react-hooks");
+
 const react = {
-	extends: "./index.js",
-	parserOptions: {
-		ecmaFeatures: { jsx: true }
+	languageOptions: {
+		parserOptions: {
+			ecmaFeatures: {
+				jsx: true
+			}
+		}
 	},
-	plugins: ["react", "react-hooks"],
+	name: "giovanni/react",
+	plugins: {
+		react: plugin,
+		"react-hooks": hooksPlugin
+	},
 	rules: {
 		"@stylistic/jsx-child-element-spacing": "off",
 		"@stylistic/jsx-closing-bracket-location": "off",
