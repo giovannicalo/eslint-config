@@ -6,6 +6,13 @@ const react = require("./react");
 const scaffolding = require("./scaffolding");
 
 const common = [
+	{
+		ignores: [
+			"build",
+			"coverage",
+			"dist"
+		]
+	},
 	main,
 	scaffolding,
 	jest
