@@ -55,6 +55,6 @@ These settings can be further overridden as normal, for instance:
 const { node } = require("eslint-configuration-giovanni");
 
 module.exports = [...node, {
-	rules: { camelcase: "off" }
+    rules: { camelcase: "off" }
 }];
 ```
