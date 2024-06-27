@@ -5,6 +5,77 @@ const react = {
 	},
 	plugins: ["react", "react-hooks"],
 	rules: {
+		"@stylistic/jsx-child-element-spacing": "off",
+		"@stylistic/jsx-closing-bracket-location": "off",
+		"@stylistic/jsx-closing-tag-location": "off",
+		"@stylistic/jsx-curly-brace-presence": ["error", {
+			children: "ignore",
+			propElementValues: "always",
+			props: "never"
+		}],
+		"@stylistic/jsx-curly-newline": ["error", "never"],
+		"@stylistic/jsx-curly-spacing": ["error", {
+			allowMultiline: false,
+			attributes: true,
+			children: true,
+			spacing: {
+				objectLiterals: "never"
+			},
+			when: "never"
+		}],
+		"@stylistic/jsx-equals-spacing": ["error", "never"],
+		"@stylistic/jsx-first-prop-new-line": "off",
+		"@stylistic/jsx-function-call-newline": "off",
+		"@stylistic/jsx-indent-props": ["error", {
+			ignoreTernaryOperator: true,
+			indentMode: "tab"
+		}],
+		"@stylistic/jsx-max-props-per-line": "off",
+		"@stylistic/jsx-newline": ["error", {
+			allowMultilines: false,
+			prevent: true
+		}],
+		"@stylistic/jsx-one-expression-per-line": ["error", {
+			allow: "none"
+		}],
+		"@stylistic/jsx-pascal-case": ["error", {
+			allowAllCaps: false,
+			allowLeadingUnderscore: false,
+			allowNamespace: false,
+			ignore: []
+		}],
+		"@stylistic/jsx-props-no-multi-spaces": "error",
+		"@stylistic/jsx-quotes": ["error", "prefer-double"],
+		"@stylistic/jsx-self-closing-comp": ["error", {
+			component: true,
+			html: true
+		}],
+		"@stylistic/jsx-sort-props": ["error", {
+			callbacksLast: false,
+			ignoreCase: false,
+			locale: "auto",
+			multiline: "ignore",
+			noSortAlphabetically: false,
+			reservedFirst: false,
+			shorthandFirst: false,
+			shorthandLast: false
+		}],
+		"@stylistic/jsx-tag-spacing": ["error", {
+			afterOpening: "never",
+			beforeClosing: "never",
+			beforeSelfClosing: "always",
+			closingSlash: "never"
+		}],
+		"@stylistic/jsx-wrap-multilines": ["error", {
+			arrow: "never",
+			assignment: "never",
+			condition: "never",
+			declaration: "never",
+			logical: "never",
+			prop: "never",
+			propertyValue: "never",
+			return: "never"
+		}],
 		"react/boolean-prop-naming": "error",
 		"react/button-has-type": ["error", {
 			button: true,
@@ -32,40 +103,15 @@ const react = {
 		"react/hook-use-state": "off",
 		"react/iframe-missing-sandbox": "error",
 		"react/jsx-boolean-value": ["error", "always"],
-		"@stylistic/jsx-child-element-spacing": "off",
-		"@stylistic/jsx-closing-bracket-location": "off",
-		"@stylistic/jsx-closing-tag-location": "off",
-		"@stylistic/jsx-curly-brace-presence": ["error", {
-			children: "ignore",
-			propElementValues: "always",
-			props: "never"
-		}],
-		"@stylistic/jsx-curly-newline": ["error", "never"],
-		"@stylistic/jsx-curly-spacing": ["error", {
-			allowMultiline: false,
-			attributes: true,
-			children: true,
-			spacing: {
-				objectLiterals: "never"
-			},
-			when: "never"
-		}],
-		"@stylistic/jsx-equals-spacing": ["error", "never"],
 		"react/jsx-filename-extension": ["error", {
 			allow: "always",
 			extensions: [".js"],
 			ignoreFilesWithoutCode: false
 		}],
-		"@stylistic/jsx-first-prop-new-line": "off",
 		"react/jsx-fragments": ["error", "element"],
-		"@stylistic/jsx-function-call-newline": "off",
 		"react/jsx-handler-names": "off",
 		"react/jsx-indent": ["error", "tab", {
 			checkAttributes: true
-		}],
-		"@stylistic/jsx-indent-props": ["error", {
-			ignoreTernaryOperator: true,
-			indentMode: "tab"
 		}],
 		"react/jsx-key": ["error", {
 			checkFragmentShorthand: true,
@@ -73,11 +119,6 @@ const react = {
 			warnOnDuplicates: true
 		}],
 		"react/jsx-max-depth": "off",
-		"@stylistic/jsx-max-props-per-line": "off",
-		"@stylistic/jsx-newline": ["error", {
-			allowMultilines: false,
-			prevent: true
-		}],
 		"react/jsx-no-bind": ["error", {
 			allowArrowFunctions: false,
 			allowBind: false,
@@ -112,46 +153,9 @@ const react = {
 		"react/jsx-no-useless-fragment": ["error", {
 			allowExpressions: false
 		}],
-		"@stylistic/jsx-one-expression-per-line": ["error", {
-			allow: "none"
-		}],
-		"@stylistic/jsx-pascal-case": ["error", {
-			allowAllCaps: false,
-			allowLeadingUnderscore: false,
-			allowNamespace: false,
-			ignore: []
-		}],
-		"@stylistic/jsx-props-no-multi-spaces": "error",
 		"react/jsx-props-no-spreading": "off",
-		"@stylistic/jsx-quotes": ["error", "prefer-double"],
-		"@stylistic/jsx-sort-props": ["error", {
-			callbacksLast: false,
-			ignoreCase: false,
-			locale: "auto",
-			multiline: "ignore",
-			noSortAlphabetically: false,
-			reservedFirst: false,
-			shorthandFirst: false,
-			shorthandLast: false
-		}],
-		"@stylistic/jsx-tag-spacing": ["error", {
-			afterOpening: "never",
-			beforeClosing: "never",
-			beforeSelfClosing: "always",
-			closingSlash: "never"
-		}],
 		"react/jsx-uses-react": "off",
 		"react/jsx-uses-vars": "error",
-		"@stylistic/jsx-wrap-multilines": ["error", {
-			arrow: "never",
-			assignment: "never",
-			condition: "never",
-			declaration: "never",
-			logical: "never",
-			prop: "never",
-			propertyValue: "never",
-			return: "never"
-		}],
 		"react/no-access-state-in-setstate": "error",
 		"react/no-adjacent-inline-elements": "error",
 		"react/no-array-index-key": "off",
@@ -213,10 +217,6 @@ const react = {
 		}],
 		"react/require-optimization": "off",
 		"react/require-render-return": "error",
-		"@stylistic/jsx-self-closing-comp": ["error", {
-			component: true,
-			html: true
-		}],
 		"react/sort-comp": ["error", {
 			groups: {
 				rendering: ["/^render.+$/", "render"]
