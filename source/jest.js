@@ -12,6 +12,7 @@ const jest = {
 			withinDescribe: "it"
 		}],
 		"jest/expect-expect": ["error", {
+			additionalTestBlockFunctions: [],
 			assertFunctionNames: ["expect"]
 		}],
 		"jest/max-expects": "off",
@@ -47,7 +48,7 @@ const jest = {
 		"jest/prefer-equality-matcher": "error",
 		"jest/prefer-expect-assertions": "off",
 		"jest/prefer-expect-resolves": "error",
-		"jest/prefer-hooks-in-order": "off",
+		"jest/prefer-hooks-in-order": "error",
 		"jest/prefer-hooks-on-top": "error",
 		"jest/prefer-importing-jest-globals": "off",
 		"jest/prefer-jest-mocked": "error",
@@ -73,7 +74,7 @@ const jest = {
 		"jest/valid-describe-callback": "error",
 		"jest/valid-expect": ["error", {
 			alwaysAwait: false,
-			asyncMatchers: [],
+			asyncMatchers: ["toReject", "toResolve"],
 			maxArgs: 1,
 			minArgs: 1
 		}],
@@ -82,6 +83,7 @@ const jest = {
 			disallowedWords: [],
 			ignoreSpaces: false,
 			ignoreTypeOfDescribeName: false,
+			ignoreTypeOfTestName: false,
 			mustMatch: {
 				it: "^should"
 			},

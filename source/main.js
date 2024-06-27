@@ -34,7 +34,7 @@ const main = {
 		unicorn: unicornPlugin
 	},
 	rules: {
-		"@stylistic/array-bracket-newline": "off",
+		"@stylistic/array-bracket-newline": ["error", "consistent"],
 		"@stylistic/array-bracket-spacing": ["error", "never", {
 			arraysInArrays: false,
 			objectsInArrays: false,
@@ -193,7 +193,7 @@ const main = {
 			allowAllPropertiesOnSameLine: true
 		}],
 		"@stylistic/one-var-declaration-per-line": "off",
-		"@stylistic/operator-linebreak": ["error", "none", {
+		"@stylistic/operator-linebreak": ["error", "after", {
 			overrides: {}
 		}],
 		"@stylistic/padded-blocks": ["error", {
@@ -275,9 +275,10 @@ const main = {
 		"arrow-body-style": ["error", "always"],
 		"block-scoped-var": "error",
 		camelcase: ["error", {
+			allow: [],
 			ignoreDestructuring: false,
 			ignoreGlobals: false,
-			ignoreImports: true,
+			ignoreImports: false,
 			properties: "always"
 		}],
 		"capitalized-comments": ["error", "always", {
@@ -301,21 +302,25 @@ const main = {
 		"dot-notation": ["error", {
 			allowKeywords: true
 		}],
-		eqeqeq: ["error", "always"],
+		eqeqeq: ["error", "always", {
+			null: "always"
+		}],
 		"for-direction": "error",
 		"func-name-matching": ["error", "always", {
 			considerPropertyDescriptor: true,
 			includeCommonJSModuleExports: false
 		}],
-		"func-names": ["error", "never"],
-		"func-style": ["warn", "expression", {
+		"func-names": ["error", "never", {
+			generators: "never"
+		}],
+		"func-style": ["error", "expression", {
 			allowArrowFunctions: true
 		}],
 		"getter-return": ["error", {
-			allowImplicit: true
+			allowImplicit: false
 		}],
 		"grouped-accessor-pairs": ["error", "getBeforeSet"],
-		"guard-for-in": "warn",
+		"guard-for-in": "off",
 		"id-denylist": "off",
 		"id-length": "off",
 		"id-match": "off",
@@ -533,7 +538,9 @@ const main = {
 		"max-statements": "off",
 		"new-cap": ["error", {
 			capIsNew: false,
+			capIsNewExceptions: [],
 			newIsCap: true,
+			newIsCapExceptions: [],
 			properties: true
 		}],
 		"no-alert": "error",
@@ -567,20 +574,28 @@ const main = {
 		"no-duplicate-imports": ["error", {
 			includeExports: true
 		}],
-		"no-else-return": "off",
+		"no-else-return": ["error", {
+			allowElseIf: false
+		}],
 		"no-empty": ["error", {
 			allowEmptyCatch: false
 		}],
 		"no-empty-character-class": "error",
-		"no-empty-function": "error",
-		"no-empty-pattern": "error",
+		"no-empty-function": ["error", {
+			allow: []
+		}],
+		"no-empty-pattern": ["error", {
+			allowObjectPatternsAsParameters: false
+		}],
 		"no-empty-static-block": "error",
 		"no-eq-null": "error",
 		"no-eval": ["error", {
 			allowIndirect: false
 		}],
 		"no-ex-assign": "error",
-		"no-extend-native": "error",
+		"no-extend-native": ["error", {
+			exceptions: []
+		}],
 		"no-extra-bind": "error",
 		"no-extra-boolean-cast": ["error", {
 			enforceForLogicalOperands: true
@@ -591,7 +606,9 @@ const main = {
 			commentPattern: "Fall through"
 		}],
 		"no-func-assign": "error",
-		"no-global-assign": "error",
+		"no-global-assign": ["error", {
+			exceptions: []
+		}],
 		"no-implicit-coercion": ["error", {
 			allow: ["!!", "~"],
 			boolean: false,
@@ -606,8 +623,12 @@ const main = {
 		"no-import-assign": "error",
 		"no-inline-comments": "off",
 		"no-inner-declarations": ["error", "both"],
-		"no-invalid-regexp": "error",
-		"no-invalid-this": "error",
+		"no-invalid-regexp": ["error", {
+			allowConstructorFlags: []
+		}],
+		"no-invalid-this": ["error", {
+			capIsConstructor: false
+		}],
 		"no-irregular-whitespace": ["error", {
 			skipComments: false,
 			skipJSXText: false,
@@ -636,7 +657,6 @@ const main = {
 		"no-new": "error",
 		"no-new-func": "error",
 		"no-new-native-nonconstructor": "error",
-		"no-new-symbol": "error",
 		"no-new-wrappers": "error",
 		"no-nonoctal-decimal-escape": "error",
 		"no-obj-calls": "error",
@@ -653,7 +673,7 @@ const main = {
 		"no-proto": "error",
 		"no-prototype-builtins": "off",
 		"no-redeclare": ["error", {
-			builtinGlobals: false
+			builtinGlobals: true
 		}],
 		"no-regex-spaces": "error",
 		"no-restricted-exports": "off",
@@ -662,7 +682,6 @@ const main = {
 		"no-restricted-properties": "off",
 		"no-restricted-syntax": "off",
 		"no-return-assign": ["error", "always"],
-		"no-return-await": "error",
 		"no-script-url": "error",
 		"no-self-assign": ["error", {
 			props: true
@@ -690,8 +709,10 @@ const main = {
 			allowAfterThis: false,
 			allowAfterThisConstructor: false,
 			allowFunctionParams: false,
-			enforceInClassFields: false,
-			enforceInMethodNames: false
+			allowInArrayDestructuring: false,
+			allowInObjectDestructuring: false,
+			enforceInClassFields: true,
+			enforceInMethodNames: true
 		}],
 		"no-unexpected-multiline": "error",
 		"no-unmodified-loop-condition": "error",
@@ -726,7 +747,7 @@ const main = {
 		"no-use-before-define": ["error", {
 			allowNamedExports: false,
 			classes: true,
-			functions: false,
+			functions: true,
 			variables: true
 		}],
 		"no-useless-backreference": "error",
@@ -744,7 +765,7 @@ const main = {
 			ignoreImport: false
 		}],
 		"no-useless-return": "error",
-		"no-var": "warn",
+		"no-var": "error",
 		"no-void": "off",
 		"no-warning-comments": ["warn", {
 			location: "start",
@@ -775,7 +796,9 @@ const main = {
 		"prefer-promise-reject-errors": ["error", {
 			allowEmptyReject: false
 		}],
-		"prefer-regex-literals": "error",
+		"prefer-regex-literals": ["error", {
+			disallowRedundantWrapping: true
+		}],
 		"prefer-rest-params": "error",
 		"prefer-spread": "error",
 		"prefer-template": "error",
@@ -799,15 +822,15 @@ const main = {
 		"promise/prefer-await-to-callbacks": "off",
 		"promise/prefer-await-to-then": "off",
 		"promise/valid-params": "error",
-		radix: ["error", "as-needed"],
+		radix: ["error", "always"],
 		"require-atomic-updates": ["error", {
 			allowProperties: false
 		}],
 		"require-await": "error",
-		"require-jsdoc": "off",
 		"require-unicode-regexp": "error",
 		"require-yield": "error",
 		"sort-imports": ["error", {
+			allowSeparatedGroups: false,
 			ignoreCase: false,
 			ignoreDeclarationSort: true,
 			ignoreMemberSort: false,
@@ -995,11 +1018,10 @@ const main = {
 			enforceForIndexOf: true,
 			enforceForSwitchCase: true
 		}],
-		"valid-jsdoc": "off",
 		"valid-typeof": ["error", {
 			requireStringLiterals: true
 		}],
-		"vars-on-top": "off",
+		"vars-on-top": "error",
 		yoda: ["error", "never", {
 			exceptRange: false,
 			onlyEquality: false
