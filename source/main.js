@@ -1,5 +1,3 @@
-const babelParser = require("@babel/eslint-parser");
-const babelPlugin = require("@babel/eslint-plugin");
 const stylisticPlugin = require("@stylistic/eslint-plugin");
 const importPlugin = require("eslint-plugin-import");
 const jsdocPlugin = require("eslint-plugin-jsdoc");
@@ -17,15 +15,9 @@ const main = {
 			...commonjs,
 			...shared
 		},
-		parser: babelParser,
 		parserOptions: {
-			allowImportExportEverywhere: false,
-			ecmaFeatures: {
-				globalReturn: false
-			},
 			// TODO: Remove once https://github.com/import-js/eslint-plugin-import/issues/2556 has been fixed
-			ecmaVersion: "latest",
-			requireConfigFile: false
+			ecmaVersion: "latest"
 		},
 		sourceType: "module"
 	},
@@ -35,7 +27,6 @@ const main = {
 	},
 	name: "giovanni",
 	plugins: {
-		"@babel": babelPlugin,
 		"@stylistic": stylisticPlugin,
 		import: importPlugin,
 		jsdoc: jsdocPlugin,
@@ -43,29 +34,6 @@ const main = {
 		unicorn: unicornPlugin
 	},
 	rules: {
-		"@babel/new-cap": ["error", {
-			capIsNew: false,
-			newIsCap: true,
-			properties: true
-		}],
-		"@babel/no-invalid-this": "error",
-		"@babel/no-undef": ["error", {
-			typeof: true
-		}],
-		"@babel/no-unused-expressions": ["error", {
-			allowShortCircuit: true,
-			allowTaggedTemplates: true,
-			allowTernary: true,
-			enforceForJSX: true
-		}],
-		"@babel/object-curly-spacing": ["error", "always", {
-			arraysInObjects: true,
-			objectsInObjects: true
-		}],
-		"@babel/semi": ["error", "always", {
-			omitLastInOneLineBlock: false,
-			omitLastInOneLineClassBody: false
-		}],
 		"@stylistic/array-bracket-newline": "off",
 		"@stylistic/array-bracket-spacing": ["error", "never", {
 			arraysInArrays: false,
@@ -217,7 +185,10 @@ const main = {
 		"@stylistic/no-whitespace-before-property": "error",
 		"@stylistic/nonblock-statement-body-position": "off",
 		"@stylistic/object-curly-newline": "off",
-		"@stylistic/object-curly-spacing": "off",
+		"@stylistic/object-curly-spacing": ["error", "always", {
+			arraysInObjects: true,
+			objectsInObjects: true
+		}],
 		"@stylistic/object-property-newline": ["error", {
 			allowAllPropertiesOnSameLine: true
 		}],
@@ -244,7 +215,10 @@ const main = {
 			ignoreStringLiterals: false
 		}],
 		"@stylistic/rest-spread-spacing": ["error", "never"],
-		"@stylistic/semi": "off",
+		"@stylistic/semi": ["error", "always", {
+			omitLastInOneLineBlock: false,
+			omitLastInOneLineClassBody: false
+		}],
 		"@stylistic/semi-spacing": ["error", {
 			after: true,
 			before: false
@@ -557,7 +531,11 @@ const main = {
 		"max-nested-callbacks": "off",
 		"max-params": "off",
 		"max-statements": "off",
-		"new-cap": "off",
+		"new-cap": ["error", {
+			capIsNew: false,
+			newIsCap: true,
+			properties: true
+		}],
 		"no-alert": "error",
 		"no-array-constructor": "error",
 		"no-async-promise-executor": "error",
@@ -629,7 +607,7 @@ const main = {
 		"no-inline-comments": "off",
 		"no-inner-declarations": ["error", "both"],
 		"no-invalid-regexp": "error",
-		"no-invalid-this": "off",
+		"no-invalid-this": "error",
 		"no-irregular-whitespace": ["error", {
 			skipComments: false,
 			skipJSXText: false,
@@ -701,7 +679,9 @@ const main = {
 		"no-ternary": "off",
 		"no-this-before-super": "error",
 		"no-throw-literal": "error",
-		"no-undef": "off",
+		"no-undef": ["error", {
+			typeof: true
+		}],
 		"no-undef-init": "error",
 		"no-undefined": "error",
 		"no-underscore-dangle": ["error", {
@@ -728,6 +708,12 @@ const main = {
 		}],
 		"no-unsafe-optional-chaining": ["error", {
 			disallowArithmeticOperators: true
+		}],
+		"no-unused-expressions": ["error", {
+			allowShortCircuit: true,
+			allowTaggedTemplates: true,
+			allowTernary: true,
+			enforceForJSX: true
 		}],
 		"no-unused-labels": "error",
 		"no-unused-private-class-members": "error",
@@ -1022,7 +1008,7 @@ const main = {
 	settings: {
 		// TODO: Remove once https://github.com/import-js/eslint-plugin-import/issues/2556 has been fixed
 		"import/parsers": {
-			"@babel/eslint-parser": [".js"]
+			espree: [".js"]
 		},
 		jsdoc: {
 			mode: "jsdoc",

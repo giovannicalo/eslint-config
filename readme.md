@@ -6,7 +6,6 @@
 
 ## Included Plugins
 
-* [`@babel/eslint-plugin`](https://github.com/babel/babel/tree/main/eslint/babel-eslint-plugin)
 * [`@stylistic/eslint-plugin`](https://github.com/eslint-stylistic/eslint-stylistic/tree/main/packages/eslint-plugin)
 * [`eslint-plugin-import`](https://github.com/benmosher/eslint-plugin-import)
 * [`eslint-plugin-jest`](https://github.com/jest-community/eslint-plugin-jest)
