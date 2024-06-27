@@ -66,16 +66,7 @@ const react = {
 			beforeSelfClosing: "always",
 			closingSlash: "never"
 		}],
-		"@stylistic/jsx-wrap-multilines": ["error", {
-			arrow: "never",
-			assignment: "never",
-			condition: "never",
-			declaration: "never",
-			logical: "never",
-			prop: "never",
-			propertyValue: "never",
-			return: "never"
-		}],
+		"@stylistic/jsx-wrap-multilines": "off",
 		"react/boolean-prop-naming": "error",
 		"react/button-has-type": ["error", {
 			button: true,
@@ -156,6 +147,15 @@ const react = {
 		"react/jsx-props-no-spreading": "off",
 		"react/jsx-uses-react": "off",
 		"react/jsx-uses-vars": "error",
+		"react/jsx-wrap-multilines": ["error", {
+			arrow: "never",
+			assignment: "never",
+			condition: "never",
+			declaration: "never",
+			logical: "never",
+			prop: "never",
+			return: "never"
+		}],
 		"react/no-access-state-in-setstate": "error",
 		"react/no-adjacent-inline-elements": "error",
 		"react/no-array-index-key": "off",
