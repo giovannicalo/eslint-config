@@ -23,6 +23,8 @@ const main = {
 			ecmaFeatures: {
 				globalReturn: false
 			},
+			// TODO: Remove once https://github.com/import-js/eslint-plugin-import/issues/2556 has been fixed
+			ecmaVersion: "latest",
 			requireConfigFile: false
 		},
 		sourceType: "module"
@@ -1018,6 +1020,10 @@ const main = {
 		}]
 	},
 	settings: {
+		// TODO: Remove once https://github.com/import-js/eslint-plugin-import/issues/2556 has been fixed
+		"import/parsers": {
+			"@babel/eslint-parser": [".js"]
+		},
 		jsdoc: {
 			mode: "jsdoc",
 			preferredTypes: {
