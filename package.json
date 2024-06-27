@@ -9,7 +9,19 @@
 	},
 	"dependencies": {
 		"@babel/core": "^7.24.7",
-		"@babel/eslint-parser": "^7.24.7"
+		"@babel/eslint-parser": "^7.24.7",
+		"@babel/eslint-plugin": "^7.24.7",
+		"@stylistic/eslint-plugin": "^2.3.0",
+		"eslint-formatter-pretty": "^5.0.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-jest": "^28.6.0",
+		"eslint-plugin-jsdoc": "^48.0.2",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^6.2.0",
+		"eslint-plugin-react": "^7.34.3",
+		"eslint-plugin-react-hooks": "^4.6.2",
+		"eslint-plugin-unicorn": "^54.0.0",
+		"globals": "^15.6.0"
 	},
 	"description": "ESLint Config",
 	"engines": {
@@ -21,18 +33,7 @@
 	"main": "index.js",
 	"name": "eslint-config-giovanni",
 	"peerDependencies": {
-		"@babel/eslint-plugin": "^7.24.7",
-		"@stylistic/eslint-plugin": "^2.3.0",
-		"eslint": "^8.57.0",
-		"eslint-formatter-pretty": "^5.0.0",
-		"eslint-plugin-import": "^2.29.1",
-		"eslint-plugin-jest": "^28.6.0",
-		"eslint-plugin-jsdoc": "^48.0.2",
-		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-promise": "^6.2.0",
-		"eslint-plugin-react": "^7.34.3",
-		"eslint-plugin-react-hooks": "^4.6.2",
-		"eslint-plugin-unicorn": "^54.0.0"
+		"eslint": "^8.57.0"
 	},
 	"repository": {
 		"type": "git",
