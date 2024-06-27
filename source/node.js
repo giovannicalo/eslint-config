@@ -34,7 +34,9 @@ const node = {
 		"n/no-unpublished-require": "error",
 		"n/no-unsupported-features/es-builtins": "error",
 		"n/no-unsupported-features/es-syntax": "error",
-		"n/no-unsupported-features/node-builtins": "error",
+		"n/no-unsupported-features/node-builtins": ["error", {
+			allowExperimental: true
+		}],
 		"n/prefer-global/buffer": ["error", "always"],
 		"n/prefer-global/console": ["error", "always"],
 		"n/prefer-global/process": ["error", "always"],
