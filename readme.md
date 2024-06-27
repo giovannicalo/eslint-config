@@ -11,7 +11,7 @@
 * [`eslint-plugin-import`](https://github.com/benmosher/eslint-plugin-import)
 * [`eslint-plugin-jest`](https://github.com/jest-community/eslint-plugin-jest)
 * [`eslint-plugin-jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc)
-* [`eslint-plugin-node`](https://github.com/mysticatea/eslint-plugin-node)
+* [`eslint-plugin-n`](https://github.com/eslint-community/eslint-plugin-n)
 * [`eslint-plugin-promise`](https://github.com/xjamundx/eslint-plugin-promise)
 * [`eslint-plugin-react`](https://github.com/yannickcr/eslint-plugin-react)
 * [`eslint-plugin-react-hooks`](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks)
