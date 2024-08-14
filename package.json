@@ -22,7 +22,7 @@
 	},
 	"description": "ESLint Config",
 	"engines": {
-		"node": ">=22.3.0"
+		"node": ">=22.6.0"
 	},
 	"homepage": "https://github.com/giovannicalo/eslint-config",
 	"keywords": ["config", "eslint"],
