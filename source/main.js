@@ -437,14 +437,21 @@ const main = {
 		"jsdoc/check-property-names": "error",
 		"jsdoc/check-syntax": "error",
 		"jsdoc/check-tag-names": "error",
+		"jsdoc/check-template-names": "error",
 		"jsdoc/check-types": ["error", {
 			noDefaults: false
 		}],
 		"jsdoc/check-values": "error",
+		"jsdoc/convert-to-jsdoc-comments": "off",
 		"jsdoc/empty-tags": "error",
 		"jsdoc/implements-on-classes": "error",
 		"jsdoc/imports-as-dependencies": "off",
 		"jsdoc/informative-docs": "off",
+		"jsdoc/lines-before-block": ["error", {
+			excludedTags: [],
+			ignoreSameLine: true,
+			lines: 1
+		}],
 		"jsdoc/match-description": ["error", {
 			matchDescription: "[A-Z].*\\."
 		}],
@@ -510,6 +517,7 @@ const main = {
 		"jsdoc/require-returns-check": "off",
 		"jsdoc/require-returns-description": "error",
 		"jsdoc/require-returns-type": "error",
+		"jsdoc/require-template": "off",
 		"jsdoc/require-throws": "off",
 		"jsdoc/sort-tags": "error",
 		"jsdoc/tag-lines": ["error", "never", {
@@ -821,6 +829,9 @@ const main = {
 		}],
 		"promise/prefer-await-to-callbacks": "off",
 		"promise/prefer-await-to-then": "off",
+		"promise/spec-only": ["error", {
+			allowedMethods: []
+		}],
 		"promise/valid-params": "error",
 		radix: ["error", "always"],
 		"require-atomic-updates": ["error", {
@@ -891,6 +902,7 @@ const main = {
 		"unicorn/no-invalid-fetch-options": "error",
 		"unicorn/no-invalid-remove-event-listener": "error",
 		"unicorn/no-keyword-prefix": "off",
+		"unicorn/no-length-as-slice-end": "error",
 		"unicorn/no-lonely-if": "error",
 		"unicorn/no-magic-array-flat-depth": "off",
 		"unicorn/no-negated-condition": "off",
