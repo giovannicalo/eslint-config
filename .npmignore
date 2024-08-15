@@ -1,6 +1,5 @@
 .editorconfig
-.eslintrc.js
 .gitattributes
-.gitignore
-.npmignore
+.github
+eslint.config.js
 jsconfig.json
