@@ -17,7 +17,7 @@ const react = {
 	rules: {
 		"@stylistic/jsx-child-element-spacing": "off",
 		"@stylistic/jsx-closing-bracket-location": "off",
-		"@stylistic/jsx-closing-tag-location": "off",
+		"@stylistic/jsx-closing-tag-location": ["error", "line-aligned"],
 		"@stylistic/jsx-curly-brace-presence": ["error", {
 			children: "ignore",
 			propElementValues: "always",
@@ -97,6 +97,7 @@ const react = {
 		"react/forbid-elements": "off",
 		"react/forbid-foreign-prop-types": "off",
 		"react/forbid-prop-types": "off",
+		"react/forward-ref-uses-ref": "error",
 		"react/function-component-definition": ["error", {
 			namedComponents: "arrow-function",
 			unnamedComponents: "arrow-function"
@@ -136,6 +137,8 @@ const react = {
 			validStrategies: ["coerce"]
 		}],
 		"react/jsx-no-literals": ["error", {
+			allowedStrings: [],
+			elementOverrides: {},
 			ignoreProps: false,
 			noAttributeStrings: false,
 			noStrings: false
@@ -154,6 +157,7 @@ const react = {
 		"react/jsx-no-useless-fragment": ["error", {
 			allowExpressions: false
 		}],
+		"react/jsx-props-no-spread-multi": "error",
 		"react/jsx-props-no-spreading": "off",
 		"react/jsx-uses-react": "off",
 		"react/jsx-uses-vars": "error",
@@ -190,7 +194,9 @@ const react = {
 		"react/no-redundant-should-component-update": "error",
 		"react/no-render-return-value": "error",
 		"react/no-set-state": "off",
-		"react/no-string-refs": "error",
+		"react/no-string-refs": ["error", {
+			noTemplateLiterals: true
+		}],
 		"react/no-this-in-sfc": "error",
 		"react/no-typos": "error",
 		"react/no-unescaped-entities": "error",
@@ -200,7 +206,8 @@ const react = {
 		}],
 		"react/no-unsafe": "error",
 		"react/no-unstable-nested-components": ["error", {
-			allowAsProps: false
+			allowAsProps: false,
+			customValidators: []
 		}],
 		"react/no-unused-class-component-methods": "error",
 		"react/no-unused-prop-types": ["error", {

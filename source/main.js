@@ -2,7 +2,7 @@ const stylisticPlugin = require("@stylistic/eslint-plugin");
 const importPlugin = require("eslint-plugin-import");
 const jsdocPlugin = require("eslint-plugin-jsdoc");
 const promisePlugin = require("eslint-plugin-promise");
-const unicornPlugin = require("eslint-plugin-unicorn");
+const { default: unicornPlugin } = require("eslint-plugin-unicorn");
 const {
 	commonjs,
 	"shared-node-browser": shared
@@ -14,10 +14,6 @@ const main = {
 		globals: {
 			...commonjs,
 			...shared
-		},
-		parserOptions: {
-			// TODO: Remove once https://github.com/import-js/eslint-plugin-import/issues/2556 has been fixed
-			ecmaVersion: "latest"
 		},
 		sourceType: "module"
 	},
@@ -61,18 +57,40 @@ const main = {
 				ArrayPattern: false,
 				ArrowFunctionExpression: false,
 				CallExpression: false,
+				ClassDeclaration: false,
+				ClassExpression: false,
+				ExportAllDeclaration: false,
+				ExportNamedDeclaration: false,
 				FunctionDeclaration: false,
 				FunctionExpression: false,
 				ImportDeclaration: false,
+				ImportExpression: false,
 				NewExpression: false,
 				ObjectExpression: false,
 				ObjectPattern: false,
+				SequenceExpression: false,
+				TSCallSignatureDeclaration: false,
+				TSConstructSignatureDeclaration: false,
+				TSConstructorType: false,
+				TSDeclareFunction: false,
+				TSEmptyBodyFunctionExpression: false,
+				TSEnumBody: false,
+				TSFunctionType: false,
+				TSIndexSignature: false,
+				TSInterfaceBody: false,
+				TSInterfaceDeclaration: false,
+				TSMethodSignature: false,
+				TSTupleType: false,
+				TSTypeLiteral: false,
+				TSTypeParameterDeclaration: false,
+				TSTypeParameterInstantiation: false,
 				VariableDeclaration: false
 			}
 		}],
 		"@stylistic/computed-property-spacing": ["error", "never", {
 			enforceForClassMembers: true
 		}],
+		"@stylistic/curly-newline": ["error", "always"],
 		"@stylistic/dot-location": ["error", "property"],
 		"@stylistic/eol-last": ["error", "always"],
 		"@stylistic/function-call-argument-newline": ["error", "consistent"],
@@ -108,12 +126,15 @@ const main = {
 			ignoreComments: false,
 			ignoredNodes: [],
 			offsetTernaryExpressions: false,
-			outerIIFEBody: 1
+			offsetTernaryExpressionsOffsetCallExpressions: false,
+			outerIIFEBody: 1,
+			tabLength: 4
 		}],
 		"@stylistic/indent-binary-ops": ["error", "tab"],
 		"@stylistic/key-spacing": ["error", {
 			afterColon: true,
 			beforeColon: false,
+			ignoredNodes: [],
 			mode: "strict"
 		}],
 		"@stylistic/keyword-spacing": ["error", {
@@ -129,6 +150,7 @@ const main = {
 		}],
 		"@stylistic/max-len": "off",
 		"@stylistic/max-statements-per-line": ["error", {
+			ignoredNodes: [],
 			max: 1
 		}],
 		"@stylistic/member-delimiter-style": ["error", {
@@ -156,6 +178,7 @@ const main = {
 			enforceForSequenceExpressions: true,
 			ignoreJSX: "none",
 			nestedBinaryExpressions: true,
+			nestedConditionalExpressions: true,
 			returnAssign: true,
 			ternaryOperandBinaryExpressions: true
 		}],
@@ -210,7 +233,7 @@ const main = {
 			unnecessary: true
 		}],
 		"@stylistic/quotes": ["error", "double", {
-			allowTemplateLiterals: false,
+			allowTemplateLiterals: "never",
 			avoidEscape: false,
 			ignoreStringLiterals: false
 		}],
@@ -287,7 +310,8 @@ const main = {
 		}],
 		"class-methods-use-this": ["error", {
 			enforceForClassFields: true,
-			exceptMethods: []
+			exceptMethods: [],
+			ignoreOverrideMethods: false
 		}],
 		complexity: "off",
 		"consistent-return": ["error", {
@@ -314,7 +338,10 @@ const main = {
 			generators: "never"
 		}],
 		"func-style": ["error", "expression", {
-			allowArrowFunctions: true
+			allowArrowFunctions: true,
+			overrides: {
+				namedExports: "expression"
+			}
 		}],
 		"getter-return": ["error", {
 			allowImplicit: false
@@ -329,7 +356,10 @@ const main = {
 		"import/dynamic-import-chunkname": "off",
 		"import/export": "error",
 		"import/exports-last": "error",
-		"import/extensions": ["error", "never"],
+		"import/extensions": ["error", "never", {
+			checkTypeImports: true,
+			ignorePackages: false
+		}],
 		"import/first": ["error", "absolute-first"],
 		"import/group-exports": "off",
 		"import/max-dependencies": "off",
@@ -404,17 +434,24 @@ const main = {
 		"import/order": ["error", {
 			alphabetize: {
 				caseInsensitive: false,
-				order: "asc"
+				order: "asc",
+				orderImportKind: "asc"
 			},
+			distinctGroup: false,
 			groups: [
 				"builtin",
 				"external",
 				"internal",
-				["parent", "index", "sibling"],
+				"parent",
+				"sibling",
+				"index",
 				"type",
 				"object"
 			],
+			named: true,
 			"newlines-between": "always",
+			pathGroups: [],
+			pathGroupsExcludedImportTypes: [],
 			warnOnUnassignedImports: false
 		}],
 		"import/prefer-default-export": ["error", {
@@ -448,6 +485,7 @@ const main = {
 		"jsdoc/imports-as-dependencies": "off",
 		"jsdoc/informative-docs": "off",
 		"jsdoc/lines-before-block": ["error", {
+			checkBlockStarts: false,
 			excludedTags: [],
 			ignoreSameLine: true,
 			lines: 1
@@ -499,7 +537,11 @@ const main = {
 			checkSetters: true,
 			enableFixer: true,
 			enableRestElementFixer: true,
-			enableRootFixer: true
+			enableRootFixer: true,
+			exemptedBy: [],
+			ignoreWhenAllParamsMissing: false,
+			unnamedRootBase: [],
+			useDefaultObjectProperties: false
 		}],
 		"jsdoc/require-param-description": "error",
 		"jsdoc/require-param-name": "error",
@@ -566,7 +608,7 @@ const main = {
 		"no-const-assign": "error",
 		"no-constant-binary-expression": "error",
 		"no-constant-condition": ["error", {
-			checkLoops: true
+			checkLoops: "allExceptWhileTrue"
 		}],
 		"no-constructor-return": "error",
 		"no-continue": "off",
@@ -606,12 +648,13 @@ const main = {
 		}],
 		"no-extra-bind": "error",
 		"no-extra-boolean-cast": ["error", {
-			enforceForLogicalOperands: true
+			enforceForInnerExpressions: true
 		}],
 		"no-extra-label": "error",
 		"no-fallthrough": ["error", {
 			allowEmptyCase: false,
-			commentPattern: "Fall through"
+			commentPattern: "Fall through",
+			reportUnusedFallthroughComment: true
 		}],
 		"no-func-assign": "error",
 		"no-global-assign": ["error", {
@@ -630,7 +673,9 @@ const main = {
 		"no-implied-eval": "error",
 		"no-import-assign": "error",
 		"no-inline-comments": "off",
-		"no-inner-declarations": ["error", "both"],
+		"no-inner-declarations": ["error", "both", {
+			blockScopedFunctions: "disallow"
+		}],
 		"no-invalid-regexp": ["error", {
 			allowConstructorFlags: []
 		}],
@@ -655,7 +700,9 @@ const main = {
 		"no-loop-func": "error",
 		"no-loss-of-precision": "error",
 		"no-magic-numbers": "off",
-		"no-misleading-character-class": "error",
+		"no-misleading-character-class": ["error", {
+			allowEscape: false
+		}],
 		"no-multi-assign": ["error", {
 			ignoreNonDeclaration: false
 		}],
@@ -749,7 +796,9 @@ const main = {
 		"no-unused-vars": ["error", {
 			args: "after-used",
 			caughtErrors: "all",
+			ignoreClassWithStaticInitBlock: false,
 			ignoreRestSiblings: false,
+			reportUsedIgnorePattern: false,
 			vars: "all"
 		}],
 		"no-use-before-define": ["error", {
@@ -758,6 +807,7 @@ const main = {
 			functions: true,
 			variables: true
 		}],
+		"no-useless-assignment": "error",
 		"no-useless-backreference": "error",
 		"no-useless-call": "error",
 		"no-useless-catch": "error",
@@ -811,10 +861,16 @@ const main = {
 		"prefer-spread": "error",
 		"prefer-template": "error",
 		"promise/always-return": ["error", {
+			ignoreAssignmentVariable: [],
 			ignoreLastCallback: false
 		}],
 		"promise/avoid-new": "off",
-		"promise/catch-or-return": "error",
+		"promise/catch-or-return": ["error", {
+			allowFinally: false,
+			allowThen: false,
+			allowThenStrict: false,
+			terminationMethod: []
+		}],
 		"promise/no-callback-in-promise": "off",
 		"promise/no-multiple-resolved": "error",
 		"promise/no-native": "off",
@@ -829,27 +885,33 @@ const main = {
 		}],
 		"promise/prefer-await-to-callbacks": "off",
 		"promise/prefer-await-to-then": "off",
+		"promise/prefer-catch": "error",
 		"promise/spec-only": ["error", {
 			allowedMethods: []
 		}],
-		"promise/valid-params": "error",
+		"promise/valid-params": ["error", {
+			exclude: []
+		}],
 		radix: ["error", "always"],
 		"require-atomic-updates": ["error", {
 			allowProperties: false
 		}],
 		"require-await": "error",
-		"require-unicode-regexp": "error",
+		"require-unicode-regexp": ["error", {
+			requireFlag: "v"
+		}],
 		"require-yield": "error",
 		"sort-imports": ["error", {
 			allowSeparatedGroups: false,
 			ignoreCase: false,
-			ignoreDeclarationSort: true,
+			ignoreDeclarationSort: false,
 			ignoreMemberSort: false,
 			memberSyntaxSortOrder: ["none", "all", "multiple", "single"]
 		}],
 		"sort-keys": ["error", "asc", {
 			allowLineSeparatedGroups: false,
 			caseSensitive: true,
+			ignoreComputedKeys: false,
 			minKeys: 2,
 			natural: true
 		}],
@@ -865,15 +927,18 @@ const main = {
 		"unicorn/catch-error-name": ["error", {
 			name: "error"
 		}],
+		"unicorn/consistent-assert": "error",
+		"unicorn/consistent-date-clone": "error",
 		"unicorn/consistent-destructuring": "error",
 		"unicorn/consistent-empty-array-spread": "error",
+		"unicorn/consistent-existence-index-check": "error",
 		"unicorn/consistent-function-scoping": ["error", {
 			checkArrowFunctions: true
 		}],
 		"unicorn/custom-error-definition": "error",
 		"unicorn/empty-brace-spaces": "error",
 		"unicorn/error-message": "error",
-		"unicorn/escape-case": "error",
+		"unicorn/escape-case": ["error", "uppercase"],
 		"unicorn/expiring-todo-comments": "off",
 		"unicorn/explicit-length-check": "off",
 		"unicorn/filename-case": ["error", {
@@ -881,15 +946,14 @@ const main = {
 			ignore: [],
 			multipleFileExtensions: true
 		}],
-		"unicorn/import-index": "error",
 		"unicorn/import-style": "off",
 		"unicorn/new-for-builtins": "error",
 		"unicorn/no-abusive-eslint-disable": "error",
+		"unicorn/no-accessor-recursion": "error",
 		"unicorn/no-anonymous-default-export": "error",
 		"unicorn/no-array-callback-reference": "off",
 		"unicorn/no-array-for-each": "off",
 		"unicorn/no-array-method-this-argument": "error",
-		"unicorn/no-array-push-push": "off",
 		"unicorn/no-array-reduce": "off",
 		"unicorn/no-await-expression-member": "off",
 		"unicorn/no-await-in-promise-methods": "error",
@@ -898,13 +962,17 @@ const main = {
 		"unicorn/no-empty-file": "error",
 		"unicorn/no-for-loop": "error",
 		"unicorn/no-hex-escape": "error",
-		"unicorn/no-instanceof-array": "error",
+		"unicorn/no-instanceof-builtins": ["error", {
+			exclude: [],
+			include: [],
+			strategy: "loose"
+		}],
 		"unicorn/no-invalid-fetch-options": "error",
 		"unicorn/no-invalid-remove-event-listener": "error",
 		"unicorn/no-keyword-prefix": "off",
-		"unicorn/no-length-as-slice-end": "error",
 		"unicorn/no-lonely-if": "error",
 		"unicorn/no-magic-array-flat-depth": "off",
+		"unicorn/no-named-default": "error",
 		"unicorn/no-negated-condition": "off",
 		"unicorn/no-negation-in-equality-check": "error",
 		"unicorn/no-nested-ternary": "off",
@@ -918,8 +986,11 @@ const main = {
 		"unicorn/no-thenable": "error",
 		"unicorn/no-this-assignment": "error",
 		"unicorn/no-typeof-undefined": "off",
+		"unicorn/no-unnecessary-array-flat-depth": "error",
+		"unicorn/no-unnecessary-array-splice-count": "error",
 		"unicorn/no-unnecessary-await": "error",
 		"unicorn/no-unnecessary-polyfills": "error",
+		"unicorn/no-unnecessary-slice-end": "error",
 		"unicorn/no-unreadable-array-destructuring": "off",
 		"unicorn/no-unreadable-iife": "error",
 		"unicorn/no-unused-properties": "error",
@@ -933,7 +1004,9 @@ const main = {
 			checkArrowFunctionBody: true
 		}],
 		"unicorn/no-zero-fractions": "error",
-		"unicorn/number-literal-case": "error",
+		"unicorn/number-literal-case": ["error", {
+			hexadecimalValue: "uppercase"
+		}],
 		"unicorn/numeric-separators-style": ["error", {
 			binary: {
 				groupLength: 4,
@@ -975,10 +1048,13 @@ const main = {
 		"unicorn/prefer-dom-node-text-content": "error",
 		"unicorn/prefer-event-target": "off",
 		"unicorn/prefer-export-from": "off",
+		"unicorn/prefer-global-this": "off",
+		"unicorn/prefer-import-meta-properties": "error",
 		"unicorn/prefer-includes": "error",
 		"unicorn/prefer-json-parse-buffer": "off",
 		"unicorn/prefer-keyboard-event-key": "error",
 		"unicorn/prefer-logical-operator-over-ternary": "error",
+		"unicorn/prefer-math-min-max": "error",
 		"unicorn/prefer-math-trunc": "error",
 		"unicorn/prefer-modern-dom-apis": "error",
 		"unicorn/prefer-modern-math-apis": "error",
@@ -997,6 +1073,7 @@ const main = {
 		"unicorn/prefer-regexp-test": "error",
 		"unicorn/prefer-set-has": "error",
 		"unicorn/prefer-set-size": "error",
+		"unicorn/prefer-single-call": "off",
 		"unicorn/prefer-spread": "error",
 		"unicorn/prefer-string-raw": "off",
 		"unicorn/prefer-string-replace-all": "error",
@@ -1040,10 +1117,6 @@ const main = {
 		}]
 	},
 	settings: {
-		// TODO: Remove once https://github.com/import-js/eslint-plugin-import/issues/2556 has been fixed
-		"import/parsers": {
-			espree: [".js"]
-		},
 		jsdoc: {
 			mode: "jsdoc",
 			preferredTypes: {
