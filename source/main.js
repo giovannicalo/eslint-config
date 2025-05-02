@@ -902,7 +902,7 @@ const main = {
 		"sort-imports": ["error", {
 			allowSeparatedGroups: false,
 			ignoreCase: false,
-			ignoreDeclarationSort: false,
+			ignoreDeclarationSort: true,
 			ignoreMemberSort: false,
 			memberSyntaxSortOrder: ["none", "all", "multiple", "single"]
 		}],
