@@ -442,9 +442,7 @@ const main = {
 				"builtin",
 				"external",
 				"internal",
-				"parent",
-				"sibling",
-				"index",
+				["parent", "index", "sibling"],
 				"type",
 				"object"
 			],
