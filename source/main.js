@@ -446,7 +446,7 @@ const main = {
 				"type",
 				"object"
 			],
-			named: true,
+			named: false,
 			"newlines-between": "always",
 			pathGroups: [],
 			pathGroupsExcludedImportTypes: [],
