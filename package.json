@@ -30,7 +30,7 @@
 	"main": "source/index.js",
 	"name": "eslint-config-giovanni",
 	"peerDependencies": {
-		"eslint": "^9.25.1"
+		"eslint": "^9.26.0"
 	},
 	"repository": {
 		"type": "git",

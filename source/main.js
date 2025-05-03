@@ -745,7 +745,9 @@ const main = {
 		}],
 		"no-setter-return": "error",
 		"no-shadow": "off",
-		"no-shadow-restricted-names": "error",
+		"no-shadow-restricted-names": ["error", {
+			reportGlobalThis: true
+		}],
 		"no-sparse-arrays": "error",
 		"no-template-curly-in-string": "error",
 		"no-ternary": "off",
@@ -787,7 +789,8 @@ const main = {
 			allowShortCircuit: true,
 			allowTaggedTemplates: true,
 			allowTernary: true,
-			enforceForJSX: true
+			enforceForJSX: true,
+			ignoreDirectives: false
 		}],
 		"no-unused-labels": "error",
 		"no-unused-private-class-members": "error",
@@ -858,10 +861,7 @@ const main = {
 		"prefer-rest-params": "error",
 		"prefer-spread": "error",
 		"prefer-template": "error",
-		"promise/always-return": ["error", {
-			ignoreAssignmentVariable: [],
-			ignoreLastCallback: false
-		}],
+		"promise/always-return": "off",
 		"promise/avoid-new": "off",
 		"promise/catch-or-return": ["error", {
 			allowFinally: false,
